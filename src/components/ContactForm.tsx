@@ -43,6 +43,17 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className={`${boxClass} flex flex-col gap-5`}>
+      {/* Asunto del email que llega, y campo trampa: si un bot lo completa,
+          Formspree descarta el envío. Oculto para personas y lectores */}
+      <input type="hidden" name="_subject" value={t("emailSubject")} />
+      <input
+        type="text"
+        name="_gotcha"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+      />
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="flex flex-col gap-2">
           <label htmlFor="name" className="text-sm font-medium">

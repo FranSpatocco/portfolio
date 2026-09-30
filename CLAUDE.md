@@ -60,7 +60,7 @@ Portfolio de Frontend Developer (React + TypeScript) para conseguir trabajo remo
 
 ## Variables de entorno (`.env.local`, ver `.env.example`)
 - `NEXT_PUBLIC_SITE_URL` — opcional, sólo con dominio propio; por defecto https://franco-spatocco.vercel.app (canonical, sitemap, Open Graph)
-- `NEXT_PUBLIC_FORMSPREE_ID` — sin esto el formulario muestra un aviso y sólo queda el email
+- `NEXT_PUBLIC_FORMSPREE_ID` — opcional; por defecto el form del portfolio (`xqpajwje`, los mensajes llegan a fspatocco02@gmail.com)
 
 ## Pendientes (del PRD)
 - README de perfil de GitHub: publicado en github.com/FranSpatocco/FranSpatocco (fuente en `docs/github-profile/README.md`); actualizar la sección Proyectos cuando se publiquen

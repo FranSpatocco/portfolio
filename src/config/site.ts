@@ -6,8 +6,9 @@ export const site = {
   email: "fspatocco02@gmail.com",
   linkedin: "https://www.linkedin.com/in/franco-spatocco-0a7161163/",
   github: "https://github.com/FranSpatocco",
-  // ID del form de Formspree (https://formspree.io). Ej: "xyzabcd"
-  formspreeId: process.env.NEXT_PUBLIC_FORMSPREE_ID || "",
+  // Form de Formspree (https://formspree.io/f/<id>). No es secreto: el id
+  // queda visible en el HTML. La variable permite usar otro form en pruebas
+  formspreeId: process.env.NEXT_PUBLIC_FORMSPREE_ID || "xqpajwje",
   cv: {
     es: "/cv/cv-es.pdf",
     en: "/cv/cv-en.pdf",

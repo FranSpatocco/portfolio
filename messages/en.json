@@ -150,7 +150,8 @@
       "email": "Email",
       "linkedin": "LinkedIn",
       "github": "GitHub"
-    }
+    },
+    "emailSubject": "New message from the portfolio"
   },
   "footer": {
     "rights": "© {year} {name}. Built with Next.js, TypeScript and Tailwind CSS.",
