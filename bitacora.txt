@@ -299,7 +299,28 @@ Solución: la clase de display/posición la decide quien usa el
 ================================================================
 FASE 3 — DEPLOY Y SEO
 ================================================================
-(completar)
+
+[30/09/2026] HERRAMIENTA — Git + GitHub (repo público)
+Para qué lo usé: versionar el proyecto (rama main) y publicarlo en
+  github.com/FranSpatocco/portfolio, con descripción y topics.
+Por qué público: los recruiters pueden revisar el código real.
+
+[30/09/2026] HERRAMIENTA — Vercel
+Qué hice: importé el repo desde vercel.com con la cuenta de GitHub
+  (acceso sólo a ese repo). Cada push a main publica solo.
+URL pública: https://franco-spatocco.vercel.app
+Lo que aprendí: Vercel activa "Deployment Protection" por defecto: las
+  URLs internas de cada deploy (proyecto-hash-usuario.vercel.app) piden
+  login; sólo el dominio de producción es público. El nombre del
+  subdominio se puede cambiar gratis en Settings → Domains.
+
+[30/09/2026] PROBLEMA — Canonical y Open Graph apuntando a example.com
+Causa: la URL del sitio salía de NEXT_PUBLIC_SITE_URL con un valor por
+  defecto provisorio.
+Solución: la URL pública quedó como valor por defecto en
+  src/config/site.ts; la variable sólo hace falta con dominio propio.
+  Se usa || en vez de ?? porque una variable vacía en .env ("") no es
+  null y rompería new URL("").
 
 ================================================================
 RESUMEN PARA CV / LINKEDIN

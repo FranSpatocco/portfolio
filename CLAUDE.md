@@ -49,17 +49,19 @@ Portfolio de Frontend Developer (React + TypeScript) para conseguir trabajo remo
 - Fondo: grilla tenue de 48px (oscuro `#12171D`, claro azul plano al 6%). Esquinas sin redondear.
 - Gesto principal: diagrama SVG Diseño → Código → Deploy que se dibuja al cargar. Secundario: captura flotante al pasar el mouse por las filas de proyectos.
 
+## Deploy
+- Vercel, conectado a github.com/FranSpatocco/portfolio: cada push a `main` publica en https://franco-spatocco.vercel.app
+
 ## Comandos
 - `npm run dev` — desarrollo en http://localhost:3000
 - `npm run build` — build de producción (verificar que todas las rutas salgan como SSG ●)
 - `npm run lint`
 
 ## Variables de entorno (`.env.local`, ver `.env.example`)
-- `NEXT_PUBLIC_SITE_URL` — dominio final (canonical, sitemap, Open Graph)
+- `NEXT_PUBLIC_SITE_URL` — opcional, sólo con dominio propio; por defecto https://franco-spatocco.vercel.app (canonical, sitemap, Open Graph)
 - `NEXT_PUBLIC_FORMSPREE_ID` — sin esto el formulario muestra un aviso y sólo queda el email
 
 ## Pendientes (del PRD)
-- Dominio → `src/config/site.ts` (el nombre ya está: Franco Spatocco)
 - README de perfil de GitHub: publicado en github.com/FranSpatocco/FranSpatocco (fuente en `docs/github-profile/README.md`); actualizar la sección Proyectos cuando se publiquen
 - Textos de los casos de estudio (marcados "(Completar)" / "(TODO)") → `messages/*.json`
 - CV en PDF → `public/cv/cv-es.pdf` y `public/cv/cv-en.pdf`
