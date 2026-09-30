@@ -29,7 +29,7 @@ _Systems Analyst focused on frontend development (React + TypeScript). Also stud
 ## 🚀 Proyectos
 
 <!-- Completar a medida que estén publicados -->
-- **Portfolio** — Next.js + TypeScript + Tailwind + next-intl (ES/EN). _Próximamente_
+- **[Portfolio](https://franco-spatocco.vercel.app)** — Next.js + TypeScript + Tailwind + next-intl (ES/EN) · [código](https://github.com/FranSpatocco/portfolio)
 - **Dashboard con IA** — React + TypeScript + Firebase + API de Claude. _En desarrollo_
 - **PWA bilingüe en Android** — PWA + i18n + Capacitor. _En desarrollo_
 - **Landing para cliente** — Next.js + GSAP, Lighthouse 95+. _En desarrollo_
@@ -38,4 +38,4 @@ _Systems Analyst focused on frontend development (React + TypeScript). Also stud
 
 - Email: fspatocco02@gmail.com
 - LinkedIn: [franco-spatocco](https://www.linkedin.com/in/franco-spatocco-0a7161163/)
-<!-- - Portfolio: completar cuando esté publicado -->
+- Portfolio: [franco-spatocco.vercel.app](https://franco-spatocco.vercel.app)
