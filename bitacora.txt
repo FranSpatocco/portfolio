@@ -1,0 +1,316 @@
+================================================================
+BITÁCORA TÉCNICA — PORTFOLIO FRONTEND
+================================================================
+Registro de todo lo que se usa, se decide y se aprende.
+Regla: se anota en el momento, no al final.
+
+Formato de cada entrada:
+  [FECHA] CATEGORÍA — Nombre
+  Qué es: (una línea)
+  Para qué lo usé: (en este proyecto)
+  Por qué esto y no otra cosa:
+  Lo que aprendí / problema que resolví:
+
+Categorías: STACK · HERRAMIENTA · DECISIÓN · DESCARTADO · PROBLEMA · CONCEPTO
+
+================================================================
+FASE 0 — ANÁLISIS Y PLANIFICACIÓN
+================================================================
+
+[30/09/2026] DECISIÓN — Análisis de mercado previo al portfolio
+Qué es: relevamiento de ofertas remotas de LatAm (GetOnBoard) y de la
+  encuesta de Stack Overflow 2025.
+Para qué lo usé: definir stack, proyectos y hosting según lo que piden
+  las empresas, no según gusto personal.
+Por qué: React + TypeScript aparece como base en casi todas las ofertas
+  frontend remotas. Diferenciales frecuentes: Tailwind, Next.js,
+  performance (Core Web Vitals), accesibilidad, consumo de APIs y uso
+  de herramientas de IA.
+Lo que aprendí: los proyectos personales cuentan como experiencia en
+  muchas búsquedas. Los proyectos genéricos (todo app, clima, clones)
+  restan en lugar de sumar.
+
+[30/09/2026] STACK — Next.js (App Router)
+Qué es: framework de React con renderizado en servidor y generación
+  estática.
+Para qué lo usé: base del sitio portfolio.
+Por qué: es el framework React más pedido en las ofertas y aporta
+  performance y SEO.
+Lo que aprendí: (completar durante el desarrollo)
+
+[30/09/2026] STACK — TypeScript
+Qué es: JavaScript con tipado estático.
+Para qué lo usé: todo el código del portfolio.
+Por qué: requisito o deseable en la gran mayoría de las ofertas.
+Lo que aprendí: (completar)
+
+[30/09/2026] STACK — Tailwind CSS
+Qué es: framework de CSS basado en clases utilitarias.
+Para qué lo usé: estilos del portfolio.
+Por qué: aparece seguido en ofertas de React + Next.
+Lo que aprendí: (completar)
+
+[30/09/2026] STACK — GSAP
+Qué es: librería de animaciones JavaScript.
+Para qué lo usé: animaciones de entrada y scroll.
+Por qué: ya lo manejo y suma diferencial visual.
+Lo que aprendí: (completar; ej.: integrarlo con componentes React)
+
+[30/09/2026] STACK — next-intl
+Qué es: librería de internacionalización para Next.js.
+Para qué lo usé: versión ES/EN con rutas /es y /en.
+Por qué: el patrón vanilla (data-i18n) no encaja con Next.js; next-intl
+  es la solución estándar y mejora el SEO por idioma.
+Lo que aprendí: (completar)
+
+[30/09/2026] DECISIÓN — Sitio estático (SSG) en lugar de dinámico
+Por qué: el portfolio no necesita datos en tiempo real. Estático =
+  más rápido, mejor SEO y hosting gratis. Lo dinámico se demuestra en
+  los proyectos (dashboard con Firebase + IA).
+
+[30/09/2026] HERRAMIENTA — Vercel
+Qué es: plataforma de hosting y deploy.
+Para qué lo usé: alojar el portfolio con deploy automático desde GitHub.
+Por qué: es el host nativo de Next.js. Netlify queda para proyectos
+  vanilla.
+
+[30/09/2026] HERRAMIENTA — Formspree
+Qué es: servicio de formularios sin backend.
+Para qué lo usé: formulario de contacto.
+
+[30/09/2026] HERRAMIENTA — Claude Design
+Qué es: herramienta de Anthropic para diseñar y prototipar desde un
+  chat con un lienzo visual.
+Para qué lo usé: explorar la dirección visual y definir el sistema de
+  diseño antes de codear; handoff a Claude Code con /design.
+Por qué: acelera la etapa de diseño. También sirve para mostrar
+  mockups a clientes freelance antes de programar.
+
+[30/09/2026] HERRAMIENTA — Claude Code
+Qué es: agente de programación de Anthropic.
+Para qué lo usé: desarrollo del portfolio a partir del PRD y CLAUDE.md.
+Nota para entrevistas: el uso de asistentes de IA para programar es
+  algo que las empresas ya piden explícitamente.
+
+[30/09/2026] DESCARTADO — Flutter para la PWA
+Por qué: usa Dart, orientado a mobile nativo (otro mercado). Flutter
+  web renderiza en canvas: peor SEO, bundle pesado y accesibilidad
+  limitada. El paso web → mobile ya está cubierto con Capacitor
+  reutilizando el mismo código.
+
+[30/09/2026] DECISIÓN — IA integrada en un proyecto, no como stack aparte
+Dónde: dashboard (proyecto estrella), con la API de Claude llamada desde
+  una API Route de Next.js.
+Por qué: demuestra integración de APIs, manejo de estados asíncronos y
+  seguridad (la API key nunca va al frontend).
+
+================================================================
+FASE 1 — DISEÑO (Claude Design)
+================================================================
+
+[30/09/2026] DECISIÓN — Criterio de diseño: "tryhard, pero sin escándalo"
+Qué es: el esfuerzo va a la ejecución (espaciados, estados de hover y
+  foco, modo claro y oscuro, mobile), no a los efectos.
+Regla: un solo gesto memorable por diseño; nada de 3D por ahora.
+Por qué: los portfolios sobrecargados de efectos restan ante recruiters.
+
+[30/09/2026] HERRAMIENTA — Lienzo de diseño de Claude (claude.ai)
+Para qué lo usé: explorar 3 direcciones visuales con los textos reales
+  (desktop y mobile) y después cerrar la elegida: home en oscuro y
+  claro, caso de estudio, mobile y menú abierto.
+Lo que aprendí: diseñar con contenido real (no lorem ipsum) muestra
+  problemas de jerarquía y largo de textos antes de codear.
+
+[30/09/2026] DECISIÓN — Dirección elegida: "Plano técnico"
+Qué es: estética de plano de ingeniería / ficha técnica.
+Por qué: es la única de las tres que cuenta la historia personal
+  (sistemas + mantenimiento industrial + interés en Industria 4.0).
+DESCARTADAS: "Editorial minimalista" (elegante pero no usa el
+  diferencial) y "Tech moderno" (violeta, degradados y vidrio: la
+  estética más repetida en portfolios y plantillas).
+Sistema:
+  - Tipografías: Space Grotesk (títulos y texto) + JetBrains Mono sólo
+    para etiquetas y datos (REF-00, P-01, [01], rótulos de fichas).
+  - Oscuro: carbón #0E1116, superficie #11151B, texto #E6E8EB,
+    acento naranja de seguridad #FF6B1A (con texto oscuro encima).
+  - Claro: papel #F4F1EA, grilla azul plano muy tenue, texto #16191D,
+    acento #C2410C (el naranja claro no llega a contraste AA sobre
+    papel, se oscureció).
+  - Gesto: diagrama SVG Diseño → Código → Deploy que se dibuja al
+    cargar. Secundario: captura flotante al pasar el mouse por los
+    proyectos de la lista.
+
+================================================================
+FASE 2 — DESARROLLO
+================================================================
+
+[30/09/2026] HERRAMIENTA — create-next-app
+Qué es: generador oficial de proyectos Next.js.
+Para qué lo usé: crear la base con TypeScript, Tailwind, ESLint, App
+  Router y carpeta src/.
+Lo que aprendí: no se puede generar en una carpeta con archivos que no
+  reconoce (PRD, bitácora), así que se generó en una subcarpeta y se
+  movió a la raíz. Next 16 ya crea AGENTS.md y CLAUDE.md para agentes.
+
+[30/09/2026] CONCEPTO — Next.js 16: "middleware" pasa a llamarse "proxy"
+Qué es: archivo src/proxy.ts que corre antes de cada request.
+Para qué lo usé: el middleware de next-intl que redirige "/" al idioma
+  del navegador (Accept-Language) o al guardado en cookie.
+Lo que aprendí: la versión instalada puede diferir de tutoriales viejos;
+  la documentación exacta viene en node_modules/next/dist/docs/.
+
+[30/09/2026] CONCEPTO — next-intl con App Router y render estático
+Qué es: la ruta dinámica [locale] envuelve todo el sitio.
+Para qué lo usé: /es y /en generados como HTML estático.
+Lo que aprendí: para que siga siendo SSG hay que exportar
+  generateStaticParams y llamar a setRequestLocale(locale) en cada
+  layout/página. Archivos clave: i18n/routing.ts (idiomas),
+  i18n/request.ts (carga de mensajes), i18n/navigation.ts (Link con
+  idioma). El selector de idioma conserva la página actual (incluido
+  el slug del caso de estudio).
+
+[30/09/2026] CONCEPTO — Tailwind CSS v4
+Qué es: nueva versión configurada desde CSS, sin tailwind.config.js.
+Lo que aprendí: los tokens se declaran con @theme inline apuntando a
+  variables CSS; el modo oscuro por clase se habilita con
+  @custom-variant dark (&:where(.dark, .dark *)).
+
+[30/09/2026] DECISIÓN — Modo oscuro con clase + script inline
+Por qué: un script mínimo en <head> lee localStorage (o la preferencia
+  del sistema) y aplica .dark antes del primer paint: sin "flash" de
+  tema claro. El botón no necesita estado de React: el ícono se
+  resuelve con CSS (dark:hidden / dark:block).
+
+[30/09/2026] CONCEPTO — GSAP en React (useGSAP + matchMedia)
+Para qué lo usé: componente Reveal, que anima al entrar en pantalla
+  (ScrollTrigger) o al montar (hero).
+Lo que aprendí: useGSAP limpia las animaciones al desmontar.
+  gsap.matchMedia("(prefers-reduced-motion: no-preference)") hace que
+  las animaciones directamente no existan si el usuario pidió reducir
+  movimiento. En el hero no se anima la opacidad para no retrasar el
+  LCP (métrica de Core Web Vitals).
+
+[30/09/2026] DECISIÓN — Textos separados de los datos de proyectos
+Por qué: src/data/projects.ts guarda sólo lo que no se traduce (stack,
+  links, imagen); títulos y casos de estudio viven en messages/*.json.
+  Agregar un proyecto = una entrada en cada archivo.
+
+[30/09/2026] CONCEPTO — SEO técnico en Next.js
+Para qué lo usé: generateMetadata por idioma (title, description,
+  canonical, hreflang con alternates.languages, Open Graph),
+  sitemap.ts con alternativas por idioma y robots.ts.
+
+[30/09/2026] CONCEPTO — Accesibilidad aplicada
+Qué hice: link "Saltar al contenido", landmarks (header, nav, main,
+  footer), secciones con aria-labelledby, labels en el formulario,
+  mensaje de estado con aria-live, aria-label en botones de ícono y
+  respeto a prefers-reduced-motion.
+
+[30/09/2026] PROBLEMA — Capturas con navegador headless
+Qué pasó: las secciones aparecían semitransparentes en capturas
+  automáticas. Causa: el navegador headless no avanza las animaciones
+  de GSAP igual que uno real. Se verificó el layout forzando
+  prefers-reduced-motion (sin animaciones) y todo se ve completo.
+
+[30/09/2026] HERRAMIENTA — Context7 (MCP)
+Qué es: servidor MCP que le da a Claude Code documentación actualizada
+  de librerías.
+Para qué lo usé: verificar la configuración de next-intl contra su
+  documentación actual.
+Por qué: el conocimiento de los modelos puede estar desactualizado;
+  Next 16 y next-intl 4 cambiaron bastante.
+
+[30/09/2026] HERRAMIENTA — Playwright CLI
+Qué es: CLI de Playwright pensada para agentes, que maneja un navegador
+  real (navegar, clic, teclado, capturas, emulación de mobile).
+Para qué lo usé: pruebas end to end del portfolio: redirección por
+  idioma, animaciones completas tras el scroll, tema persistente,
+  selector de idioma, link "Saltar al contenido" y layout mobile.
+Lo que aprendí: resolvió el problema de las capturas headless (acá sí
+  corren las animaciones de GSAP).
+
+[30/09/2026] DECISIÓN — Migrar next-intl a next/root-params
+Qué es: next/root-params (Next 16.3+) permite leer [locale] desde
+  cualquier Server Component.
+Qué cambié: src/i18n/request.ts lee el idioma con rootParams.locale()
+  y se quitaron los setRequestLocale de layout y páginas.
+Por qué: Context7 mostró que setRequestLocale ya es "legacy" en la doc
+  de next-intl. Menos código repetido y el sitio sigue 100% estático.
+
+[30/09/2026] HERRAMIENTA — GitHub CLI (gh)
+Qué es: la línea de comandos oficial de GitHub.
+Para qué lo usé: crear el repo de perfil FranSpatocco/FranSpatocco y
+  subir el README desde la terminal, sin pasar por la web.
+Lo que aprendí: el login se hace con "gh auth login --web" (código de
+  un solo uso en github.com/login/device). Un repo con el mismo nombre
+  que el usuario muestra su README en la página del perfil.
+
+[30/09/2026] DECISIÓN — Perfil de GitHub como parte del portfolio
+Por qué: los recruiters revisan GitHub antes que el CV. Se agregó un
+  README de perfil (presentación, tecnologías, proyectos en curso y
+  contacto). Con gh se cargaron bio, ubicación y "disponible para
+  contratación" (requirió el permiso extra "user": gh auth refresh -s
+  user) y se archivó la calculadora (proyecto genérico). Pendiente:
+  fijar los proyectos nuevos cuando estén publicados.
+
+[30/09/2026] CONCEPTO — Menú mobile accesible
+Qué hice: componente MobileMenu (cliente) visible sólo debajo de 768px,
+  con links a las secciones y botón de CV.
+Lo que aprendí: patrón "disclosure": botón con aria-expanded y
+  aria-controls, panel con el atributo hidden. Se cierra al elegir un
+  link, con Escape (devolviendo el foco al botón), con un clic afuera
+  y al pasar a desktop. Probado con Playwright en mobile emulado.
+
+[30/09/2026] PROBLEMA — Importar constantes desde un archivo "use client"
+Qué pasó: la lista de secciones tenía que compartirse entre Header
+  (Server Component) y MobileMenu (Client Component).
+Causa: lo que un Server Component importa de un archivo "use client"
+  llega como referencia de cliente, no como el valor real.
+Solución: mover la constante a un módulo neutro (src/config/nav.ts).
+
+[30/09/2026] DECISIÓN — Implementación del diseño "Plano técnico"
+Qué hice: pasé el diseño del lienzo a Next.js. Tokens de color como
+  variables CSS (claro en :root, oscuro en .dark) expuestas a Tailwind
+  con @theme inline; fuentes con next/font (Space Grotesk y JetBrains
+  Mono, sin pedidos externos a Google Fonts en runtime).
+Componentes nuevos: BlueprintDiagram (gesto principal), CornerTicks,
+  SectionHeading, ProjectCapture.
+Detalles "tryhard": foco visible con el color de acento, selección de
+  texto con los colores de marca, estados hover/focus en cada link y
+  botón, la captura flotante también aparece con el teclado
+  (group-focus-visible), y todo respeta prefers-reduced-motion.
+
+[30/09/2026] CONCEPTO — DrawSVGPlugin de GSAP
+Qué es: plugin que anima el trazo de un SVG como si se dibujara.
+Lo que aprendí: desde GSAP 3.13 todos los plugins son gratuitos y
+  vienen en el paquete npm. Se animan los rectángulos, flechas y
+  círculos con drawSVG: 0 en una timeline; el engranaje punteado se
+  rota en lugar de dibujarse, porque drawSVG reemplaza el
+  stroke-dasharray y se perderían los dientes.
+
+[30/09/2026] PROBLEMA — Clases de Tailwind que se pisan
+Qué pasó: componentes con una clase base (ej.: "grid" o "relative")
+  que después recibían otra que la contradice ("hidden", "absolute").
+Causa: con dos utilidades de la misma propiedad, gana la que aparece
+  después en el CSS generado, no la que se escribe al final.
+Solución: la clase de display/posición la decide quien usa el
+  componente (prop className con un valor por defecto).
+
+================================================================
+FASE 3 — DEPLOY Y SEO
+================================================================
+(completar)
+
+================================================================
+RESUMEN PARA CV / LINKEDIN
+(actualizar al cerrar cada fase)
+================================================================
+Frontend: HTML, CSS, JavaScript, TypeScript, React, Next.js
+Estilos: Tailwind CSS
+Animación: GSAP
+i18n: next-intl (ES/EN)
+Backend/servicios: Firebase, Formspree, API de Claude
+Mobile: PWA, Capacitor, Android Studio
+Deploy: Vercel, Netlify
+Herramientas: Git, GitHub, VS Code, Claude Code, Claude Design
+Buenas prácticas: accesibilidad, Core Web Vitals, SEO técnico

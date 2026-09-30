@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+/* Modo oscuro por clase (.dark en <html>), controlado por ThemeToggle */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Sistema "Plano técnico" (ver CLAUDE.md). Claro: papel de plano */
+:root {
+  --bg: #f4f1ea;
+  --surface: #fbfaf6;
+  --fg: #16191d;
+  --muted: #4f5661;
+  --subtle: #5f6672;
+  --border: #d6d0c4;
+  --line: #e3ded3;
+  --grid: rgb(29 78 216 / 0.06);
+  --accent: #c2410c;
+  --accent-hover: #9a3412;
+  --accent-fg: #ffffff;
+  --hatch-a: #ece7dc;
+  --hatch-b: #f7f4ee;
+  --shadow: rgb(22 25 29 / 0.18);
+}
+
+/* Oscuro: carbón + naranja de seguridad */
+.dark {
+  --bg: #0e1116;
+  --surface: #11151b;
+  --fg: #e6e8eb;
+  --muted: #a3abb8;
+  --subtle: #7a8290;
+  --border: #2a323d;
+  --line: #1f2630;
+  --grid: #12171d;
+  --accent: #ff6b1a;
+  --accent-hover: #ff8a4c;
+  --accent-fg: #0e1116;
+  --hatch-a: #141920;
+  --hatch-b: #11151b;
+  --shadow: rgb(0 0 0 / 0.5);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-border: var(--border);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-fg: var(--accent-fg);
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Grilla de plano de fondo */
+body {
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+  color: var(--fg);
+}
+
+@media (min-width: 768px) {
+  body {
+    background-size: 48px 48px;
+  }
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Offset para que el header fijo no tape los títulos al navegar por anclas */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+@layer components {
+  /* Rayado de plano para las capturas que todavía no existen */
+  .hatch {
+    background-image: repeating-linear-gradient(
+      45deg,
+      var(--hatch-a) 0 10px,
+      var(--hatch-b) 10px 20px
+    );
+  }
+
+  /* Rótulos técnicos: REF-00, P-01, [01], etiquetas de fichas */
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--subtle);
+  }
+}

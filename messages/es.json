@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "title": "{name} · Frontend Developer (React + TypeScript)",
+    "description": "Portfolio de {name}, Frontend Developer especializado en React, TypeScript y Next.js. Proyectos, casos de estudio y contacto."
+  },
+  "nav": {
+    "skip": "Saltar al contenido",
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "cv": "Descargar CV",
+    "menu": "Menú",
+    "closeMenu": "Cerrar menú",
+    "mainNav": "Navegación principal"
+  },
+  "theme": {
+    "toggle": "Cambiar tema claro/oscuro"
+  },
+  "locale": {
+    "label": "Idioma",
+    "switchTo": "Cambiar a {language}",
+    "es": "Español",
+    "en": "English"
+  },
+  "hero": {
+    "greeting": "Hola, soy {name}",
+    "role": "Frontend Developer · React · TypeScript",
+    "tagline": "Construyo interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy.",
+    "ctaProjects": "Ver proyectos",
+    "ctaContact": "Contactame",
+    "label": "REF-00 — Frontend Developer",
+    "figure": {
+      "caption": "Fig. 01 — Del diseño al deploy",
+      "rev": "Rev. 2026",
+      "alt": "Diagrama: diseño, código y deploy conectados por un engranaje",
+      "design": "DISEÑO",
+      "designSub": "UI · SISTEMA",
+      "code": "CÓDIGO",
+      "codeSub": "REACT · TS",
+      "deploy": "DEPLOY",
+      "deploySub": "VERCEL",
+      "target": "OBJETIVO: LIGHTHOUSE 95+"
+    },
+    "specs": {
+      "stackLabel": "Stack",
+      "stack": "React · TypeScript · Next.js",
+      "baseLabel": "Base",
+      "base": "Mar del Plata, AR",
+      "modeLabel": "Modalidad",
+      "mode": "Remoto / presencial",
+      "statusLabel": "Estado",
+      "status": "Disponible"
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Tres proyectos reales, cada uno con su caso de estudio.",
+    "featured": "Destacado",
+    "demo": "Demo",
+    "repo": "GitHub",
+    "caseStudy": "Ver caso de estudio",
+    "comingSoon": "Próximamente",
+    "stack": "Stack",
+    "items": {
+      "ai-dashboard": {
+        "title": "Dashboard con IA",
+        "summary": "Dashboard en React + TypeScript con Firebase que genera resúmenes e insights usando la API de Claude desde una API Route.",
+        "problem": "(Completar) Qué problema resuelve el dashboard y para quién.",
+        "decisions": "(Completar) La API key vive sólo en el servidor (API Route de Next.js). Decisiones de modelado de datos en Firebase, manejo de estados de carga y error.",
+        "result": "(Completar) Resultado, métricas y aprendizajes."
+      },
+      "pwa-capacitor": {
+        "title": "PWA bilingüe en Android",
+        "summary": "Progressive Web App con i18n que se lleva a Android con Capacitor, reutilizando el mismo código.",
+        "problem": "(Completar) Qué necesidad cubre la app y por qué web + mobile.",
+        "decisions": "(Completar) Service worker y estrategia offline, i18n, empaquetado con Capacitor.",
+        "result": "(Completar) Resultado, métricas y aprendizajes."
+      },
+      "gsap-landing": {
+        "title": "Landing para cliente",
+        "summary": "Landing con animaciones GSAP pensada como servicio freelance, con Lighthouse 95+ en todas las métricas.",
+        "problem": "(Completar) Qué necesitaba el cliente (real o ficticio).",
+        "decisions": "(Completar) Animaciones con GSAP sin afectar performance, respeto a prefers-reduced-motion, imágenes optimizadas.",
+        "result": "(Completar) Puntajes de Lighthouse y resultado."
+      }
+    },
+    "viewCase": "Ver caso",
+    "statusLabel": "Estado",
+    "capture": "[ Captura del proyecto ]",
+    "status": {
+      "inDevelopment": "En desarrollo",
+      "live": "Publicado"
+    }
+  },
+  "caseStudy": {
+    "back": "Volver a proyectos",
+    "problem": "El problema",
+    "decisions": "Decisiones técnicas",
+    "result": "Resultado",
+    "label": "{code} — Caso de estudio",
+    "roleLabel": "Rol",
+    "role": "Diseño y desarrollo",
+    "linksLabel": "Links",
+    "figure": "Fig. 01 — {title}",
+    "next": "Siguiente — {code}"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "paragraphs": {
+      "intro": "Soy Analista de Sistemas y me enfoco en el desarrollo frontend con React, TypeScript y Next.js. Me gusta construir interfaces claras, rápidas y accesibles, y cuidar cada detalle desde el diseño hasta el deploy.",
+      "industry": "En paralelo curso la Tecnicatura Superior en Mantenimiento Industrial, porque me atrae el cruce entre el software y la industria: automatización, Industria 4.0 y herramientas que ayuden a las empresas a aprovechar mejor sus datos.",
+      "ai": "Uso a diario herramientas de IA como Claude Code para programar, documentar y aprender más rápido, sin dejar de entender cada parte del código que entrego.",
+      "looking": "Busco mi primera experiencia laboral en IT, de forma remota o presencial en Mar del Plata, y estoy abierto a todo tipo de propuestas. Tengo muchas ganas de sumarme a un equipo, aprender y crecer profesionalmente."
+    },
+    "facts": {
+      "locationLabel": "Ubicación",
+      "location": "Mar del Plata, Buenos Aires, Argentina",
+      "modeLabel": "Modalidad",
+      "mode": "Remoto o presencial",
+      "educationLabel": "Formación",
+      "education": "Analista de Sistemas · Tecnicatura Superior en Mantenimiento Industrial (en curso)",
+      "interestsLabel": "Intereses",
+      "interests": "Frontend, automatización e Industria 4.0"
+    },
+    "stackTitle": "Tecnologías que uso"
+  },
+  "services": {
+    "title": "Servicios freelance",
+    "body": "¿Necesitás una landing, una web institucional o una PWA? Diseño y desarrollo sitios rápidos, accesibles y bien posicionados.",
+    "items": {
+      "landing": "Landings y sitios institucionales",
+      "pwa": "PWAs y apps web instalables",
+      "performance": "Optimización de performance y SEO"
+    },
+    "cta": "Pedir presupuesto"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Escribime por el formulario o por cualquiera de estos canales.",
+    "name": "Nombre",
+    "email": "Email",
+    "message": "Mensaje",
+    "send": "Enviar",
+    "sending": "Enviando…",
+    "success": "¡Gracias! Te respondo a la brevedad.",
+    "error": "No se pudo enviar el mensaje. Probá de nuevo o escribime por email.",
+    "notConfigured": "El formulario todavía no está configurado. Escribime por email.",
+    "channels": {
+      "email": "Email",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    }
+  },
+  "footer": {
+    "rights": "© {year} {name}. Hecho con Next.js, TypeScript y Tailwind CSS.",
+    "meta": "Rev. 2026 · Mar del Plata, AR"
+  },
+  "notFound": {
+    "code": "Error 404",
+    "title": "Página no encontrada",
+    "back": "Volver al inicio"
+  }
+}
