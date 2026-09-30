@@ -322,6 +322,19 @@ Solución: la URL pública quedó como valor por defecto en
   Se usa || en vez de ?? porque una variable vacía en .env ("") no es
   null y rompería new URL("").
 
+[30/09/2026] DECISIÓN — CV generado desde código (ES y EN)
+Qué es: cv/cv-data.mjs tiene el contenido en ambos idiomas y
+  cv/build-cv.mjs lo convierte en HTML y lo imprime a PDF A4 con el
+  navegador de playwright-cli (npm run cv).
+Por qué: actualizar el CV (ej.: al terminar un proyecto) es cambiar
+  una línea y regenerar; mismo estilo que el sitio pero apto para ATS
+  (una columna, texto real, sin tablas ni gráficos).
+Regla: los datos que faltan se cargan como TODO(...); mientras quede
+  alguno, el script genera borradores en cv/out/ con los pendientes
+  resaltados y no publica nada en public/cv/.
+Lo que aprendí: el CV de un perfil junior se apoya en proyectos; los
+  que están en desarrollo se marcan como tales, sin inflar nada.
+
 ================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)

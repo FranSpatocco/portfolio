@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "cv": "node cv/build-cv.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

@@ -43,3 +43,6 @@ next-env.d.ts
 
 # playwright-cli
 .playwright-cli/
+
+# borradores y HTML intermedio del CV
+/cv/out/
