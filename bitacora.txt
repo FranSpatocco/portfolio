@@ -335,6 +335,20 @@ Regla: los datos que faltan se cargan como TODO(...); mientras quede
 Lo que aprendí: el CV de un perfil junior se apoya en proyectos; los
   que están en desarrollo se marcan como tales, sin inflar nada.
 
+[30/09/2026] HERRAMIENTA — Formspree (formulario de contacto)
+Qué es: servicio que recibe los envíos de un formulario y los reenvía
+  por email; permite tener contacto en un sitio estático sin backend.
+Qué hice: el form envía por fetch (sin recargar la página) al
+  endpoint formspree.io/f/xqpajwje con Accept: application/json, y
+  muestra el resultado en un mensaje con aria-live.
+Extras: campo trampa _gotcha contra bots (oculto a personas y
+  lectores de pantalla) y _subject para que el email llegue con un
+  asunto reconocible. El campo "email" queda como reply-to.
+Lo que aprendí: el id del form no es un secreto (está en el HTML); la
+  protección contra abuso la hace Formspree (spam, límites del plan).
+Verificado: envío real desde el sitio publicado → respuesta 200 y
+  mensaje "¡Gracias! Te respondo a la brevedad."
+
 ================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)
