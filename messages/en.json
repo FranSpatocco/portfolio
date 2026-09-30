@@ -1,7 +1,8 @@
 {
   "meta": {
     "title": "{name} · Frontend Developer (React + TypeScript)",
-    "description": "Portfolio of {name}, a Frontend Developer focused on React, TypeScript and Next.js. Projects, case studies and contact."
+    "description": "Portfolio of {name}, a Frontend Developer focused on React, TypeScript and Next.js. Projects, case studies and contact.",
+    "ogAlt": "Franco Spatocco — Frontend Developer · React · TypeScript. Diagram from design to deploy."
   },
   "nav": {
     "skip": "Skip to content",

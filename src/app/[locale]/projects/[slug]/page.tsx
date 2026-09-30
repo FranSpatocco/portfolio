@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { routing } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
 import { getProject, projectCode, projects } from "@/data/projects";
 import { site } from "@/config/site";
+import { ogImage } from "@/config/og";
 import CornerTicks from "@/components/CornerTicks";
 import ProjectCapture from "@/components/ProjectCapture";
 import ProjectLinks from "@/components/ProjectLinks";
@@ -23,8 +24,10 @@ export async function generateMetadata({
   const project = getProject(slug);
   if (!project) return {};
   const t = await getTranslations({ locale, namespace: "projects.items" });
+  const tm = await getTranslations({ locale, namespace: "meta" });
   const title = `${t(`${project.slug}.title`)} · ${site.name}`;
   const description = t(`${project.slug}.summary`);
+  const image = ogImage(locale as Locale, tm("ogAlt"));
 
   return {
     title,
@@ -35,7 +38,13 @@ export async function generateMetadata({
         routing.locales.map((l) => [l, `/${l}/projects/${slug}`]),
       ),
     },
-    openGraph: { title, description, url: `/${locale}/projects/${slug}` },
+    openGraph: {
+      title,
+      description,
+      url: `/${locale}/projects/${slug}`,
+      images: [image],
+    },
+    twitter: { card: "summary_large_image", title, description, images: [image] },
   };
 }
 

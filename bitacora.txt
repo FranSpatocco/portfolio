@@ -349,6 +349,20 @@ Lo que aprendí: el id del form no es un secreto (está en el HTML); la
 Verificado: envío real desde el sitio publicado → respuesta 200 y
   mensaje "¡Gracias! Te respondo a la brevedad."
 
+[30/09/2026] CONCEPTO — Imagen Open Graph (vista previa al compartir)
+Qué es: la imagen de 1200×630 que muestran LinkedIn, WhatsApp, Slack,
+  etc. al pegar el link (meta og:image y twitter:image).
+Qué hice: og/build-og.mjs arma un HTML con el estilo del sitio (modo
+  oscuro, que destaca en el feed) y lo captura con playwright-cli:
+  public/og/og-es.png y og-en.png (npm run og). Cada idioma declara
+  su imagen y su texto alternativo en generateMetadata.
+PROBLEMA evitado: en Next, si una página define su propio openGraph,
+  reemplaza el del layout en lugar de combinarse; el caso de estudio
+  se quedaba sin imagen. Solución: helper ogImage() en
+  src/config/og.ts que usan todas las páginas.
+Lo que aprendí: og:image tiene que ser una URL absoluta; Next la arma
+  sola a partir de metadataBase.
+
 ================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)

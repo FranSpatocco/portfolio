@@ -56,6 +56,7 @@ Portfolio de Frontend Developer (React + TypeScript) para conseguir trabajo remo
 - `npm run dev` — desarrollo en http://localhost:3000
 - `npm run build` — build de producción (verificar que todas las rutas salgan como SSG ●)
 - `npm run lint`
+- `npm run og` — genera las imágenes para compartir (`public/og/og-{es,en}.png`, 1200×630) desde `og/build-og.mjs`. Toda página con `openGraph` propio debe incluir `ogImage()` de `src/config/og.ts`.
 - `npm run cv` — genera el CV (ES/EN) desde `cv/cv-data.mjs`. Con datos `TODO(...)` pendientes deja borradores en `cv/out/`; sin pendientes publica `public/cv/cv-{es,en}.pdf`. Requiere `playwright-cli` global.
 
 ## Variables de entorno (`.env.local`, ver `.env.example`)
@@ -67,5 +68,4 @@ Portfolio de Frontend Developer (React + TypeScript) para conseguir trabajo remo
 - Textos de los casos de estudio (marcados "(Completar)" / "(TODO)") → `messages/*.json`
 - CV: completar los `TODO(...)` de `cv/cv-data.mjs` (Franco los carga en `datos-cv.txt` del Escritorio) y correr `npm run cv`
 - Capturas de proyectos → `public/projects/` + campo `image` en `src/data/projects.ts`; demo y repo en `demoUrl` / `repoUrl`
-- Imagen Open Graph (`src/app/opengraph-image.png`, 1200×630)
 - Revisión de seguridad con `/security-review` (requiere inicializar git y tener cambios para comparar)

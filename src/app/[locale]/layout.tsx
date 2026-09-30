@@ -3,8 +3,9 @@ import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
-import { routing } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
 import { site } from "@/config/site";
+import { ogImage } from "@/config/og";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "../globals.css";
@@ -32,6 +33,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "meta" });
   const title = t("title", { name: site.name });
   const description = t("description", { name: site.name });
+  const image = ogImage(locale as Locale, t("ogAlt"));
 
   return {
     metadataBase: new URL(site.url),
@@ -50,8 +52,9 @@ export async function generateMetadata({
       siteName: site.name,
       locale: locale === "es" ? "es_AR" : "en_US",
       type: "website",
+      images: [image],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title, description, images: [image] },
   };
 }
 
