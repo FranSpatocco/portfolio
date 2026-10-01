@@ -56,7 +56,7 @@
   },
   "projects": {
     "title": "Proyectos",
-    "subtitle": "Tres proyectos reales, cada uno con su caso de estudio.",
+    "subtitle": "Proyectos reales, cada uno con su caso de estudio.",
     "featured": "Destacado",
     "demo": "Demo",
     "repo": "GitHub",
@@ -77,13 +77,6 @@
         "problem": "Quería un proyecto mobile real, no una lista de tareas: algo que use el GPS del celular, dibuje un mapa en vivo y guarde los datos en la nube. Me inspiré en Strava, pero dejé de lado lo social para enfocarme en la carrera, con el mapa y los números como protagonistas. Como pieza de portfolio también tenía que poder probarse en un clic desde la computadora, sin registrarse y sin salir a correr.",
         "decisions": "Elegí Flutter para tener una sola base de código en Android, iOS y web. El GPS a veces da saltos imposibles, así que descarto las lecturas poco precisas y las que implicarían correr a más de 8 m/s; eso lo descubrí probando en una carrera real. El momento exacto en que se cruza cada kilómetro se calcula entre dos lecturas de GPS, para que los parciales sean precisos. La app se usa sin cuenta: hay una carrera de ejemplo para recorrerla desde la PC, y el registro se pide recién al guardar una carrera. Las animaciones están hechas con las herramientas propias de Flutter, sin librerías extra, y el diseño se adapta de verdad a la computadora (barra lateral, mapa con un panel al costado) en lugar de estirar la versión de celular.",
         "result": "Publicada en la web con Firebase Hosting e instalada y probada en un Android real, incluida una carrera al aire libre. Tiene tests de la lógica (parciales por kilómetro e intervalos) y de pantallas. Lo que más aprendí: los problemas importantes aparecieron recién en el dispositivo real (el login con Google que fallaba en Android, la distancia que se congelaba con la pantalla apagada, la barra de navegación tapando botones), así que probar en el celular desde temprano fue clave. Queda pendiente publicarla en las tiendas: iOS necesita una Mac."
-      },
-      "gsap-landing": {
-        "title": "Landing para cliente",
-        "summary": "Landing con animaciones GSAP pensada como servicio freelance, con Lighthouse 95+ en todas las métricas.",
-        "problem": "(Completar) Qué necesitaba el cliente (real o ficticio).",
-        "decisions": "(Completar) Animaciones con GSAP sin afectar performance, respeto a prefers-reduced-motion, imágenes optimizadas.",
-        "result": "(Completar) Puntajes de Lighthouse y resultado."
       }
     },
     "viewCase": "Ver caso",

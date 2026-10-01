@@ -33,7 +33,6 @@ _Systems Analyst focused on frontend development (React + TypeScript). Also stud
 - **[Portfolio](https://franco-spatocco.vercel.app)** — Next.js + TypeScript + Tailwind + next-intl (ES/EN) · [código](https://github.com/FranSpatocco/portfolio)
 - **[Dashboard con IA — Grano & Co.](https://grano-co-dashboard.vercel.app)** — Next.js + TypeScript + Firebase + API de Claude: panel de una cafetería con resumen semanal escrito por IA · [código](https://github.com/FranSpatocco/grano-co-dashboard)
 - **[Laufen — app de running](https://laufen-app.web.app)** — Flutter + Firebase: GPS, mapa en vivo, parciales por km e intervalos, en Android, iOS y web con un mismo código · [código](https://github.com/FranSpatocco/laufen)
-- **Landing para cliente** — Next.js + GSAP, Lighthouse 95+. _En desarrollo_
 
 ## 📫 Contacto
 

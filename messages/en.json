@@ -56,7 +56,7 @@
   },
   "projects": {
     "title": "Projects",
-    "subtitle": "Three real projects, each with its own case study.",
+    "subtitle": "Real projects, each with its own case study.",
     "featured": "Featured",
     "demo": "Demo",
     "repo": "GitHub",
@@ -77,13 +77,6 @@
         "problem": "I wanted a real mobile project, not a to-do list: something that uses the phone's GPS, draws a live map and stores data in the cloud. I took Strava as a reference but left the social side out to focus on the run itself, with the map and the numbers front and center. As a portfolio piece it also had to be testable in one click from a computer, without signing up or going for a run.",
         "decisions": "I chose Flutter to have a single codebase for Android, iOS and web. GPS sometimes jumps to impossible positions, so I discard low-accuracy readings and any that would mean running faster than 8 m/s; I found that out testing on a real run. The exact moment each kilometer is crossed is calculated between two GPS readings, so splits are accurate. The app works without an account: there's a sample run to explore it from a desktop, and signing up is only asked for when saving a run. Animations are built with Flutter's own tools, no extra libraries, and the layout truly adapts to desktop (side navigation, map with a side panel) instead of stretching the phone version.",
         "result": "Published on the web with Firebase Hosting, and installed and tested on a real Android phone, including an outdoor run. It has tests for the logic (per-kilometer splits and intervals) and for screens. What I learned the most: the important bugs only showed up on the real device (Google sign-in failing on Android, distance freezing with the screen off, the navigation bar covering buttons), so testing on the phone early was key. Still pending: publishing to the app stores, since iOS needs a Mac."
-      },
-      "gsap-landing": {
-        "title": "Client landing page",
-        "summary": "Landing page with GSAP animations built as a freelance showcase, scoring 95+ on every Lighthouse metric.",
-        "problem": "(TODO) What the client (real or fictional) needed.",
-        "decisions": "(TODO) GSAP animations without hurting performance, prefers-reduced-motion support, optimized images.",
-        "result": "(TODO) Lighthouse scores and outcome."
       }
     },
     "viewCase": "View case",

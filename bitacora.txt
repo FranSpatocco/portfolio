@@ -413,6 +413,38 @@ Detalle: el servicio "pwa" pasa a "apps" (Apps para web y celular con
   Flutter) en messages/*.json y Services.tsx. En el CV, Flutter va en
   la fila Frontend para no sumar una línea (se mantiene en 1 página).
 
+[01/10/2026] DECISIÓN — Landing de cliente oculta hasta resolver la patente
+Qué es: el proyecto 3 (landing de lanzamiento de un producto real) queda
+  cargado en el portfolio pero sin publicarse.
+Por qué: el producto está en trámite de patente; mostrarlo antes de tiempo
+  podría afectar la protección. Se publica cuando quien lleva el trámite
+  confirme que se puede mostrar.
+Cómo: campo "published: false" en los datos del proyecto, filtrado en el
+  build (no se genera la página ni aparece en el sitemap). Nada de ocultar
+  con CSS: lo que se despliega es público aunque no se vea.
+  src/data/projects.ts exporta sólo los publicados, así lista, casos de
+  estudio, sitemap y "siguiente proyecto" la excluyen sin tocar cada
+  componente. El subtítulo "Tres proyectos reales" pasa a "Proyectos
+  reales" para no depender de la cantidad visible.
+Para publicarla: borrar "published: false" en src/data/projects.ts y
+  volver a agregar sus textos en messages/{es,en}.json
+  (projects.items.gsap-landing). Se sacaron de ahí porque
+  NextIntlClientProvider manda todos los mensajes al navegador: aunque no
+  hubiera card ni página, el texto viajaba en el HTML de cada página.
+  Textos a restaurar (ES / EN):
+    title: "Landing para cliente" / "Client landing page"
+    summary: "Landing con animaciones GSAP pensada como servicio freelance,
+      con Lighthouse 95+ en todas las métricas." / "Landing page with GSAP
+      animations built as a freelance showcase, scoring 95+ on every
+      Lighthouse metric."
+    problem, decisions, result: estaban sin completar ("(Completar)" /
+      "(TODO)"); se escriben al publicarla.
+Repo de la landing: privado hasta la publicación.
+También fuera del CV (cv/cv-data.mjs, entrada "Landing para cliente" /
+  "Client landing page", En desarrollo, stack Next.js · Tailwind CSS ·
+  GSAP) y del perfil de GitHub: también son públicos. Restaurarlos al
+  publicarla.
+
 ================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)

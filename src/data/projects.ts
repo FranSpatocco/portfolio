@@ -9,9 +9,12 @@ export type Project = {
   // Ruta en /public. Si falta, la card muestra un placeholder.
   image?: string;
   featured?: boolean;
+  // false = cargado pero no publicado: queda fuera del build (sin página,
+  // sin card, sin sitemap). Ver bitácora, "Landing de cliente oculta".
+  published?: boolean;
 };
 
-export const projects: Project[] = [
+const allProjects: Project[] = [
   {
     slug: "ai-dashboard",
     stack: ["Next.js", "React", "TypeScript", "Firebase", "Claude API", "TanStack Query", "Zod"],
@@ -33,8 +36,17 @@ export const projects: Project[] = [
     slug: "gsap-landing",
     stack: ["Next.js", "Tailwind CSS", "GSAP", "Lighthouse 95+"],
     status: "inDevelopment",
+    // Producto real en trámite de patente: no se muestra hasta que quien
+    // lleva el trámite confirme que se puede publicar.
+    published: false,
   },
 ];
+
+// Sólo los publicados: todo el sitio (lista, casos de estudio,
+// generateStaticParams, sitemap, "siguiente proyecto") usa esta lista, así
+// un proyecto oculto no se genera en absoluto. Nada de ocultarlo con CSS:
+// lo que se despliega es público aunque no se vea.
+export const projects = allProjects.filter((p) => p.published !== false);
 
 export const getProject = (slug: string) =>
   projects.find((p) => p.slug === slug);

@@ -73,12 +73,6 @@ export const cv = {
           "App de running con GPS en Flutter y Firebase para Android, iOS y web: mapa en vivo, parciales e intervalos.",
         ],
       },
-      {
-        name: "Landing para cliente",
-        meta: "En desarrollo",
-        stack: "Next.js · Tailwind CSS · GSAP",
-        bullets: ["Landing con animaciones GSAP pensada como servicio freelance, con objetivo de Lighthouse 95+."],
-      },
     ],
     experience: [
       {
@@ -167,12 +161,6 @@ export const cv = {
         bullets: [
           "GPS running app in Flutter and Firebase for Android, iOS and web: live map, per-km splits and intervals.",
         ],
-      },
-      {
-        name: "Client landing page",
-        meta: "In development",
-        stack: "Next.js · Tailwind CSS · GSAP",
-        bullets: ["Landing page with GSAP animations built as a freelance showcase, targeting Lighthouse 95+."],
       },
     ],
     experience: [
