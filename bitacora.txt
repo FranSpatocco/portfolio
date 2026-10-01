@@ -382,6 +382,28 @@ PROBLEMA resuelto: con tres viñetas el CV pasaba a 2 páginas (el script
 Nota: cv-data.mjs y messages/*.json usan CRLF; para editarlos conviene
   el editor o un script que conserve los saltos de línea.
 
+[01/10/2026] DECISIÓN — Integración de Laufen (P-02), reemplaza a la PWA
+Qué es: la app de running hecha en Flutter ocupa el lugar 2 de proyectos,
+  en reemplazo de "PWA bilingüe en Android" (Capacitor), que se descarta.
+Por qué: Laufen cubre el mismo diferencial web → mobile (Android, iOS y
+  web con un mismo código) y ya está publicada y probada en un Android
+  real; la PWA seguía sin empezar.
+Qué hice (siguiendo "Integrar un proyecto terminado" del CLAUDE.md):
+  - src/data/projects.ts: slug "laufen", demo https://laufen-app.web.app,
+    repo github.com/FranSpatocco/laufen, stack real y captura.
+  - public/projects/laufen/overview.webp: landing de producción en
+    escritorio (1600×1000, 30 KB) con playwright-cli, convertida con sharp.
+  - Caso de estudio en messages/{es,en}.json a partir del README y el
+    CLAUDE.md de Laufen. Sin métricas inventadas.
+  - CV: entrada nueva con demo y código; "Flutter (Dart)" en Frontend.
+  - "Sobre mí": Flutter en la lista de tecnologías.
+  - Perfil de GitHub: badges de Flutter y Dart, y link al proyecto.
+  - PRD: el proyecto 2 pasa a ser Laufen.
+Verificado: build con todas las rutas estáticas (●), card, captura
+  flotante y caso de estudio en ES y EN con playwright-cli.
+PROBLEMA resuelto: el CV volvió a pasar a 2 páginas (sobraba una sola
+  línea). Se dejó Laufen con una viñeta corta, de una línea.
+
 ================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)
@@ -393,7 +415,7 @@ i18n: next-intl (ES/EN)
 Datos y estado: TanStack Query, Zod, Recharts
 Backend/servicios: Firebase (Auth, Firestore, Admin SDK), Formspree,
   API de Claude (salida estructurada), Next.js Route Handlers
-Mobile: PWA, Capacitor, Android Studio
+Mobile: Flutter (Dart), PWA, Capacitor, Android Studio
 Deploy y CI: Vercel, Netlify, GitHub Actions
 Testing: Vitest, Playwright
 Herramientas: Git, GitHub, VS Code, Claude Code, Claude Design

@@ -12,6 +12,7 @@ const stack = [
   "TypeScript",
   "React",
   "Next.js",
+  "Flutter",
   "Tailwind CSS",
   "GSAP",
   "next-intl",

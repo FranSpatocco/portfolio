@@ -18,6 +18,8 @@ _Systems Analyst focused on frontend development (React + TypeScript). Also stud
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-02569B?logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?logo=dart&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)
 ![GSAP](https://img.shields.io/badge/GSAP-88CE02?logo=greensock&logoColor=black)
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?logo=firebase&logoColor=black)
@@ -31,7 +33,7 @@ _Systems Analyst focused on frontend development (React + TypeScript). Also stud
 <!-- Completar a medida que estén publicados -->
 - **[Portfolio](https://franco-spatocco.vercel.app)** — Next.js + TypeScript + Tailwind + next-intl (ES/EN) · [código](https://github.com/FranSpatocco/portfolio)
 - **[Dashboard con IA — Grano & Co.](https://grano-co-dashboard.vercel.app)** — Next.js + TypeScript + Firebase + API de Claude: panel de una cafetería con resumen semanal escrito por IA · [código](https://github.com/FranSpatocco/grano-co-dashboard)
-- **PWA bilingüe en Android** — PWA + i18n + Capacitor. _En desarrollo_
+- **[Laufen — app de running](https://laufen-app.web.app)** — Flutter + Firebase: GPS, mapa en vivo, parciales por km e intervalos, en Android, iOS y web con un mismo código · [código](https://github.com/FranSpatocco/laufen)
 - **Landing para cliente** — Next.js + GSAP, Lighthouse 95+. _En desarrollo_
 
 ## 📫 Contacto

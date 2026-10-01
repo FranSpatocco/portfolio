@@ -20,7 +20,7 @@ Tener el portfolio publicado con dominio propio, bilingüe (ES/EN), Lighthouse 9
 
 ## Proyectos a mostrar
 1. **Dashboard con IA (proyecto estrella):** React + TypeScript + Firebase, con resúmenes o insights generados vía API de Claude desde una API Route (la key queda en el servidor).
-2. **PWA con i18n llevada a Android con Capacitor:** diferencial web a mobile.
+2. **Laufen, app de running en Flutter** (reemplazó a la PWA con Capacitor): diferencial web a mobile, un solo código para Android, iOS y web.
 3. **Landing "de cliente" con GSAP:** muestra de servicio freelance, con Lighthouse 95+.
 
 ## Funcionalidades clave

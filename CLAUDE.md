@@ -64,7 +64,7 @@ Portfolio de Frontend Developer (React + TypeScript) para conseguir trabajo remo
 - `NEXT_PUBLIC_FORMSPREE_ID` — opcional; por defecto el form del portfolio (`xqpajwje`, los mensajes llegan a fspatocco02@gmail.com)
 
 ## Integrar un proyecto terminado
-Los 3 proyectos se desarrollan en carpetas y repos aparte (el Dashboard con IA en otra sesión de Claude Code). Al integrar uno:
+Los 3 proyectos se desarrollan en carpetas y repos aparte (el Dashboard con IA y Laufen —app de running en Flutter, que reemplazó a la PWA con Capacitor— en otras sesiones de Claude Code). Al integrar uno:
 1. **Datos** en `src/data/projects.ts`: `demoUrl`, `repoUrl`, `status: "live"` y `stack` real.
 2. **Capturas** en `public/projects/<slug>/` (webp, ~1600px de ancho) y el campo `image` del proyecto. La primera es la de la card y del caso de estudio.
 3. **Caso de estudio** en `messages/es.json` y `messages/en.json` (`projects.items.<slug>`): `summary`, `problem`, `decisions`, `result`, reemplazando los "(Completar)" / "(TODO)". Tomar el material de la bitácora y del README de ese proyecto; no inventar métricas.

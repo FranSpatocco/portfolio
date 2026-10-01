@@ -14,7 +14,7 @@ const contact = {
 };
 
 const skills = {
-  frontend: "HTML, CSS, JavaScript, TypeScript, React, Next.js",
+  frontend: "HTML, CSS, JavaScript, TypeScript, React, Next.js, Flutter (Dart)",
   styling: "Tailwind CSS, GSAP, diseño responsive, modo claro/oscuro",
   quality: "Accesibilidad web (WCAG), SEO técnico, Core Web Vitals, Playwright",
   tools: "Git, GitHub, Vercel, next-intl, Firebase, PWA, Capacitor, Claude Code",
@@ -63,10 +63,15 @@ export const cv = {
         ],
       },
       {
-        name: "PWA bilingüe en Android",
-        meta: "En desarrollo",
-        stack: "React · TypeScript · PWA · i18n · Capacitor",
-        bullets: ["Progressive Web App con i18n llevada a Android con Capacitor, reutilizando el mismo código."],
+        name: "Laufen — app de running",
+        meta: "2026",
+        links: [
+          { href: "https://laufen-app.web.app", text: "demo" },
+          { href: "https://github.com/FranSpatocco/laufen", text: "código" },
+        ],
+        bullets: [
+          "App de running con GPS en Flutter y Firebase para Android, iOS y web: mapa en vivo, parciales e intervalos.",
+        ],
       },
       {
         name: "Landing para cliente",
@@ -153,10 +158,15 @@ export const cv = {
         ],
       },
       {
-        name: "Bilingual PWA on Android",
-        meta: "In development",
-        stack: "React · TypeScript · PWA · i18n · Capacitor",
-        bullets: ["Progressive Web App with i18n shipped to Android with Capacitor, reusing the same codebase."],
+        name: "Laufen — running app",
+        meta: "2026",
+        links: [
+          { href: "https://laufen-app.web.app", text: "demo" },
+          { href: "https://github.com/FranSpatocco/laufen", text: "source" },
+        ],
+        bullets: [
+          "GPS running app in Flutter and Firebase for Android, iOS and web: live map, per-km splits and intervals.",
+        ],
       },
       {
         name: "Client landing page",

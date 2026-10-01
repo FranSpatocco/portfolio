@@ -1,7 +1,7 @@
 // Datos no traducibles de cada proyecto. Los textos (título, resumen,
 // caso de estudio) viven en messages/{es,en}.json bajo projects.items.<slug>.
 export type Project = {
-  slug: "ai-dashboard" | "pwa-capacitor" | "gsap-landing";
+  slug: "ai-dashboard" | "laufen" | "gsap-landing";
   stack: string[];
   status: "inDevelopment" | "live";
   demoUrl?: string;
@@ -22,9 +22,12 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    slug: "pwa-capacitor",
-    stack: ["React", "TypeScript", "PWA", "i18n", "Capacitor", "Android"],
-    status: "inDevelopment",
+    slug: "laufen",
+    stack: ["Flutter", "Dart", "Firebase", "flutter_map", "GPS", "Android", "Web"],
+    status: "live",
+    demoUrl: "https://laufen-app.web.app",
+    repoUrl: "https://github.com/FranSpatocco/laufen",
+    image: "/projects/laufen/overview.webp",
   },
   {
     slug: "gsap-landing",

@@ -71,12 +71,12 @@
         "decisions": "Lo armé con Next.js y TypeScript, y los datos viven en Firebase. En lugar de leer miles de pedidos, guardo un resumen por día, así el panel carga rápido y cuesta menos. La IA se consulta desde el servidor: la clave nunca llega al navegador y cada respuesta se revisa antes de mostrarla. Para que el costo no se dispare, el resumen se genera una vez por semana y hay un límite de usos por persona y por día. Los datos de ejemplo se actualizan solos cada hora, así el panel siempre muestra el día de hoy. Diseño propio, en español e inglés, y accesible.",
         "result": "Publicado en Vercel, con publicación automática desde GitHub. En Lighthouse obtuvo 100 en accesibilidad, buenas prácticas y SEO, y 99 de rendimiento en computadora; en celular ronda 75 y es lo próximo a mejorar. Lo que más aprendí: a pensar qué pasa cuando algo falla (si la IA no responde, el panel muestra igual un resumen) y a probar en producción, porque varios problemas aparecieron recién al publicar y no en mi computadora."
       },
-      "pwa-capacitor": {
-        "title": "PWA bilingüe en Android",
-        "summary": "Progressive Web App con i18n que se lleva a Android con Capacitor, reutilizando el mismo código.",
-        "problem": "(Completar) Qué necesidad cubre la app y por qué web + mobile.",
-        "decisions": "(Completar) Service worker y estrategia offline, i18n, empaquetado con Capacitor.",
-        "result": "(Completar) Resultado, métricas y aprendizajes."
+      "laufen": {
+        "title": "Laufen — app de running",
+        "summary": "App para registrar carreras con GPS, hecha 100% en Flutter: el mismo código funciona en Android, iOS y la web. Mapa en vivo, ritmo por kilómetro, intervalos e historial, con Firebase detrás.",
+        "problem": "Quería un proyecto mobile real, no una lista de tareas: algo que use el GPS del celular, dibuje un mapa en vivo y guarde los datos en la nube. Me inspiré en Strava, pero dejé de lado lo social para enfocarme en la carrera, con el mapa y los números como protagonistas. Como pieza de portfolio también tenía que poder probarse en un clic desde la computadora, sin registrarse y sin salir a correr.",
+        "decisions": "Elegí Flutter para tener una sola base de código en Android, iOS y web. El GPS a veces da saltos imposibles, así que descarto las lecturas poco precisas y las que implicarían correr a más de 8 m/s; eso lo descubrí probando en una carrera real. El momento exacto en que se cruza cada kilómetro se calcula entre dos lecturas de GPS, para que los parciales sean precisos. La app se usa sin cuenta: hay una carrera de ejemplo para recorrerla desde la PC, y el registro se pide recién al guardar una carrera. Las animaciones están hechas con las herramientas propias de Flutter, sin librerías extra, y el diseño se adapta de verdad a la computadora (barra lateral, mapa con un panel al costado) en lugar de estirar la versión de celular.",
+        "result": "Publicada en la web con Firebase Hosting e instalada y probada en un Android real, incluida una carrera al aire libre. Tiene tests de la lógica (parciales por kilómetro e intervalos) y de pantallas. Lo que más aprendí: los problemas importantes aparecieron recién en el dispositivo real (el login con Google que fallaba en Android, la distancia que se congelaba con la pantalla apagada, la barra de navegación tapando botones), así que probar en el celular desde temprano fue clave. Queda pendiente publicarla en las tiendas: iOS necesita una Mac."
       },
       "gsap-landing": {
         "title": "Landing para cliente",
