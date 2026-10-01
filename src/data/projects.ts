@@ -14,8 +14,11 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "ai-dashboard",
-    stack: ["React", "TypeScript", "Next.js", "Firebase", "Claude API"],
-    status: "inDevelopment",
+    stack: ["Next.js", "React", "TypeScript", "Firebase", "Claude API", "TanStack Query", "Zod"],
+    status: "live",
+    demoUrl: "https://grano-co-dashboard.vercel.app",
+    repoUrl: "https://github.com/FranSpatocco/grano-co-dashboard",
+    image: "/projects/ai-dashboard/overview.webp",
     featured: true,
   },
   {

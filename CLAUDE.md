@@ -63,6 +63,15 @@ Portfolio de Frontend Developer (React + TypeScript) para conseguir trabajo remo
 - `NEXT_PUBLIC_SITE_URL` — opcional, sólo con dominio propio; por defecto https://franco-spatocco.vercel.app (canonical, sitemap, Open Graph)
 - `NEXT_PUBLIC_FORMSPREE_ID` — opcional; por defecto el form del portfolio (`xqpajwje`, los mensajes llegan a fspatocco02@gmail.com)
 
+## Integrar un proyecto terminado
+Los 3 proyectos se desarrollan en carpetas y repos aparte (el Dashboard con IA en otra sesión de Claude Code). Al integrar uno:
+1. **Datos** en `src/data/projects.ts`: `demoUrl`, `repoUrl`, `status: "live"` y `stack` real.
+2. **Capturas** en `public/projects/<slug>/` (webp, ~1600px de ancho) y el campo `image` del proyecto. La primera es la de la card y del caso de estudio.
+3. **Caso de estudio** en `messages/es.json` y `messages/en.json` (`projects.items.<slug>`): `summary`, `problem`, `decisions`, `result`, reemplazando los "(Completar)" / "(TODO)". Tomar el material de la bitácora y del README de ese proyecto; no inventar métricas.
+4. **CV**: actualizar el proyecto en `cv/cv-data.mjs` (quitar "En desarrollo", agregar link) y correr `npm run cv`.
+5. **Perfil de GitHub**: actualizar `docs/github-profile/README.md` y subirlo (repo FranSpatocco/FranSpatocco).
+6. `npm run build`, revisar con `playwright-cli` y registrar la integración en `bitacora.txt`.
+
 ## Pendientes (del PRD)
 - README de perfil de GitHub: publicado en github.com/FranSpatocco/FranSpatocco (fuente en `docs/github-profile/README.md`); actualizar la sección Proyectos cuando se publiquen
 - Textos de los casos de estudio (marcados "(Completar)" / "(TODO)") → `messages/*.json`

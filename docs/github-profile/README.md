@@ -30,7 +30,7 @@ _Systems Analyst focused on frontend development (React + TypeScript). Also stud
 
 <!-- Completar a medida que estén publicados -->
 - **[Portfolio](https://franco-spatocco.vercel.app)** — Next.js + TypeScript + Tailwind + next-intl (ES/EN) · [código](https://github.com/FranSpatocco/portfolio)
-- **Dashboard con IA** — React + TypeScript + Firebase + API de Claude. _En desarrollo_
+- **[Dashboard con IA — Grano & Co.](https://grano-co-dashboard.vercel.app)** — Next.js + TypeScript + Firebase + API de Claude: panel de una cafetería con resumen semanal escrito por IA · [código](https://github.com/FranSpatocco/grano-co-dashboard)
 - **PWA bilingüe en Android** — PWA + i18n + Capacitor. _En desarrollo_
 - **Landing para cliente** — Next.js + GSAP, Lighthouse 95+. _En desarrollo_
 

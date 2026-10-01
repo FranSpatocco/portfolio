@@ -51,11 +51,15 @@ export const cv = {
         ],
       },
       {
-        name: "Dashboard con IA",
-        meta: "En desarrollo",
-        stack: "React · TypeScript · Next.js · Firebase · API de Claude",
+        name: "Dashboard con IA — Grano & Co.",
+        meta: "2026",
+        links: [
+          { href: "https://grano-co-dashboard.vercel.app", text: "demo" },
+          { href: "https://github.com/FranSpatocco/grano-co-dashboard", text: "código" },
+        ],
         bullets: [
-          "Resúmenes e insights con la API de Claude desde una API Route, sin exponer la API key en el frontend.",
+          "Panel de una cafetería con Next.js 16, TypeScript, Firebase y TanStack Query; resumen semanal con la API de Claude desde el servidor, validado con Zod y con límites de uso.",
+          "CSP y cabeceras de seguridad, tests con Vitest, bilingüe ES/EN; Lighthouse 100 en accesibilidad.",
         ],
       },
       {
@@ -137,10 +141,16 @@ export const cv = {
         ],
       },
       {
-        name: "AI Dashboard",
-        meta: "In development",
-        stack: "React · TypeScript · Next.js · Firebase · Claude API",
-        bullets: ["Summaries and insights generated with the Claude API from an API Route, keeping the API key off the frontend."],
+        name: "AI Dashboard — Grano & Co.",
+        meta: "2026",
+        links: [
+          { href: "https://grano-co-dashboard.vercel.app", text: "demo" },
+          { href: "https://github.com/FranSpatocco/grano-co-dashboard", text: "source" },
+        ],
+        bullets: [
+          "Coffee shop dashboard with Next.js 16, TypeScript, Firebase and TanStack Query; weekly summary from the Claude API on the server, validated with Zod and rate-limited.",
+          "CSP and security headers, Vitest tests, bilingual ES/EN; Lighthouse 100 for accessibility.",
+        ],
       },
       {
         name: "Bilingual PWA on Android",

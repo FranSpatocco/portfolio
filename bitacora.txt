@@ -363,6 +363,25 @@ PROBLEMA evitado: en Next, si una página define su propio openGraph,
 Lo que aprendí: og:image tiene que ser una URL absoluta; Next la arma
   sola a partir de metadataBase.
 
+[01/10/2026] DECISIÓN — Integración del Dashboard con IA (P-01)
+Qué es: el primer proyecto terminado pasa de "En desarrollo" a "Publicado".
+Qué hice (siguiendo "Integrar un proyecto terminado" del CLAUDE.md):
+  - src/data/projects.ts: demo https://grano-co-dashboard.vercel.app,
+    repo github.com/FranSpatocco/grano-co-dashboard, stack real y captura.
+  - public/projects/ai-dashboard/overview.webp: captura de producción
+    (1600×1000, 58 KB) con playwright-cli, convertida con sharp.
+  - Caso de estudio en messages/{es,en}.json (problema, decisiones,
+    resultado) a partir de la bitácora y el README del dashboard. Sin
+    métricas inventadas: los números de Lighthouse son los medidos.
+  - CV: entrada nueva con links a demo y código; npm run cv.
+  - Perfil de GitHub (docs/github-profile/README.md): link al proyecto.
+Verificado: build con todas las rutas estáticas (●), card y caso de
+  estudio en ES y EN con playwright-cli, links correctos.
+PROBLEMA resuelto: con tres viñetas el CV pasaba a 2 páginas (el script
+  avisa "⚠ 2 páginas"). Se resumió a dos viñetas y vuelve a una página.
+Nota: cv-data.mjs y messages/*.json usan CRLF; para editarlos conviene
+  el editor o un script que conserve los saltos de línea.
+
 ================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)
@@ -371,8 +390,12 @@ Frontend: HTML, CSS, JavaScript, TypeScript, React, Next.js
 Estilos: Tailwind CSS
 Animación: GSAP
 i18n: next-intl (ES/EN)
-Backend/servicios: Firebase, Formspree, API de Claude
+Datos y estado: TanStack Query, Zod, Recharts
+Backend/servicios: Firebase (Auth, Firestore, Admin SDK), Formspree,
+  API de Claude (salida estructurada), Next.js Route Handlers
 Mobile: PWA, Capacitor, Android Studio
-Deploy: Vercel, Netlify
+Deploy y CI: Vercel, Netlify, GitHub Actions
+Testing: Vitest, Playwright
 Herramientas: Git, GitHub, VS Code, Claude Code, Claude Design
-Buenas prácticas: accesibilidad, Core Web Vitals, SEO técnico
+Buenas prácticas: accesibilidad, Core Web Vitals, SEO técnico,
+  seguridad web (CSP, cabeceras HTTP, límites de uso de APIs)

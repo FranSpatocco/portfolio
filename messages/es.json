@@ -66,10 +66,10 @@
     "items": {
       "ai-dashboard": {
         "title": "Dashboard con IA",
-        "summary": "Dashboard en React + TypeScript con Firebase que genera resúmenes e insights usando la API de Claude desde una API Route.",
-        "problem": "(Completar) Qué problema resuelve el dashboard y para quién.",
-        "decisions": "(Completar) La API key vive sólo en el servidor (API Route de Next.js). Decisiones de modelado de datos en Firebase, manejo de estados de carga y error.",
-        "result": "(Completar) Resultado, métricas y aprendizajes."
+        "summary": "Panel de gestión para una cafetería de especialidad: ventas, pedidos y stock en una sola pantalla, y un resumen semanal que escribe Claude y aparece como un ticket que se imprime.",
+        "problem": "Un local gastronómico chico tiene sus ventas en el sistema de caja, pero nadie las mira: no hay tiempo para cruzar horarios pico, productos que crecen y stock. El objetivo fue un panel que se entienda en cinco segundos y que, además de mostrar números, diga qué hacer esta semana. Como proyecto de portfolio, también tenía que abrirse en un clic, sin registrarse.",
+        "decisions": "Next.js con App Router y TypeScript; Firebase Auth (invitado y email) y Firestore con estadísticas diarias preagregadas, para leer pocos documentos en lugar de miles. La IA corre en un Route Handler: la API key nunca llega al navegador, el token de Firebase se verifica en el servidor y la respuesta de Claude se valida con Zod (salida estructurada). Para controlar el costo hay caché por semana, límites por usuario, por IP y diario; si la API falla, el panel muestra un resumen calculado con reglas en vez de un error. Los datos de ejemplo los genera un algoritmo determinístico y un GitHub Action los mantiene al día cada hora. Diseño propio, bilingüe ES/EN, accesible (AA) y con Content Security Policy.",
+        "result": "Publicado en Vercel con deploy automático desde GitHub. En Lighthouse (pantalla de ingreso): accesibilidad, buenas prácticas y SEO 100; rendimiento 99 en desktop y alrededor de 75 en mobile, donde el próximo paso es cargar Firebase recién al entrar. Lo que más aprendí: diseñar para el caso de error, porque la IA y la red fallan, y que muchos problemas solo aparecen en producción: el runtime de Vercel rechazó una dependencia ESM y la CSP reveló un script de Google que la app no necesitaba."
       },
       "pwa-capacitor": {
         "title": "PWA bilingüe en Android",

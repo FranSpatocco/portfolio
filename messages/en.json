@@ -66,10 +66,10 @@
     "items": {
       "ai-dashboard": {
         "title": "AI Dashboard",
-        "summary": "React + TypeScript dashboard backed by Firebase that generates summaries and insights with the Claude API from an API Route.",
-        "problem": "(TODO) What problem the dashboard solves and for whom.",
-        "decisions": "(TODO) The API key lives only on the server (Next.js API Route). Firebase data modeling, loading and error states.",
-        "result": "(TODO) Outcome, metrics and learnings."
+        "summary": "Management dashboard for a specialty coffee shop: sales, orders and stock on one screen, plus a weekly summary written by Claude that prints out like a café receipt.",
+        "problem": "A small café has its sales in the point-of-sale system, but nobody looks at them: there's no time to cross-check peak hours, growing products and stock. The goal was a dashboard you understand in five seconds that, beyond showing numbers, tells you what to do this week. As a portfolio project, it also had to open in one click, with no sign-up.",
+        "decisions": "Next.js App Router and TypeScript; Firebase Auth (guest and email) and Firestore with pre-aggregated daily stats, so the dashboard reads a few documents instead of thousands. The AI runs in a Route Handler: the API key never reaches the browser, the Firebase token is verified on the server and Claude's response is validated with Zod (structured output). Costs are capped with a weekly cache plus per-user, per-IP and daily limits; if the API fails, the dashboard shows a rule-based summary instead of an error. Sample data comes from a deterministic generator, kept fresh every hour by a GitHub Action. Custom design, bilingual ES/EN, accessible (AA) and with a Content Security Policy.",
+        "result": "Live on Vercel with automatic deploys from GitHub. Lighthouse (sign-in screen): accessibility, best practices and SEO 100; performance 99 on desktop and around 75 on mobile, where the next step is loading Firebase only when entering. Main takeaways: design for the failure case, because AI and networks fail, and many issues only show up in production: Vercel's runtime rejected an ESM dependency, and the CSP exposed a Google script the app didn't need."
       },
       "pwa-capacitor": {
         "title": "Bilingual PWA on Android",
