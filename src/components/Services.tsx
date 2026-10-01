@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import Reveal from "./Reveal";
 
-const items = ["landing", "pwa", "performance"] as const;
+const items = ["landing", "apps", "performance"] as const;
 
 export default function Services() {
   const t = useTranslations("services");

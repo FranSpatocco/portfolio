@@ -128,10 +128,10 @@
   },
   "services": {
     "title": "Freelance services",
-    "body": "Need a landing page, a company website or a PWA? I design and build fast, accessible, SEO-friendly sites.",
+    "body": "Need a landing page, a company website or an app? I design and build fast, accessible, SEO-friendly sites.",
     "items": {
       "landing": "Landing pages and company websites",
-      "pwa": "PWAs and installable web apps",
+      "apps": "Web and mobile apps with Flutter",
       "performance": "Performance and SEO optimization"
     },
     "cta": "Request a quote"

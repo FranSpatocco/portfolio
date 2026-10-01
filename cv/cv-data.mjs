@@ -14,10 +14,10 @@ const contact = {
 };
 
 const skills = {
-  frontend: "HTML, CSS, JavaScript, TypeScript, React, Next.js, Flutter (Dart)",
+  frontend: "HTML, CSS, JavaScript, TypeScript, React, Next.js, Flutter / Dart (web + mobile)",
   styling: "Tailwind CSS, GSAP, diseño responsive, modo claro/oscuro",
   quality: "Accesibilidad web (WCAG), SEO técnico, Core Web Vitals, Playwright",
-  tools: "Git, GitHub, Vercel, next-intl, Firebase, PWA, Capacitor, Claude Code",
+  tools: "Git, GitHub, Vercel, next-intl, Firebase, Claude Code",
 };
 
 export const cv = {

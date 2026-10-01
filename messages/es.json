@@ -128,10 +128,10 @@
   },
   "services": {
     "title": "Servicios freelance",
-    "body": "¿Necesitás una landing, una web institucional o una PWA? Diseño y desarrollo sitios rápidos, accesibles y bien posicionados.",
+    "body": "¿Necesitás una landing, una web institucional o una app? Diseño y desarrollo sitios rápidos, accesibles y bien posicionados.",
     "items": {
       "landing": "Landings y sitios institucionales",
-      "pwa": "PWAs y apps web instalables",
+      "apps": "Apps para web y celular con Flutter",
       "performance": "Optimización de performance y SEO"
     },
     "cta": "Pedir presupuesto"

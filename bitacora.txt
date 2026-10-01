@@ -404,6 +404,15 @@ Verificado: build con todas las rutas estáticas (●), card, captura
 PROBLEMA resuelto: el CV volvió a pasar a 2 páginas (sobraba una sola
   línea). Se dejó Laufen con una viñeta corta, de una línea.
 
+[01/10/2026] DECISIÓN — Fuera PWA y Capacitor del stack mostrado
+Qué es: se sacan PWA y Capacitor del CV, "Sobre mí", Servicios y perfil
+  de GitHub; en su lugar, Flutter / Dart para web y mobile.
+Por qué: con la PWA descartada ningún proyecto los respalda; Laufen sí
+  respalda Flutter en Android, iOS y web.
+Detalle: el servicio "pwa" pasa a "apps" (Apps para web y celular con
+  Flutter) en messages/*.json y Services.tsx. En el CV, Flutter va en
+  la fila Frontend para no sumar una línea (se mantiene en 1 página).
+
 ================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)
@@ -415,7 +424,7 @@ i18n: next-intl (ES/EN)
 Datos y estado: TanStack Query, Zod, Recharts
 Backend/servicios: Firebase (Auth, Firestore, Admin SDK), Formspree,
   API de Claude (salida estructurada), Next.js Route Handlers
-Mobile: Flutter (Dart), PWA, Capacitor, Android Studio
+Mobile: Flutter (Dart) para web y mobile, Android Studio
 Deploy y CI: Vercel, Netlify, GitHub Actions
 Testing: Vitest, Playwright
 Herramientas: Git, GitHub, VS Code, Claude Code, Claude Design
