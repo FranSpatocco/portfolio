@@ -446,6 +446,76 @@ También fuera del CV (cv/cv-data.mjs, entrada "Landing para cliente" /
   publicarla.
 
 ================================================================
+FASE 4 — REDISEÑO "BENTO"
+================================================================
+
+[02/10/2026] HERRAMIENTA — Lighthouse calibrado para una PC lenta
+Qué es: medir Lighthouse por línea de comandos con el throttling de CPU
+  ajustado a la máquina.
+Para qué lo usé: saber de verdad cuánto daba el sitio en mobile.
+Por qué: con el 4x por defecto la home daba 63–77 y variaba mucho entre
+  corridas. Lighthouse avisaba "slower CPU than Lighthouse expects"
+  (benchmarkIndex ~800). Su guía de calibración pide 2x para esa CPU.
+Lo que aprendí: medir antes de optimizar. Calibrado, el sitio viejo daba
+  93–94 en la home y 96–97 en los casos de estudio. Un cambio "obvio"
+  (ScrollTrigger → IntersectionObserver) no mejoraba nada medible y se
+  descartó. Comando: npx lighthouse <url>
+  --throttling.cpuSlowdownMultiplier=2, 3 corridas y la mediana.
+
+[02/10/2026] DECISIÓN — Rediseño "Bento" con código propio, no la plantilla Gridx
+Qué es: nueva dirección visual en grilla de tarjetas, inspirada en la
+  plantilla Gridx de Envato.
+Por qué no la plantilla: es HTML/JS plano (el portfolio tiene que mostrar
+  React + TypeScript), el repo es público (sería publicar código ajeno),
+  pide suscripción a Envato y se perdían i18n, casos de estudio, CV por
+  idioma y SEO. Además traía cifras tipo "+125 clientes" que no aplican.
+Cómo: sólo cambió la capa visual. Tokens nuevos (inset, raised,
+  border-strong), Geist como única tipografía, clase .card, la home pasa a
+  ser una grilla bento (Hero.tsx) cuyas tarjetas llevan a cada sección.
+  Sin foto: el monograma "FS" ocupa su lugar. Las cifras de la tarjeta
+  "Datos" son verificables (proyectos publicados, ES/EN, 100 de
+  accesibilidad). Se borraron BlueprintDiagram y CornerTicks.
+Diseño previo en Claude Design (página "Bento (estilo Gridx)").
+
+[02/10/2026] PROBLEMA — La grilla se ensanchaba en mobile (2877px)
+Qué pasó: en 390px la página medía casi 2900 de ancho.
+Causa: una grilla sin columnas definidas usa columnas "auto", que crecen
+  hasta el ancho mínimo del contenido; la cinta del hero (texto sin
+  saltos) era larguísima.
+Solución: grid-cols-1 (minmax(0, 1fr)) en todas las grillas y min-w-0 en
+  la columna de la cinta. Quedó como regla en CLAUDE.md.
+
+[02/10/2026] PROBLEMA — GSAP pisaba el hover de las tarjetas
+Qué pasó: las tarjetas animadas con Reveal no se elevaban al pasar el
+  mouse.
+Causa: gsap.from deja un transform inline al terminar, que le gana al
+  transform del :hover en CSS.
+Solución: clearProps: "transform,opacity" en el tween de Reveal.
+
+[02/10/2026] DECISIÓN — La cinta del hero en CSS, sin JS
+Qué es: el gesto principal del diseño nuevo es una cinta de texto que se
+  desplaza (@keyframes en globals.css).
+Por qué: el diagrama SVG anterior usaba GSAP + DrawSVG al cargar y era la
+  mayor parte del bloqueo del hilo principal en mobile. Con la cinta en
+  CSS el TBT bajó de ~190 ms a ~80 ms. Con movimiento reducido queda
+  quieta; el texto completo está en un sr-only para lectores de pantalla.
+Resultado Lighthouse (local, mobile CPU 2x): home 93–95, casos de
+  estudio 96–97; desktop 99–100. Accesibilidad y buenas prácticas 100 en
+  todo.
+
+[02/10/2026] DECISIÓN — Cabeceras de seguridad (CSP y compañía)
+Qué es: Content-Security-Policy, X-Frame-Options, X-Content-Type-Options,
+  Referrer-Policy y Permissions-Policy desde headers() en next.config.ts.
+Por qué: Vercel sólo ponía HSTS. Sin frame-ancestors / X-Frame-Options
+  cualquiera podía meter el sitio en un iframe (clickjacking).
+Detalle: script-src lleva 'unsafe-inline' porque Next hidrata con scripts
+  inline y el del tema evita el flash; un nonce obligaría a renderizar por
+  request y se perdería el SSG. connect-src y form-action permiten sólo
+  Formspree. Se aplica sólo en producción (el modo dev de Next usa eval).
+Revisión completa: npm audit sin vulnerabilidades, links externos con
+  noopener, .env fuera de git, sin HTML de usuarios.
+
+================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)
 ================================================================
@@ -459,6 +529,7 @@ Backend/servicios: Firebase (Auth, Firestore, Admin SDK), Formspree,
 Mobile: Flutter (Dart) para web y mobile, Android Studio
 Deploy y CI: Vercel, Netlify, GitHub Actions
 Testing: Vitest, Playwright
-Herramientas: Git, GitHub, VS Code, Claude Code, Claude Design
+Herramientas: Git, GitHub, VS Code, Claude Code, Claude Design, Lighthouse
 Buenas prácticas: accesibilidad, Core Web Vitals, SEO técnico,
-  seguridad web (CSP, cabeceras HTTP, límites de uso de APIs)
+  seguridad web (CSP, cabeceras HTTP, límites de uso de APIs),
+  diseño responsive con CSS Grid

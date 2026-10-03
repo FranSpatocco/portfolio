@@ -16,21 +16,25 @@ Portfolio de Frontend Developer (React + TypeScript) para conseguir trabajo remo
 - `src/app/sitemap.ts`, `src/app/robots.ts` — SEO con `hreflang`
 - `src/proxy.ts` — middleware de next-intl (en Next 16 `middleware` se llama `proxy`)
 - `src/i18n/` — `routing.ts`, `request.ts`, `navigation.ts` (usar su `Link`, no el de `next/link`)
-- `src/components/` — secciones de la home + `Reveal` (animaciones), `BlueprintDiagram` (gesto del hero), `CornerTicks`, `SectionHeading`, `ProjectCapture`, `ThemeToggle`, `LocaleSwitcher`, `MobileMenu`
+- `src/components/` — `Hero` (la grilla bento de la home) y las secciones + `Reveal` (animaciones), `CardCaption` (pie de tarjeta con flecha), `Monogram`, `icons.tsx` (íconos de trazo), `SectionHeading`, `ProjectCapture`, `ProjectLinks`, `ThemeToggle`, `LocaleSwitcher`, `MobileMenu`
 - `src/config/nav.ts` — secciones del menú (compartidas por el header y el menú mobile)
 - `src/config/site.ts` — nombre, URLs, links, CV, ID de Formspree
 - `src/data/projects.ts` — datos no traducibles de los proyectos (stack, links, imagen)
+- `src/data/stack.ts` — tecnologías (lista completa para "Sobre mí" y las principales para la tarjeta Stack)
 - `messages/es.json` y `messages/en.json` — todos los textos
 
 ## Reglas
 - **Nada de texto hardcodeado en componentes.** Todo texto nuevo va en `messages/es.json` y `messages/en.json` a la vez, con las mismas claves.
 - Cada página nueva con segmentos dinámicos: `generateStaticParams` para que siga siendo estática, y `generateMetadata` con `alternates.languages`. El idioma se lee con `next/root-params` en `src/i18n/request.ts`: **no usar `setRequestLocale`** (es el método legacy).
 - Para documentación de librerías usar el MCP de Context7; para probar en navegador, `playwright-cli`.
-- Colores sólo con los tokens (`bg`, `surface`, `fg`, `muted`, `subtle`, `border`, `line`, `accent`, `accent-hover`, `accent-fg`); el modo oscuro se resuelve redefiniendo las variables en `.dark`. Rótulos técnicos con la clase `.label`; capturas faltantes con `.hatch`.
-- Animaciones sólo a través de `Reveal` o `gsap.matchMedia` con `(prefers-reduced-motion: no-preference)`. No animar la opacidad del contenido above the fold (afecta el LCP).
+- Colores sólo con los tokens (`bg`, `surface`, `inset`, `raised`, `fg`, `muted`, `subtle`, `border`, `border-strong`, `line`, `accent`, `accent-hover`, `accent-fg`); el modo oscuro se resuelve redefiniendo las variables en `.dark`. Tarjetas con la clase `.card` (y `.card-link` si son clickeables, con la flecha `.arrow`); rótulos con `.label`; capturas faltantes con `.hatch`.
+- Grillas: siempre con columnas explícitas (`grid-cols-1` en mobile), si no la cinta del hero o un texto largo ensanchan la página.
+- Animaciones sólo a través de `Reveal` o `gsap.matchMedia` con `(prefers-reduced-motion: no-preference)`. La grilla del hero no se anima (está above the fold, afecta el LCP). La cinta es CSS puro y se frena con movimiento reducido.
+- Cifras de la tarjeta "Datos": sólo verificables (proyectos publicados, idiomas, accesibilidad 100 en Lighthouse). Si alguna deja de ser cierta, se cambia.
 - Imágenes con `next/image` y `alt` traducido.
 - Accesibilidad: HTML semántico, contraste AA, foco visible, navegación por teclado.
 - Mobile-first. Objetivo Lighthouse 95+ en las cuatro métricas.
+- Seguridad: las cabeceras (CSP, X-Frame-Options, etc.) están en `next.config.ts`. Un servicio externo nuevo (analytics, otro form) hay que sumarlo a la CSP o el navegador lo bloquea.
 - Next 16 tiene cambios respecto a versiones anteriores: ante la duda, leer `node_modules/next/dist/docs/`.
 - **Bitácora:** cada tecnología, decisión o problema resuelto se registra en `bitacora.txt` en el momento, con el formato del encabezado del archivo.
 
@@ -42,12 +46,12 @@ Portfolio de Frontend Developer (React + TypeScript) para conseguir trabajo remo
 - Nada de efectos que tapen el contenido, cursores custom, textos que se escriben solos ni frases grandilocuentes. Textos honestos, en el tono del "Sobre mí".
 - **Sin 3D por ahora.**
 
-**Dirección elegida: "Plano técnico"** (diseño en https://claude.ai/artifact/9uy3tF1Zzb5pSS2bnZmLPy, página "Plano técnico v2"):
-- Tipografías: Space Grotesk (títulos y texto) + JetBrains Mono **sólo** para etiquetas y datos (REF-00, P-01, [01], rótulos de fichas).
-- Oscuro: bg `#0E1116`, surface `#11151B`, fg `#E6E8EB`, muted `#A3ABB8`, subtle `#7A8290`, border `#2A323D`, line `#1F2630`, accent `#FF6B1A` con texto `#0E1116` encima.
-- Claro: bg `#F4F1EA`, surface `#FBFAF6`, fg `#16191D`, muted `#4F5661`, subtle `#5F6672`, border `#D6D0C4`, line `#E3DED3`, accent `#C2410C` con texto blanco encima.
-- Fondo: grilla tenue de 48px (oscuro `#12171D`, claro azul plano al 6%). Esquinas sin redondear.
-- Gesto principal: diagrama SVG Diseño → Código → Deploy que se dibuja al cargar. Secundario: captura flotante al pasar el mouse por las filas de proyectos.
+**Dirección elegida: "Bento"** (reemplazó a "Plano técnico" el 02/10/2026; diseño en https://claude.ai/artifact/9uy3tF1Zzb5pSS2bnZmLPy, página "Bento (estilo Gridx)"). Inspirada en la plantilla Gridx de Envato, pero con código propio:
+- Tipografía: Geist (una sola familia). Rótulos en mayúscula con tracking (`.label`).
+- Oscuro: bg `#0D0D0E`, tarjeta `#19191C`→`#141416`, inset `#111113`, raised `#202024`, fg `#F2F2F3`, muted `#A6A6AD`, subtle `#8B8B93`, border `#242427`, border-strong `#2E2E33`, accent `#7B8CFF` con texto `#0D0D0E` encima.
+- Claro: bg `#F3F3F1`, tarjeta `#FFFFFF`→`#FBFBFA`, inset `#F6F6F4`, raised `#F0F0EE`, fg `#141416`, muted `#55555C`, subtle `#66666E`, border `#E2E2DF`, border-strong `#D2D2CE`, accent `#4352D6` con texto blanco encima.
+- Tarjetas con radio de 28px, botones en píldora. Sin foto: el monograma "FS" ocupa su lugar.
+- Gesto principal: la cinta de texto del hero (CSS). Secundario: las tarjetas clickeables se elevan y la flecha se rellena con el acento.
 
 ## Deploy
 - Vercel, conectado a github.com/FranSpatocco/portfolio: cada push a `main` publica en https://franco-spatocco.vercel.app
@@ -77,4 +81,4 @@ Los 3 proyectos se desarrollan en carpetas y repos aparte (el Dashboard con IA y
 - Textos de los casos de estudio (marcados "(Completar)" / "(TODO)") → `messages/*.json`
 - CV: completar los `TODO(...)` de `cv/cv-data.mjs` (Franco los carga en `datos-cv.txt` del Escritorio) y correr `npm run cv`
 - Capturas de proyectos → `public/projects/` + campo `image` en `src/data/projects.ts`; demo y repo en `demoUrl` / `repoUrl`
-- Revisión de seguridad con `/security-review` (requiere inicializar git y tener cambios para comparar)
+- Dominio propio (con `NEXT_PUBLIC_SITE_URL`)

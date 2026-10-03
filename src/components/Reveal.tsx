@@ -37,6 +37,9 @@ export default function Reveal({
           duration: 0.7,
           ease: "power2.out",
           stagger: stagger ? 0.1 : 0,
+          // Sin estilos inline al terminar: si no, el transform que deja
+          // GSAP pisa el hover de las tarjetas (.card-link)
+          clearProps: "transform,opacity",
           scrollTrigger:
             trigger === "scroll"
               ? { trigger: ref.current, start: "top 85%", once: true }

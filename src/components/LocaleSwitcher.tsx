@@ -19,7 +19,7 @@ export default function LocaleSwitcher() {
       locale={target}
       hrefLang={target}
       aria-label={t("switchTo", { language: t(target) })}
-      className="grid size-11 place-items-center border border-border font-mono text-xs text-fg uppercase transition-colors hover:border-fg"
+      className="grid size-11 place-items-center rounded-full border border-border-strong text-[0.8125rem] font-medium text-muted uppercase transition-colors hover:border-fg hover:text-fg"
     >
       {target}
     </Link>

@@ -1,10 +1,14 @@
 import { useTranslations } from "next-intl";
 import type { Project } from "@/data/projects";
+import { ArrowUpRight } from "./icons";
 
-type Props = { project: Project; className?: string };
+type Props = { project: Project; className?: string; linkClassName?: string };
+
+const pill =
+  "flex h-11 items-center gap-1.5 rounded-full border border-border-strong px-4 text-sm font-medium transition-colors hover:border-fg";
 
 // Links a demo y repo; mientras no existan, "Próximamente"
-export default function ProjectLinks({ project, className = "" }: Props) {
+export default function ProjectLinks({ project, className = "", linkClassName = pill }: Props) {
   const t = useTranslations("projects");
   const title = useTranslations("projects.items")(`${project.slug}.title`);
 
@@ -14,11 +18,11 @@ export default function ProjectLinks({ project, className = "" }: Props) {
   ].filter((l) => l.href);
 
   if (links.length === 0) {
-    return <span className={`text-muted ${className}`}>{t("comingSoon")}</span>;
+    return <span className={`text-sm text-muted ${className}`}>{t("comingSoon")}</span>;
   }
 
   return (
-    <span className={`flex gap-6 font-semibold ${className}`}>
+    <>
       {links.map((l) => (
         <a
           key={l.label}
@@ -26,11 +30,12 @@ export default function ProjectLinks({ project, className = "" }: Props) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`${l.label}: ${title}`}
-          className="text-accent underline-offset-4 transition-colors hover:text-accent-hover hover:underline"
+          className={`${linkClassName} ${className}`}
         >
-          {l.label} ↗
+          {l.label}
+          <ArrowUpRight className="size-3.5" />
         </a>
       ))}
-    </span>
+    </>
   );
 }

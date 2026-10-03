@@ -15,111 +15,92 @@ mkdirSync(publicDir, { recursive: true });
 const texts = {
   es: {
     tagline: "Interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy.",
-    caption: "Fig. 01 — Del diseño al deploy",
-    boxes: ["DISEÑO", "CÓDIGO", "DEPLOY"],
-    subs: ["UI · SISTEMA", "REACT · TS", "VERCEL"],
+    available: "Disponible",
+    mode: "Remoto o presencial",
+    stackLabel: "Stack",
     location: "Mar del Plata, AR",
   },
   en: {
     tagline: "Fast, accessible and maintainable interfaces, from design to deploy.",
-    caption: "Fig. 01 — From design to deploy",
-    boxes: ["DESIGN", "CODE", "DEPLOY"],
-    subs: ["UI · SYSTEM", "REACT · TS", "VERCEL"],
+    available: "Available",
+    mode: "Remote or on-site",
+    stackLabel: "Stack",
     location: "Mar del Plata, AR",
   },
 };
 
-// Paleta oscura del sitio: destaca más en el feed de LinkedIn
+const stack = ["React", "TypeScript", "Next.js", "Tailwind CSS", "Flutter"];
+
+// Paleta oscura del sitio (sistema "Bento"): destaca más en el feed de LinkedIn
 const c = {
-  bg: "#0E1116",
-  surface: "#11151B",
-  fg: "#E6E8EB",
-  muted: "#A3ABB8",
-  subtle: "#7A8290",
-  border: "#2A323D",
-  line: "#1F2630",
-  grid: "#151A21",
-  accent: "#FF6B1A",
+  bg: "#0D0D0E",
+  surface: "#19191C",
+  surfaceTo: "#141416",
+  inset: "#111113",
+  raised: "#202024",
+  fg: "#F2F2F3",
+  muted: "#A6A6AD",
+  subtle: "#8B8B93",
+  border: "#242427",
+  borderStrong: "#2E2E33",
+  accent: "#7B8CFF",
+  accentFg: "#0D0D0E",
 };
 
-const diagram = (t) => {
-  const box = (x, i) => `
-    <rect x="${x}" y="30" width="112" height="56" fill="${c.surface}" stroke="${i === 1 ? c.accent : c.border}"/>
-    <text x="${x + 56}" y="56" fill="${c.fg}">${t.boxes[i]}</text>
-    <text x="${x + 56}" y="73" font-size="9" fill="${c.subtle}">${t.subs[i]}</text>`;
-  return `
-  <svg viewBox="0 0 420 300" width="400" aria-hidden="true">
-    <g font-family="JetBrains Mono, monospace" font-size="12" text-anchor="middle">
-      ${box(10, 0)}${box(154, 1)}${box(298, 2)}
-    </g>
-    <g stroke="${c.accent}" stroke-width="1.5" fill="none">
-      <path d="M122 58 H148 M143 53 L149 58 L143 63"/>
-      <path d="M266 58 H292 M287 53 L293 58 L287 63"/>
-      <path d="M210 86 V146" stroke-dasharray="4 4"/>
-      <circle cx="210" cy="204" r="50" stroke-width="10" stroke-dasharray="9.8 9.8"/>
-      <circle cx="210" cy="204" r="40"/>
-      <circle cx="210" cy="204" r="14"/>
-      <path d="M210 190 V218 M196 204 H224" stroke-width="1"/>
-    </g>
-  </svg>`;
-};
-
-const tick = (pos) =>
-  `<span class="tick" style="${pos}"></span>`;
+const arrow = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg>`;
 
 const render = (lang, t) => `<!doctype html>
 <html lang="${lang}">
 <head>
 <meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; margin: 0; }
   html, body { width: 1200px; height: 630px; overflow: hidden; }
   body {
-    position: relative;
-    background-color: ${c.bg};
-    background-image: linear-gradient(${c.grid} 1px, transparent 1px), linear-gradient(90deg, ${c.grid} 1px, transparent 1px);
-    background-size: 48px 48px;
-    font-family: "Space Grotesk", sans-serif;
-    color: ${c.fg};
+    display: grid; grid-template-columns: 1fr 380px; gap: 20px; padding: 40px;
+    background: ${c.bg}; font-family: "Geist", sans-serif; color: ${c.fg};
   }
-  .frame { position: absolute; inset: 40px; border: 1px solid ${c.border}; }
-  .tick { position: absolute; width: 18px; height: 18px; border-color: ${c.accent}; border-style: solid; border-width: 0; }
-  .mono { font-family: "JetBrains Mono", monospace; letter-spacing: 0.08em; text-transform: uppercase; }
-  .content { position: absolute; inset: 40px; display: grid; grid-template-columns: 1fr 420px; align-items: center; padding: 0 64px; gap: 24px; }
-  .ref { font-size: 17px; color: ${c.accent}; }
-  h1 { margin-top: 22px; font-size: 104px; font-weight: 600; line-height: 0.9; letter-spacing: -0.04em; }
-  .role { margin-top: 26px; font-size: 27px; font-weight: 500; letter-spacing: -0.01em; white-space: nowrap; }
-  .tagline { margin-top: 16px; max-width: 520px; font-size: 20px; line-height: 1.5; color: ${c.muted}; }
-  .figure { display: flex; flex-direction: column; align-items: center; gap: 18px; }
-  .caption { font-size: 13px; color: ${c.subtle}; }
-  .footer { position: absolute; left: 40px; right: 40px; bottom: 40px; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 28px; border-top: 1px solid ${c.border}; font-size: 15px; color: ${c.muted}; }
-  .footer strong { color: ${c.fg}; font-weight: 500; }
-  .dot { display: inline-block; width: 9px; height: 9px; margin-right: 10px; background: ${c.accent}; }
+  .card { border: 1px solid ${c.border}; border-radius: 32px; background: linear-gradient(180deg, ${c.surface}, ${c.surfaceTo}); }
+  .label { font-size: 15px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: ${c.subtle}; }
+  .hero { display: flex; flex-direction: column; justify-content: space-between; padding: 44px; }
+  .mono { display: grid; place-items: center; width: 124px; height: 124px; border-radius: 26px; background: ${c.accent}; color: ${c.accentFg}; font-size: 58px; font-weight: 700; letter-spacing: -0.06em; }
+  h1 { margin-top: 14px; font-size: 80px; font-weight: 600; line-height: 1; letter-spacing: -0.04em; }
+  .tagline { margin-top: 18px; max-width: 560px; font-size: 22px; line-height: 1.5; color: ${c.muted}; }
+  .side { display: flex; flex-direction: column; gap: 20px; }
+  .side .card { padding: 28px; }
+  .status { display: flex; align-items: center; gap: 12px; }
+  .dot { width: 10px; height: 10px; border-radius: 99px; background: ${c.accent}; }
+  .big { margin-top: 12px; font-size: 30px; font-weight: 600; letter-spacing: -0.02em; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .chip { padding: 8px 14px; border-radius: 99px; border: 1px solid ${c.borderStrong}; background: ${c.raised}; font-size: 16px; font-weight: 500; }
+  .url { flex: 1; display: flex; align-items: center; justify-content: space-between; }
+  .url strong { font-size: 18px; font-weight: 600; white-space: nowrap; }
+  .circle { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 99px; background: ${c.accent}; color: ${c.accentFg}; }
 </style>
 </head>
 <body>
-  <div class="frame">
-    ${tick("top:-1px;left:-1px;border-top-width:2px;border-left-width:2px")}
-    ${tick("top:-1px;right:-1px;border-top-width:2px;border-right-width:2px")}
-    ${tick("bottom:-1px;left:-1px;border-bottom-width:2px;border-left-width:2px")}
-    ${tick("bottom:-1px;right:-1px;border-bottom-width:2px;border-right-width:2px")}
-  </div>
-  <div class="content" style="bottom: 96px;">
+  <div class="card hero">
+    <div class="mono">FS</div>
     <div>
-      <p class="mono ref">REF-00 — Frontend Developer</p>
-      <h1>Franco<br>Spatocco</h1>
-      <p class="role">Frontend Developer · React · TypeScript</p>
+      <p class="label">Frontend Developer · React · TypeScript</p>
+      <h1>Franco Spatocco.</h1>
       <p class="tagline">${t.tagline}</p>
     </div>
-    <div class="figure">
-      ${diagram(t)}
-      <p class="mono caption">${t.caption}</p>
-    </div>
   </div>
-  <div class="footer mono">
-    <span><span class="dot"></span><strong>franco-spatocco.vercel.app</strong></span>
-    <span>${t.location}</span>
+  <div class="side">
+    <div class="card">
+      <p class="label status"><span class="dot"></span>${t.available} · ${t.location}</p>
+      <p class="big">${t.mode}</p>
+    </div>
+    <div class="card">
+      <p class="label">${t.stackLabel}</p>
+      <div class="chips">${stack.map((s) => `<span class="chip">${s}</span>`).join("")}</div>
+    </div>
+    <div class="card url">
+      <strong>franco-spatocco.vercel.app</strong>
+      <span class="circle">${arrow}</span>
+    </div>
   </div>
 </body>
 </html>`;

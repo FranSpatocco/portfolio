@@ -3,55 +3,59 @@
 /* Modo oscuro por clase (.dark en <html>), controlado por ThemeToggle */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Sistema "Plano técnico" (ver CLAUDE.md). Claro: papel de plano */
+/* Sistema "Bento" (ver CLAUDE.md). Claro: gris cálido y tarjetas blancas */
 :root {
-  --bg: #f4f1ea;
-  --surface: #fbfaf6;
-  --fg: #16191d;
-  --muted: #4f5661;
-  --subtle: #5f6672;
-  --border: #d6d0c4;
-  --line: #e3ded3;
-  --grid: rgb(29 78 216 / 0.06);
-  --accent: #c2410c;
-  --accent-hover: #9a3412;
+  --bg: #f3f3f1;
+  --surface: #ffffff;
+  --surface-to: #fbfbfa;
+  --inset: #f6f6f4;
+  --raised: #f0f0ee;
+  --fg: #141416;
+  --muted: #55555c;
+  --subtle: #66666e;
+  --border: #e2e2df;
+  --border-strong: #d2d2ce;
+  --line: #e8e8e5;
+  --accent: #4352d6;
+  --accent-hover: #3442bf;
   --accent-fg: #ffffff;
-  --hatch-a: #ece7dc;
-  --hatch-b: #f7f4ee;
-  --shadow: rgb(22 25 29 / 0.18);
+  --shadow: rgb(20 20 22 / 0.12);
 }
 
-/* Oscuro: carbón + naranja de seguridad */
+/* Oscuro: casi negro, tarjetas grafito y acento lavanda */
 .dark {
-  --bg: #0e1116;
-  --surface: #11151b;
-  --fg: #e6e8eb;
-  --muted: #a3abb8;
-  --subtle: #7a8290;
-  --border: #2a323d;
-  --line: #1f2630;
-  --grid: #12171d;
-  --accent: #ff6b1a;
-  --accent-hover: #ff8a4c;
-  --accent-fg: #0e1116;
-  --hatch-a: #141920;
-  --hatch-b: #11151b;
+  --bg: #0d0d0e;
+  --surface: #19191c;
+  --surface-to: #141416;
+  --inset: #111113;
+  --raised: #202024;
+  --fg: #f2f2f3;
+  --muted: #a6a6ad;
+  --subtle: #8b8b93;
+  --border: #242427;
+  --border-strong: #2e2e33;
+  --line: #1e1e22;
+  --accent: #7b8cff;
+  --accent-hover: #95a3ff;
+  --accent-fg: #0d0d0e;
   --shadow: rgb(0 0 0 / 0.5);
 }
 
 @theme inline {
   --color-bg: var(--bg);
   --color-surface: var(--surface);
+  --color-inset: var(--inset);
+  --color-raised: var(--raised);
   --color-fg: var(--fg);
   --color-muted: var(--muted);
   --color-subtle: var(--subtle);
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
   --color-line: var(--line);
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
   --color-accent-fg: var(--accent-fg);
-  --font-sans: var(--font-space-grotesk);
-  --font-mono: var(--font-jetbrains-mono);
+  --font-sans: var(--font-geist);
 }
 
 html {
@@ -69,20 +73,9 @@ html.dark {
   }
 }
 
-/* Grilla de plano de fondo */
 body {
   background-color: var(--bg);
-  background-image:
-    linear-gradient(var(--grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-size: 32px 32px;
   color: var(--fg);
-}
-
-@media (min-width: 768px) {
-  body {
-    background-size: 48px 48px;
-  }
 }
 
 ::selection {
@@ -97,25 +90,78 @@ body {
 
 /* Offset para que el header fijo no tape los títulos al navegar por anclas */
 section[id] {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 6rem;
+}
+
+/* Cinta de texto del hero: el gesto del diseño. Sólo CSS, sin JS */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @layer components {
-  /* Rayado de plano para las capturas que todavía no existen */
-  .hatch {
-    background-image: repeating-linear-gradient(
-      45deg,
-      var(--hatch-a) 0 10px,
-      var(--hatch-b) 10px 20px
-    );
+  /* Tarjeta bento: la unidad de todo el sitio */
+  .card {
+    border: 1px solid var(--border);
+    border-radius: 1.75rem;
+    background-color: var(--surface-to);
+    background-image: linear-gradient(180deg, var(--surface), var(--surface-to));
   }
 
-  /* Rótulos técnicos: REF-00, P-01, [01], etiquetas de fichas */
+  /* Tarjeta clickeable: se eleva y la flecha se rellena con el acento */
+  .card-link {
+    transition:
+      border-color 0.25s ease,
+      transform 0.25s ease;
+  }
+  .card-link:hover,
+  .card-link:focus-visible {
+    border-color: var(--border-strong);
+    transform: translateY(-3px);
+  }
+  .card-link:hover .arrow,
+  .card-link:focus-visible .arrow {
+    border-color: var(--accent);
+    background-color: var(--accent);
+    color: var(--accent-fg);
+  }
+  .arrow {
+    transition:
+      background-color 0.25s ease,
+      border-color 0.25s ease,
+      color 0.25s ease;
+  }
+
+  /* Rótulos sobre los títulos: STACK, TRABAJOS, P-01 */
   .label {
-    font-family: var(--font-mono);
     font-size: 0.75rem;
+    font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--subtle);
+  }
+
+  /* Placeholder para capturas que todavía no existen */
+  .hatch {
+    background-image: repeating-linear-gradient(
+      45deg,
+      var(--inset) 0 10px,
+      var(--raised) 10px 20px
+    );
+  }
+
+  .marquee-track {
+    animation: marquee 28s linear infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-link:hover,
+  .card-link:focus-visible {
+    transform: none;
+  }
+  .marquee-track {
+    animation: none;
   }
 }

@@ -2,28 +2,20 @@ import type { ReactNode } from "react";
 
 type Props = {
   id: string;
-  index: number;
+  label: string;
   title: string;
   aside?: ReactNode;
-  // Con borde inferior y el aside a la derecha (ej.: Proyectos)
-  ruled?: boolean;
 };
 
-// Encabezado de sección con índice de plano: [01] Proyectos
-export default function SectionHeading({ id, index, title, aside, ruled }: Props) {
+// Encabezado de sección: rótulo chico sobre el título, aside a la derecha
+export default function SectionHeading({ id, label, title, aside }: Props) {
   return (
-    <div
-      className={`flex flex-col gap-4 md:flex-row md:items-end md:justify-between ${
-        ruled ? "border-b border-line pb-8" : ""
-      }`}
-    >
-      <div className="flex flex-col gap-3">
-        <span className="label text-accent">
-          [{String(index).padStart(2, "0")}]
-        </span>
+    <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+      <div className="flex flex-col gap-2">
+        <span className="label">{label}</span>
         <h2
           id={id}
-          className="text-4xl leading-none font-semibold tracking-[-0.03em] md:text-[3.5rem]"
+          className="text-4xl leading-none font-semibold tracking-[-0.035em] md:text-5xl"
         >
           {title}
         </h2>

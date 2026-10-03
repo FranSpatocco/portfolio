@@ -6,6 +6,7 @@ import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { navSections } from "@/config/nav";
 import { site } from "@/config/site";
+import { ArrowUpRight, Download } from "./icons";
 import ThemeToggle from "./ThemeToggle";
 
 export default function MobileMenu() {
@@ -36,7 +37,7 @@ export default function MobileMenu() {
       }
     };
     // Si se agranda la ventana a desktop, el menú deja de tener sentido
-    const desktop = window.matchMedia("(min-width: 768px)");
+    const desktop = window.matchMedia("(min-width: 1024px)");
     const onDesktop = () => desktop.matches && setOpen(false);
 
     document.addEventListener("keydown", onKeyDown);
@@ -52,7 +53,7 @@ export default function MobileMenu() {
   const close = () => setOpen(false);
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <button
         ref={buttonRef}
         type="button"
@@ -60,8 +61,8 @@ export default function MobileMenu() {
         aria-expanded={open}
         aria-controls="mobile-menu"
         aria-label={open ? t("closeMenu") : t("menu")}
-        className={`grid size-11 place-items-center border transition-colors ${
-          open ? "border-accent text-accent" : "border-border text-fg"
+        className={`grid size-11 place-items-center rounded-full border transition-colors ${
+          open ? "border-accent text-accent" : "border-border-strong text-fg"
         }`}
       >
         <svg
@@ -76,7 +77,7 @@ export default function MobileMenu() {
           {open ? (
             <path d="M6 6l12 12M18 6L6 18" />
           ) : (
-            <path d="M4 7h16M4 12h16M4 17h10" />
+            <path d="M4 8h16M4 16h16" />
           )}
         </svg>
       </button>
@@ -85,21 +86,19 @@ export default function MobileMenu() {
         ref={panelRef}
         id="mobile-menu"
         hidden={!open}
-        className="absolute inset-x-0 top-16 border-b border-border bg-bg px-5 pt-3 pb-6 shadow-[0_32px_48px_-24px_var(--shadow)]"
+        className="card absolute inset-x-3 top-18 px-5 pt-2 pb-5 shadow-[0_32px_48px_-24px_var(--shadow)] md:inset-x-6 md:top-22"
       >
         <nav aria-label={t("menu")}>
           <ul className="flex flex-col">
-            {navSections.map((id, i) => (
-              <li key={id} className="border-b border-line">
+            {navSections.map((id) => (
+              <li key={id} className="border-b border-line last:border-b-0">
                 <Link
                   href={`/#${id}`}
                   onClick={close}
                   className="flex min-h-15 items-center justify-between text-[1.375rem] font-medium transition-colors hover:text-accent"
                 >
                   {t(id)}
-                  <span aria-hidden="true" className="label">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+                  <ArrowUpRight className="size-5 text-subtle" />
                 </Link>
               </li>
             ))}
@@ -110,8 +109,9 @@ export default function MobileMenu() {
             href={site.cv[locale]}
             download
             onClick={close}
-            className="flex h-13 flex-1 items-center justify-center bg-accent font-semibold text-accent-fg transition-colors hover:bg-accent-hover"
+            className="flex h-13 flex-1 items-center justify-center gap-2 rounded-full bg-accent font-semibold text-accent-fg transition-colors hover:bg-accent-hover"
           >
+            <Download className="size-4" />
             {t("cv")}
           </a>
           <ThemeToggle className="grid size-13" />

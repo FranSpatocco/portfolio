@@ -2,7 +2,7 @@
   "meta": {
     "title": "{name} · Frontend Developer (React + TypeScript)",
     "description": "Portfolio de {name}, Frontend Developer especializado en React, TypeScript y Next.js. Proyectos, casos de estudio y contacto.",
-    "ogAlt": "Franco Spatocco — Frontend Developer · React · TypeScript. Diagrama del diseño al deploy."
+    "ogAlt": "Franco Spatocco — Frontend Developer · React · TypeScript. Tarjetas con el monograma FS, el stack y el estado: disponible."
   },
   "nav": {
     "skip": "Saltar al contenido",
@@ -13,7 +13,8 @@
     "cv": "Descargar CV",
     "menu": "Menú",
     "closeMenu": "Cerrar menú",
-    "mainNav": "Navegación principal"
+    "mainNav": "Navegación principal",
+    "talk": "Hablemos"
   },
   "theme": {
     "toggle": "Cambiar tema claro/oscuro"
@@ -25,34 +26,40 @@
     "en": "English"
   },
   "hero": {
-    "greeting": "Hola, soy {name}",
     "role": "Frontend Developer · React · TypeScript",
     "tagline": "Construyo interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy.",
     "ctaProjects": "Ver proyectos",
     "ctaContact": "Contactame",
-    "label": "REF-00 — Frontend Developer",
-    "figure": {
-      "caption": "Fig. 01 — Del diseño al deploy",
-      "rev": "Rev. 2026",
-      "alt": "Diagrama: diseño, código y deploy conectados por un engranaje",
-      "design": "DISEÑO",
-      "designSub": "UI · SISTEMA",
-      "code": "CÓDIGO",
-      "codeSub": "REACT · TS",
-      "deploy": "DEPLOY",
-      "deploySub": "VERCEL",
-      "target": "OBJETIVO: LIGHTHOUSE 95+"
-    },
-    "specs": {
-      "stackLabel": "Stack",
-      "stack": "React · TypeScript · Next.js",
-      "baseLabel": "Base",
-      "base": "Mar del Plata, AR",
-      "modeLabel": "Modalidad",
-      "mode": "Remoto / presencial",
-      "statusLabel": "Estado",
-      "status": "Disponible"
+    "location": "MDQ · AR",
+    "marqueeLabel": "Disponible para trabajar · Remoto o presencial · React, TypeScript y Next.js",
+    "marquee": {
+      "available": "Disponible para <b>trabajar</b>",
+      "mode": "Remoto o <b>presencial</b>",
+      "stack": "React · TypeScript · <b>Next.js</b>"
     }
+  },
+  "bento": {
+    "aboutLabel": "Más sobre mí",
+    "aboutTitle": "Sobre mí",
+    "aboutInitials": "AS",
+    "aboutBadge": "Analista de Sistemas",
+    "projectsLabel": "Trabajos",
+    "projectsTitle": "Proyectos",
+    "stackLabel": "Stack",
+    "stackTitle": "Tecnologías que uso",
+    "servicesLabel": "Servicios freelance",
+    "servicesTitle": "Lo que ofrezco",
+    "profilesLabel": "Seguime",
+    "profilesTitle": "Perfiles",
+    "factsLabel": "Datos",
+    "facts": {
+      "projects": "Proyectos publicados",
+      "languages": "Sitio bilingüe",
+      "a11y": "Accesibilidad en Lighthouse"
+    },
+    "available": "Disponible · Mar del Plata, AR",
+    "together": "Trabajemos",
+    "togetherAccent": "juntos."
   },
   "projects": {
     "title": "Proyectos",
@@ -85,18 +92,18 @@
     "status": {
       "inDevelopment": "En desarrollo",
       "live": "Publicado"
-    }
+    },
+    "label": "Trabajos recientes"
   },
   "caseStudy": {
     "back": "Volver a proyectos",
     "problem": "El problema",
     "decisions": "Decisiones técnicas",
     "result": "Resultado",
-    "label": "{code} — Caso de estudio",
+    "label": "{code} · Caso de estudio",
     "roleLabel": "Rol",
     "role": "Diseño y desarrollo",
     "linksLabel": "Links",
-    "figure": "Fig. 01 — {title}",
     "next": "Siguiente — {code}"
   },
   "about": {
@@ -117,7 +124,8 @@
       "interestsLabel": "Intereses",
       "interests": "Frontend, automatización e Industria 4.0"
     },
-    "stackTitle": "Tecnologías que uso"
+    "stackTitle": "Tecnologías que uso",
+    "label": "Quién soy"
   },
   "services": {
     "title": "Servicios freelance",
@@ -127,7 +135,8 @@
       "apps": "Apps para web y celular con Flutter",
       "performance": "Optimización de performance y SEO"
     },
-    "cta": "Pedir presupuesto"
+    "cta": "Pedir presupuesto",
+    "label": "Para clientes"
   },
   "contact": {
     "title": "Contacto",
@@ -145,11 +154,11 @@
       "linkedin": "LinkedIn",
       "github": "GitHub"
     },
-    "emailSubject": "Nuevo mensaje desde el portfolio"
+    "emailSubject": "Nuevo mensaje desde el portfolio",
+    "label": "Escribime"
   },
   "footer": {
-    "rights": "© {year} {name}. Hecho con Next.js, TypeScript y Tailwind CSS.",
-    "meta": "Rev. 2026 · Mar del Plata, AR"
+    "rights": "© {year} {name}. Hecho con Next.js, TypeScript y Tailwind CSS."
   },
   "notFound": {
     "code": "Error 404",
