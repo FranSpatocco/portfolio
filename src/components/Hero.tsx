@@ -7,7 +7,7 @@ import { featuredStack } from "@/data/stack";
 import CardCaption from "./CardCaption";
 import { ArrowUpRight, Download, Gauge, GitHub, Layout, LinkedIn, Phone } from "./icons";
 
-const marquee = ["available", "mode", "stack"] as const;
+const marquee = ["role", "stack", "mode"] as const;
 const services = [
   { key: "landing", Icon: Layout },
   { key: "apps", Icon: Phone },
@@ -50,13 +50,10 @@ export default function Hero() {
         <div className="card flex flex-col gap-6 p-5.5 sm:flex-row sm:items-center sm:gap-8 md:col-span-2 md:p-9 lg:col-span-6">
           <div
             aria-hidden="true"
-            className="relative grid h-55 shrink-0 place-items-center rounded-[1.25rem] bg-accent text-accent-fg sm:size-50"
+            className="grid h-55 shrink-0 place-items-center rounded-[1.25rem] bg-accent text-accent-fg sm:size-50"
           >
             <span className="text-[6.5rem] leading-none font-bold tracking-[-0.06em] sm:text-[5.75rem]">
               FS
-            </span>
-            <span className="absolute bottom-3.5 left-4 text-[0.6875rem] font-semibold tracking-[0.08em]">
-              {t("location")}
             </span>
           </div>
           <div className="flex flex-col gap-3">
@@ -239,10 +236,7 @@ export default function Hero() {
           href="#contact"
           className="card card-link flex flex-col justify-between gap-7 p-6 md:col-span-2 md:p-8 lg:col-span-6"
         >
-          <span className="label flex items-center gap-2.5">
-            <span aria-hidden="true" className="size-2 rounded-full bg-accent" />
-            {tb("available")}
-          </span>
+          <span className="label">{tb("contactLabel")}</span>
           <span className="flex items-end justify-between gap-4">
             <span className="text-[2.5rem] leading-none font-semibold tracking-[-0.04em] md:text-[3.25rem]">
               {tb("together")}

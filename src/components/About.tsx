@@ -4,7 +4,8 @@ import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
 const paragraphs = ["intro", "industry", "ai", "looking"] as const;
-const facts = ["location", "mode", "education", "interests"] as const;
+// Formación va última y a lo ancho: es el dato más largo
+const facts = ["mode", "interests", "education"] as const;
 
 export default function About() {
   const t = useTranslations("about");
@@ -31,7 +32,7 @@ export default function About() {
             {facts.map((key) => (
               <div
                 key={key}
-                className="flex flex-col gap-2 rounded-[1.125rem] border border-line bg-inset p-4"
+                className="flex flex-col gap-2 rounded-[1.125rem] border border-line bg-inset p-4 sm:last:col-span-2"
               >
                 <dt className="label text-[0.6875rem]">{t(`facts.${key}Label`)}</dt>
                 <dd className="text-[0.9375rem] leading-normal">{t(`facts.${key}`)}</dd>

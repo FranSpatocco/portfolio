@@ -2,7 +2,7 @@
   "meta": {
     "title": "{name} · Frontend Developer (React + TypeScript)",
     "description": "Portfolio of {name}, a Frontend Developer focused on React, TypeScript and Next.js. Projects, case studies and contact.",
-    "ogAlt": "Franco Spatocco — Frontend Developer · React · TypeScript. Cards with the FS monogram, the stack and the status: available."
+    "ogAlt": "Franco Spatocco — Frontend Developer · React · TypeScript. Cards with the FS monogram, the stack and the work mode: remote."
   },
   "nav": {
     "skip": "Skip to content",
@@ -30,12 +30,11 @@
     "tagline": "I build fast, accessible and maintainable interfaces, from design to deploy.",
     "ctaProjects": "See projects",
     "ctaContact": "Get in touch",
-    "location": "MDQ · AR",
-    "marqueeLabel": "Available for work · Remote or on-site · React, TypeScript and Next.js",
+    "marqueeLabel": "Frontend Developer · React, TypeScript and Next.js · Remote work",
     "marquee": {
-      "available": "Available for <b>work</b>",
-      "mode": "Remote or <b>on-site</b>",
-      "stack": "React · TypeScript · <b>Next.js</b>"
+      "role": "Frontend <b>Developer</b>",
+      "stack": "React · TypeScript · <b>Next.js</b>",
+      "mode": "Remote <b>work</b>"
     }
   },
   "bento": {
@@ -57,7 +56,7 @@
       "languages": "Bilingual site",
       "a11y": "Lighthouse accessibility"
     },
-    "available": "Available · Mar del Plata, AR",
+    "contactLabel": "Contact",
     "together": "Let's work",
     "togetherAccent": "together."
   },
@@ -112,13 +111,11 @@
       "intro": "I'm a Systems Analyst focused on frontend development with React, TypeScript and Next.js. I enjoy building clear, fast and accessible interfaces, and caring about every detail from design to deploy.",
       "industry": "I'm also studying Industrial Maintenance at a technical college, because I'm drawn to where software meets industry: automation, Industry 4.0 and tools that help companies make better use of their data.",
       "ai": "I use AI tools like Claude Code every day to code, document and learn faster, while making sure I understand every part of the code I ship.",
-      "looking": "I'm looking for my first job in tech, either remote or on-site in Mar del Plata, and I'm open to all kinds of opportunities. I'm eager to join a team, keep learning and grow professionally."
+      "looking": "I'm looking for my first job in tech, working remotely, and I'm open to all kinds of opportunities. I'm eager to join a team, keep learning and grow professionally."
     },
     "facts": {
-      "locationLabel": "Location",
-      "location": "Mar del Plata, Buenos Aires, Argentina",
       "modeLabel": "Work mode",
-      "mode": "Remote or on-site",
+      "mode": "Remote",
       "educationLabel": "Education",
       "education": "Systems Analyst · Industrial Maintenance technical degree (in progress)",
       "interestsLabel": "Interests",

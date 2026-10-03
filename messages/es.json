@@ -2,7 +2,7 @@
   "meta": {
     "title": "{name} · Frontend Developer (React + TypeScript)",
     "description": "Portfolio de {name}, Frontend Developer especializado en React, TypeScript y Next.js. Proyectos, casos de estudio y contacto.",
-    "ogAlt": "Franco Spatocco — Frontend Developer · React · TypeScript. Tarjetas con el monograma FS, el stack y el estado: disponible."
+    "ogAlt": "Franco Spatocco — Frontend Developer · React · TypeScript. Tarjetas con el monograma FS, el stack y la modalidad: remoto."
   },
   "nav": {
     "skip": "Saltar al contenido",
@@ -30,12 +30,11 @@
     "tagline": "Construyo interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy.",
     "ctaProjects": "Ver proyectos",
     "ctaContact": "Contactame",
-    "location": "MDQ · AR",
-    "marqueeLabel": "Disponible para trabajar · Remoto o presencial · React, TypeScript y Next.js",
+    "marqueeLabel": "Frontend Developer · React, TypeScript y Next.js · Trabajo remoto",
     "marquee": {
-      "available": "Disponible para <b>trabajar</b>",
-      "mode": "Remoto o <b>presencial</b>",
-      "stack": "React · TypeScript · <b>Next.js</b>"
+      "role": "Frontend <b>Developer</b>",
+      "stack": "React · TypeScript · <b>Next.js</b>",
+      "mode": "Trabajo <b>remoto</b>"
     }
   },
   "bento": {
@@ -57,7 +56,7 @@
       "languages": "Sitio bilingüe",
       "a11y": "Accesibilidad en Lighthouse"
     },
-    "available": "Disponible · Mar del Plata, AR",
+    "contactLabel": "Contacto",
     "together": "Trabajemos",
     "togetherAccent": "juntos."
   },
@@ -112,13 +111,11 @@
       "intro": "Soy Analista de Sistemas y me enfoco en el desarrollo frontend con React, TypeScript y Next.js. Me gusta construir interfaces claras, rápidas y accesibles, y cuidar cada detalle desde el diseño hasta el deploy.",
       "industry": "En paralelo curso la Tecnicatura Superior en Mantenimiento Industrial, porque me atrae el cruce entre el software y la industria: automatización, Industria 4.0 y herramientas que ayuden a las empresas a aprovechar mejor sus datos.",
       "ai": "Uso a diario herramientas de IA como Claude Code para programar, documentar y aprender más rápido, sin dejar de entender cada parte del código que entrego.",
-      "looking": "Busco mi primera experiencia laboral en IT, de forma remota o presencial en Mar del Plata, y estoy abierto a todo tipo de propuestas. Tengo muchas ganas de sumarme a un equipo, aprender y crecer profesionalmente."
+      "looking": "Busco mi primera experiencia laboral en IT, de forma remota, y estoy abierto a todo tipo de propuestas. Tengo muchas ganas de sumarme a un equipo, aprender y crecer profesionalmente."
     },
     "facts": {
-      "locationLabel": "Ubicación",
-      "location": "Mar del Plata, Buenos Aires, Argentina",
       "modeLabel": "Modalidad",
-      "mode": "Remoto o presencial",
+      "mode": "Remoto",
       "educationLabel": "Formación",
       "education": "Analista de Sistemas · Tecnicatura Superior en Mantenimiento Industrial (en curso)",
       "interestsLabel": "Intereses",

@@ -515,6 +515,16 @@ Detalle: script-src lleva 'unsafe-inline' porque Next hidrata con scripts
 Revisión completa: npm audit sin vulnerabilidades, links externos con
   noopener, .env fuera de git, sin HTML de usuarios.
 
+[02/10/2026] DECISIÓN — Sin ubicación ni "Disponible" en el sitio
+Qué es: se sacaron "MDQ · AR", "Mar del Plata, AR", el dato "Ubicación"
+  de Sobre mí, "presencial" y los "Disponible" (cinta del hero, tarjeta de
+  contacto e imagen para compartir).
+Por qué: la búsqueda es de trabajo remoto, así que la ubicación no suma; y
+  en una landing para buscar trabajo, "Disponible" es redundante.
+En su lugar: la cinta dice "Frontend Developer · React · TypeScript ·
+  Next.js · Trabajo remoto"; la tarjeta de contacto lleva el rótulo
+  "Contacto"; la imagen para compartir muestra "Modalidad: Trabajo remoto".
+
 ================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)

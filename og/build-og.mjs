@@ -15,17 +15,15 @@ mkdirSync(publicDir, { recursive: true });
 const texts = {
   es: {
     tagline: "Interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy.",
-    available: "Disponible",
-    mode: "Remoto o presencial",
+    modeLabel: "Modalidad",
+    mode: "Trabajo remoto",
     stackLabel: "Stack",
-    location: "Mar del Plata, AR",
   },
   en: {
     tagline: "Fast, accessible and maintainable interfaces, from design to deploy.",
-    available: "Available",
-    mode: "Remote or on-site",
+    modeLabel: "Work mode",
+    mode: "Remote work",
     stackLabel: "Stack",
-    location: "Mar del Plata, AR",
   },
 };
 
@@ -69,8 +67,6 @@ const render = (lang, t) => `<!doctype html>
   .tagline { margin-top: 18px; max-width: 560px; font-size: 22px; line-height: 1.5; color: ${c.muted}; }
   .side { display: flex; flex-direction: column; gap: 20px; }
   .side .card { padding: 28px; }
-  .status { display: flex; align-items: center; gap: 12px; }
-  .dot { width: 10px; height: 10px; border-radius: 99px; background: ${c.accent}; }
   .big { margin-top: 12px; font-size: 30px; font-weight: 600; letter-spacing: -0.02em; }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
   .chip { padding: 8px 14px; border-radius: 99px; border: 1px solid ${c.borderStrong}; background: ${c.raised}; font-size: 16px; font-weight: 500; }
@@ -90,7 +86,7 @@ const render = (lang, t) => `<!doctype html>
   </div>
   <div class="side">
     <div class="card">
-      <p class="label status"><span class="dot"></span>${t.available} · ${t.location}</p>
+      <p class="label">${t.modeLabel}</p>
       <p class="big">${t.mode}</p>
     </div>
     <div class="card">
