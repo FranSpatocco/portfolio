@@ -25,7 +25,6 @@ export const cv = {
     lang: "es",
     name: "Franco Spatocco",
     role: "Frontend Developer · React · TypeScript",
-    location: "Mar del Plata, Buenos Aires, Argentina",
     phone: "+54 9 223 687 8118",
     contact,
     sections: {
@@ -38,7 +37,7 @@ export const cv = {
       courses: "Cursos",
     },
     profile:
-      "Analista de Sistemas enfocado en desarrollo frontend con React, TypeScript y Next.js. Construyo interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy. Curso la Tecnicatura Superior en Mantenimiento Industrial: me interesa el cruce entre software, automatización e Industria 4.0. Busco mi primera experiencia en IT, remota o presencial en Mar del Plata.",
+      "Analista de Sistemas enfocado en desarrollo frontend con React, TypeScript y Next.js. Construyo interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy. Curso la Tecnicatura Superior en Mantenimiento Industrial: me interesa el cruce entre software, automatización e Industria 4.0. Busco mi primera experiencia en IT, en modalidad remota.",
     projects: [
       {
         name: "Portfolio personal",
@@ -114,7 +113,6 @@ export const cv = {
     lang: "en",
     name: "Franco Spatocco",
     role: "Frontend Developer · React · TypeScript",
-    location: "Mar del Plata, Buenos Aires, Argentina",
     phone: "+54 9 223 687 8118",
     contact,
     sections: {
@@ -127,7 +125,7 @@ export const cv = {
       courses: "Courses",
     },
     profile:
-      "Systems Analyst focused on frontend development with React, TypeScript and Next.js. I build fast, accessible and maintainable interfaces, from design to deploy. Currently studying Industrial Maintenance, drawn to where software meets automation and Industry 4.0. Looking for my first tech role, remote or on-site in Mar del Plata.",
+      "Systems Analyst focused on frontend development with React, TypeScript and Next.js. I build fast, accessible and maintainable interfaces, from design to deploy. Currently studying Industrial Maintenance, drawn to where software meets automation and Industry 4.0. Looking for my first tech role, working remotely.",
     projects: [
       {
         name: "Personal portfolio",

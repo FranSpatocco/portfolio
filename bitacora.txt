@@ -525,6 +525,22 @@ En su lugar: la cinta dice "Frontend Developer · React · TypeScript ·
   Next.js · Trabajo remoto"; la tarjeta de contacto lleva el rótulo
   "Contacto"; la imagen para compartir muestra "Modalidad: Trabajo remoto".
 
+[06/10/2026] DECISIÓN — CV y perfil de GitHub alineados con el sitio
+Qué es: lo mismo que se hizo en el sitio, aplicado al CV y a GitHub.
+CV (cv/): sin ubicación en el encabezado; el perfil dice "Busco mi
+  primera experiencia en IT, en modalidad remota". Pasa al estilo Bento
+  en versión para imprimir: Geist, acento #4352D6 (el del modo claro),
+  encabezado en tarjeta con el monograma FS, títulos de sección como
+  rótulos. Sigue en una página.
+PROBLEMA resuelto: al extraer el texto del PDF el nombre salía
+  "FrancoSpatocco": con interletrado negativo Chrome deja el espacio tan
+  angosto que los lectores de PDF (y los ATS que filtran CVs) lo unen.
+  Se compensó con word-spacing en el h1 y se verificó con pypdf.
+GitHub: README de perfil sin "Mar del Plata, Argentina" ni "presencial"
+  (subido con gh api); el campo Location del perfil quedó vacío.
+Se mantiene: el teléfono en el CV (dato de contacto, aunque su código de
+  área sea de MDQ).
+
 ================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)

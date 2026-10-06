@@ -1,14 +1,14 @@
 # Hola, soy Franco 👋
 
-**Frontend Developer · React · TypeScript** — Mar del Plata, Argentina 🇦🇷
+**Frontend Developer · React · TypeScript**
 
 Analista de Sistemas enfocado en desarrollo frontend. Me gusta construir interfaces claras, rápidas y accesibles. En paralelo curso la Tecnicatura Superior en Mantenimiento Industrial: me interesa el cruce entre software, automatización e Industria 4.0.
 
-🔎 Busco mi primera experiencia en IT (remoto o presencial en Mar del Plata).
+🔎 Busco mi primera experiencia en IT, en modalidad remota.
 
 ---
 
-_Systems Analyst focused on frontend development (React + TypeScript). Also studying Industrial Maintenance: interested in automation and Industry 4.0. Open to remote or on-site roles._
+_Systems Analyst focused on frontend development (React + TypeScript). Also studying Industrial Maintenance: interested in automation and Industry 4.0. Open to remote roles._
 
 ## 🛠️ Tecnologías
 
