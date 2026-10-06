@@ -40,8 +40,8 @@
   "bento": {
     "aboutLabel": "Más sobre mí",
     "aboutTitle": "Sobre mí",
-    "aboutInitials": "AS",
-    "aboutBadge": "Analista de Sistemas",
+    "aboutMark": "</>",
+    "aboutBadge": "Desarrollador Frontend",
     "projectsLabel": "Trabajos",
     "projectsTitle": "Proyectos",
     "stackLabel": "Stack",
@@ -108,8 +108,8 @@
   "about": {
     "title": "Sobre mí",
     "paragraphs": {
-      "intro": "Soy Analista de Sistemas y me enfoco en el desarrollo frontend con React, TypeScript y Next.js. Me gusta construir interfaces claras, rápidas y accesibles, y cuidar cada detalle desde el diseño hasta el deploy.",
-      "industry": "En paralelo curso la Tecnicatura Superior en Mantenimiento Industrial, porque me atrae el cruce entre el software y la industria: automatización, Industria 4.0 y herramientas que ayuden a las empresas a aprovechar mejor sus datos.",
+      "intro": "Soy desarrollador frontend y trabajo con React, TypeScript y Next.js. Me gusta construir interfaces claras, rápidas y accesibles, y cuidar cada detalle desde el diseño hasta el deploy.",
+      "industry": "Me formé como Analista de Sistemas y en paralelo curso la Tecnicatura Superior en Mantenimiento Industrial, porque me atrae el cruce entre el software y la industria: automatización, Industria 4.0 y herramientas que ayuden a las empresas a aprovechar mejor sus datos.",
       "ai": "Uso a diario herramientas de IA como Claude Code para programar, documentar y aprender más rápido, sin dejar de entender cada parte del código que entrego.",
       "looking": "Busco mi primera experiencia laboral en IT, de forma remota, y estoy abierto a todo tipo de propuestas. Tengo muchas ganas de sumarme a un equipo, aprender y crecer profesionalmente."
     },
@@ -117,7 +117,7 @@
       "modeLabel": "Modalidad",
       "mode": "Remoto",
       "educationLabel": "Formación",
-      "education": "Analista de Sistemas · Tecnicatura Superior en Mantenimiento Industrial (en curso)",
+      "education": "Tecnicatura Superior en Mantenimiento Industrial (en curso) · Analista de Sistemas",
       "interestsLabel": "Intereses",
       "interests": "Frontend, automatización e Industria 4.0"
     },

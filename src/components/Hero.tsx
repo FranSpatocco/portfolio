@@ -117,7 +117,7 @@ export default function Hero() {
             >
               <span className="flex flex-1 flex-col items-center justify-center gap-1.5 pb-4">
                 <span className="text-[2.125rem] font-semibold tracking-[-0.04em] md:text-[2.5rem]">
-                  {tb("aboutInitials")}
+                  {tb("aboutMark")}
                 </span>
                 <span className="label hidden text-center md:block">{tb("aboutBadge")}</span>
               </span>

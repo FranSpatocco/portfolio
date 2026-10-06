@@ -40,8 +40,8 @@
   "bento": {
     "aboutLabel": "More about me",
     "aboutTitle": "About me",
-    "aboutInitials": "SA",
-    "aboutBadge": "Systems Analyst",
+    "aboutMark": "</>",
+    "aboutBadge": "Frontend Developer",
     "projectsLabel": "Work",
     "projectsTitle": "Projects",
     "stackLabel": "Stack",
@@ -108,8 +108,8 @@
   "about": {
     "title": "About me",
     "paragraphs": {
-      "intro": "I'm a Systems Analyst focused on frontend development with React, TypeScript and Next.js. I enjoy building clear, fast and accessible interfaces, and caring about every detail from design to deploy.",
-      "industry": "I'm also studying Industrial Maintenance at a technical college, because I'm drawn to where software meets industry: automation, Industry 4.0 and tools that help companies make better use of their data.",
+      "intro": "I'm a frontend developer working with React, TypeScript and Next.js. I enjoy building clear, fast and accessible interfaces, and caring about every detail from design to deploy.",
+      "industry": "My background is in Systems Analysis, and I'm also studying Industrial Maintenance at a technical college, because I'm drawn to where software meets industry: automation, Industry 4.0 and tools that help companies make better use of their data.",
       "ai": "I use AI tools like Claude Code every day to code, document and learn faster, while making sure I understand every part of the code I ship.",
       "looking": "I'm looking for my first job in tech, working remotely, and I'm open to all kinds of opportunities. I'm eager to join a team, keep learning and grow professionally."
     },
@@ -117,7 +117,7 @@
       "modeLabel": "Work mode",
       "mode": "Remote",
       "educationLabel": "Education",
-      "education": "Systems Analyst · Industrial Maintenance technical degree (in progress)",
+      "education": "Industrial Maintenance technical degree (in progress) · Systems Analyst",
       "interestsLabel": "Interests",
       "interests": "Frontend, automation and Industry 4.0"
     },

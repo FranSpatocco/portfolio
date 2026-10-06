@@ -541,6 +541,19 @@ GitHub: README de perfil sin "Mar del Plata, Argentina" ni "presencial"
 Se mantiene: el teléfono en el CV (dato de contacto, aunque su código de
   área sea de MDQ).
 
+[06/10/2026] DECISIÓN — Desarrollador frontend primero, Analista de Sistemas de fondo
+Qué es: la presentación principal pasa a ser "desarrollador frontend";
+  el título de Analista de Sistemas queda como formación.
+Por qué: el portfolio busca puestos de frontend; abrir con "Analista de
+  Sistemas" ponía primero un rol que no es el que se busca.
+Dónde: tarjeta "Sobre mí" del hero ("AS" → "</>" con el rótulo
+  "Desarrollador Frontend"; la clave pasó de aboutInitials a aboutMark),
+  primer párrafo de Sobre mí ("Soy desarrollador frontend…"), el título
+  pasa al segundo párrafo ("Me formé como Analista de Sistemas…"), en
+  Formación va después de la tecnicatura, y el perfil del CV empieza con
+  "Desarrollador frontend…". En la sección Formación del CV sigue como
+  título obtenido (2024).
+
 ================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)

@@ -37,7 +37,7 @@ export const cv = {
       courses: "Cursos",
     },
     profile:
-      "Analista de Sistemas enfocado en desarrollo frontend con React, TypeScript y Next.js. Construyo interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy. Curso la Tecnicatura Superior en Mantenimiento Industrial: me interesa el cruce entre software, automatización e Industria 4.0. Busco mi primera experiencia en IT, en modalidad remota.",
+      "Desarrollador frontend con React, TypeScript y Next.js. Construyo interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy. Formado como Analista de Sistemas; curso la Tecnicatura Superior en Mantenimiento Industrial porque me interesa el cruce entre software, automatización e Industria 4.0. Busco mi primera experiencia en IT, en modalidad remota.",
     projects: [
       {
         name: "Portfolio personal",
@@ -125,7 +125,7 @@ export const cv = {
       courses: "Courses",
     },
     profile:
-      "Systems Analyst focused on frontend development with React, TypeScript and Next.js. I build fast, accessible and maintainable interfaces, from design to deploy. Currently studying Industrial Maintenance, drawn to where software meets automation and Industry 4.0. Looking for my first tech role, working remotely.",
+      "Frontend developer working with React, TypeScript and Next.js. I build fast, accessible and maintainable interfaces, from design to deploy. Background in Systems Analysis; currently studying Industrial Maintenance, drawn to where software meets automation and Industry 4.0. Looking for my first tech role, working remotely.",
     projects: [
       {
         name: "Personal portfolio",
