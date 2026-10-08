@@ -6,7 +6,7 @@ export const TODO = (text) => ({ todo: text });
 const contact = {
   email: "fspatocco02@gmail.com",
   linkedin: {
-    href: "https://www.linkedin.com/in/franco-spatocco-0a7161163/",
+    href: "https://www.linkedin.com/in/franco-spatocco/",
     text: "linkedin.com/in/franco-spatocco",
   },
   github: { href: "https://github.com/FranSpatocco", text: "github.com/FranSpatocco" },

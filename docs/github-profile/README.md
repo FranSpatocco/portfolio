@@ -42,4 +42,4 @@ _Frontend developer (React, TypeScript, Next.js, Flutter). I build fast, accessi
 
 ## Contacto
 
-[Portfolio](https://franco-spatocco.vercel.app) · [LinkedIn](https://www.linkedin.com/in/franco-spatocco-0a7161163/) · fspatocco02@gmail.com
+[Portfolio](https://franco-spatocco.vercel.app) · [LinkedIn](https://www.linkedin.com/in/franco-spatocco/) · fspatocco02@gmail.com

@@ -4,7 +4,7 @@ export const site = {
   // Dirección pública en Vercel. Si hay dominio propio, NEXT_PUBLIC_SITE_URL la reemplaza
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://franco-spatocco.vercel.app",
   email: "fspatocco02@gmail.com",
-  linkedin: "https://www.linkedin.com/in/franco-spatocco-0a7161163/",
+  linkedin: "https://www.linkedin.com/in/franco-spatocco/",
   github: "https://github.com/FranSpatocco",
   // Form de Formspree (https://formspree.io/f/<id>). No es secreto: el id
   // queda visible en el HTML. La variable permite usar otro form en pruebas
