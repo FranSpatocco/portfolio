@@ -554,6 +554,24 @@ Dónde: tarjeta "Sobre mí" del hero ("AS" → "</>" con el rótulo
   "Desarrollador frontend…". En la sección Formación del CV sigue como
   título obtenido (2024).
 
+[07/10/2026] DECISIÓN — Lavada de cara del perfil de GitHub
+Qué es: README de perfil rehecho y repos ordenados antes de pasar a LinkedIn.
+README de perfil: los 3 proyectos publicados (Dashboard con IA, Laufen y
+  este portfolio) en una tabla tipo bento con captura real de cada demo
+  (webp en assets/ del repo FranSpatocco), y los 14 badges reemplazados
+  por una línea de "Stack". Fuente en docs/github-profile/.
+Cambia respecto del 02/10 y el 06/10: a pedido de Franco el perfil dice
+  "Disponible para trabajar de forma remota, en relación de dependencia o
+  como freelance" (antes "Busco mi primera experiencia en IT") y el campo
+  Location dice "Argentina" (país, sin ciudad). El sitio y el CV siguen
+  como estaban.
+Repos: topics en grano-co-dashboard y laufen; calcu-javascript y
+  Proy-Jorge-React pasaron a privados (calcu estaba archivado: hubo que
+  desarchivarlo, cambiar la visibilidad y volver a archivarlo). README de
+  este repo reescrito para quien llega desde GitHub (captura, qué incluye,
+  stack) en vez de sólo instrucciones.
+Regla: los proyectos de clientes no se muestran sin permiso explícito.
+
 ================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)

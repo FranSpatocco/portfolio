@@ -1,41 +1,45 @@
 # Hola, soy Franco 👋
 
-**Frontend Developer · React · TypeScript**
+**Frontend Developer · React · TypeScript · Next.js · Flutter**
 
-Analista de Sistemas enfocado en desarrollo frontend. Me gusta construir interfaces claras, rápidas y accesibles. En paralelo curso la Tecnicatura Superior en Mantenimiento Industrial: me interesa el cruce entre software, automatización e Industria 4.0.
+Analista de Sistemas. Construyo interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy: sitios y paneles web con Next.js, y apps para web y celular con Flutter. También curso la Tecnicatura en Mantenimiento Industrial y me interesa el cruce entre software, automatización e Industria 4.0.
 
-🔎 Busco mi primera experiencia en IT, en modalidad remota.
+📬 **Disponible para trabajar de forma remota**, en relación de dependencia o como freelance.
 
----
+_Frontend developer (React, TypeScript, Next.js, Flutter). I build fast, accessible interfaces from design to deploy. Available for remote work, full-time or freelance._
 
-_Systems Analyst focused on frontend development (React + TypeScript). Also studying Industrial Maintenance: interested in automation and Industry 4.0. Open to remote roles._
+**Stack:** React · TypeScript · Next.js · Tailwind CSS · GSAP · Flutter · Dart · Firebase · Vercel · API de Claude
 
-## 🛠️ Tecnologías
+## Proyectos
 
-![HTML](https://img.shields.io/badge/HTML-E34F26?logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
-![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white)
-![Flutter](https://img.shields.io/badge/Flutter-02569B?logo=flutter&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-0175C2?logo=dart&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)
-![GSAP](https://img.shields.io/badge/GSAP-88CE02?logo=greensock&logoColor=black)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?logo=firebase&logoColor=black)
-![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white)
-![Claude Code](https://img.shields.io/badge/Claude_Code-D97757?logo=anthropic&logoColor=white)
+<table>
+  <tr>
+    <td colspan="2">
+      <a href="https://grano-co-dashboard.vercel.app"><img src="assets/grano.webp" alt="Panel de Grano & Co. con KPIs de ventas, evolución semanal y ventas por categoría"></a>
+      <h3>Grano &amp; Co. · dashboard con IA</h3>
+      Panel de gestión de una cafetería: ventas, pedidos y stock en una pantalla, con un resumen semanal escrito por la API de Claude.<br>
+      <sub>Next.js · TypeScript · Firebase · TanStack Query · Recharts · API de Claude</sub><br>
+      <a href="https://grano-co-dashboard.vercel.app"><b>Ver demo</b></a> · <a href="https://github.com/FranSpatocco/grano-co-dashboard">Código</a>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="https://laufen-app.web.app"><img src="assets/laufen.webp" alt="Landing de Laufen con un mapa y una ruta de running"></a>
+      <h3>Laufen · app de running</h3>
+      GPS, mapa en vivo, parciales por km e intervalos. Android, iOS y web con un mismo código.<br>
+      <sub>Flutter · Dart · Firebase</sub><br>
+      <a href="https://laufen-app.web.app"><b>Ver demo</b></a> · <a href="https://github.com/FranSpatocco/laufen">Código</a>
+    </td>
+    <td width="50%" valign="top">
+      <a href="https://franco-spatocco.vercel.app"><img src="assets/portfolio.webp" alt="Portfolio de Franco Spatocco con diseño de tarjetas"></a>
+      <h3>Portfolio</h3>
+      Bilingüe (ES/EN), con animaciones y diseño de tarjetas. Lighthouse 90+ en mobile.<br>
+      <sub>Next.js · TypeScript · Tailwind CSS · next-intl · GSAP</sub><br>
+      <a href="https://franco-spatocco.vercel.app"><b>Ver sitio</b></a> · <a href="https://github.com/FranSpatocco/portfolio">Código</a>
+    </td>
+  </tr>
+</table>
 
-## 🚀 Proyectos
+## Contacto
 
-<!-- Completar a medida que estén publicados -->
-- **[Portfolio](https://franco-spatocco.vercel.app)** — Next.js + TypeScript + Tailwind + next-intl (ES/EN) · [código](https://github.com/FranSpatocco/portfolio)
-- **[Dashboard con IA — Grano & Co.](https://grano-co-dashboard.vercel.app)** — Next.js + TypeScript + Firebase + API de Claude: panel de una cafetería con resumen semanal escrito por IA · [código](https://github.com/FranSpatocco/grano-co-dashboard)
-- **[Laufen — app de running](https://laufen-app.web.app)** — Flutter + Firebase: GPS, mapa en vivo, parciales por km e intervalos, en Android, iOS y web con un mismo código · [código](https://github.com/FranSpatocco/laufen)
-
-## 📫 Contacto
-
-- Email: fspatocco02@gmail.com
-- LinkedIn: [franco-spatocco](https://www.linkedin.com/in/franco-spatocco-0a7161163/)
-- Portfolio: [franco-spatocco.vercel.app](https://franco-spatocco.vercel.app)
+[Portfolio](https://franco-spatocco.vercel.app) · [LinkedIn](https://www.linkedin.com/in/franco-spatocco-0a7161163/) · fspatocco02@gmail.com

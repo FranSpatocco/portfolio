@@ -77,7 +77,7 @@ Los 3 proyectos se desarrollan en carpetas y repos aparte (el Dashboard con IA y
 6. `npm run build`, revisar con `playwright-cli` y registrar la integración en `bitacora.txt`.
 
 ## Pendientes (del PRD)
-- README de perfil de GitHub: publicado en github.com/FranSpatocco/FranSpatocco (fuente en `docs/github-profile/README.md`); actualizar la sección Proyectos cuando se publiquen
+- README de perfil de GitHub: publicado en github.com/FranSpatocco/FranSpatocco (fuente en `docs/github-profile/`, con las capturas en `assets/`); al sumar un proyecto, agregarlo con su captura
 - Textos de los casos de estudio (marcados "(Completar)" / "(TODO)") → `messages/*.json`
 - CV: completar los `TODO(...)` de `cv/cv-data.mjs` (Franco los carga en `datos-cv.txt` del Escritorio) y correr `npm run cv`
 - Capturas de proyectos → `public/projects/` + campo `image` en `src/data/projects.ts`; demo y repo en `demoUrl` / `repoUrl`
