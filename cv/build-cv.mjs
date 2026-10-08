@@ -48,6 +48,7 @@ const entry = ({ title, sub, meta, extra = "", bullets = [] }) => `
 function render(d) {
   const c = d.contact;
   const contactLine = [
+    v(d.location),
     v(d.phone),
     `<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`,
     link(c.linkedin),

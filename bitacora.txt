@@ -572,6 +572,22 @@ Repos: topics en grano-co-dashboard y laufen; calcu-javascript y
   stack) en vez de sólo instrucciones.
 Regla: los proyectos de clientes no se muestran sin permiso explícito.
 
+[07/10/2026] DECISIÓN — Buscando trabajo, disponible, remoto desde Argentina
+Qué es: el mismo mensaje en el sitio, el CV y GitHub. Revierte en parte
+  la decisión del 02/10 ("Sin ubicación ni Disponible").
+Por qué: Franco quiere que quede claro que busca trabajo y está
+  disponible, y que es de Argentina y busca remoto (en Mar del Plata casi
+  no hay empresas que contraten presencial). La ciudad sigue sin aparecer.
+Sitio: la cinta del hero suma "Disponible para trabajar" y "Remoto desde
+  Argentina"; la tarjeta de contacto lleva el rótulo "Disponible para
+  trabajar"; Sobre mí tiene los datos Estado (Buscando trabajo), Modalidad
+  y Ubicación, y el párrafo final arranca con "Estoy buscando trabajo y
+  estoy disponible para empezar". Meta descripción, ogAlt e imagen para
+  compartir ("Disponible para trabajar · Remoto · Argentina") al día.
+CV: "Argentina (remoto)" al principio de la línea de contacto (campo
+  location, nuevo en build-cv.mjs) y el perfil cierra con la búsqueda.
+GitHub: README y bio con el mismo mensaje; "Available for hire" activado.
+
 ================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)

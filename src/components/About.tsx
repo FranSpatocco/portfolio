@@ -5,7 +5,7 @@ import SectionHeading from "./SectionHeading";
 
 const paragraphs = ["intro", "industry", "ai", "looking"] as const;
 // Formación va última y a lo ancho: es el dato más largo
-const facts = ["mode", "interests", "education"] as const;
+const facts = ["status", "mode", "location", "interests", "education"] as const;
 
 export default function About() {
   const t = useTranslations("about");

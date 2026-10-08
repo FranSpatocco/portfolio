@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "{name} · Frontend Developer (React + TypeScript)",
-    "description": "Portfolio of {name}, a Frontend Developer focused on React, TypeScript and Next.js. Projects, case studies and contact.",
-    "ogAlt": "Franco Spatocco — Frontend Developer · React · TypeScript. Cards with the FS monogram, the stack and the work mode: remote."
+    "description": "Portfolio of {name}, a Frontend Developer focused on React, TypeScript and Next.js. Available for remote work from Argentina. Projects, case studies and contact.",
+    "ogAlt": "Franco Spatocco — Frontend Developer · React · TypeScript. Cards with the FS monogram, the stack and availability: remote work from Argentina."
   },
   "nav": {
     "skip": "Skip to content",
@@ -30,11 +30,12 @@
     "tagline": "I build fast, accessible and maintainable interfaces, from design to deploy.",
     "ctaProjects": "See projects",
     "ctaContact": "Get in touch",
-    "marqueeLabel": "Frontend Developer · React, TypeScript and Next.js · Remote work",
+    "marqueeLabel": "Frontend Developer · React, TypeScript and Next.js · Available for work · Remote from Argentina",
     "marquee": {
       "role": "Frontend <b>Developer</b>",
       "stack": "React · TypeScript · <b>Next.js</b>",
-      "mode": "Remote <b>work</b>"
+      "available": "Available <b>for work</b>",
+      "mode": "Remote from <b>Argentina</b>"
     }
   },
   "bento": {
@@ -56,7 +57,7 @@
       "languages": "Bilingual site",
       "a11y": "Lighthouse accessibility"
     },
-    "contactLabel": "Contact",
+    "contactLabel": "Available for work",
     "together": "Let's work",
     "togetherAccent": "together."
   },
@@ -111,11 +112,15 @@
       "intro": "I'm a frontend developer working with React, TypeScript and Next.js. I enjoy building clear, fast and accessible interfaces, and caring about every detail from design to deploy.",
       "industry": "My background is in Systems Analysis, and I'm also studying Industrial Maintenance at a technical college, because I'm drawn to where software meets industry: automation, Industry 4.0 and tools that help companies make better use of their data.",
       "ai": "I use AI tools like Claude Code every day to code, document and learn faster, while making sure I understand every part of the code I ship.",
-      "looking": "I'm looking for my first job in tech, working remotely, and I'm open to all kinds of opportunities. I'm eager to join a team, keep learning and grow professionally."
+      "looking": "I'm looking for work and available to start: remotely, from Argentina, full-time or freelance. I'm after my first job in tech and I'm eager to join a team, keep learning and grow professionally."
     },
     "facts": {
+      "statusLabel": "Status",
+      "status": "Looking for work",
       "modeLabel": "Work mode",
       "mode": "Remote",
+      "locationLabel": "Location",
+      "location": "Argentina",
       "educationLabel": "Education",
       "education": "Industrial Maintenance technical degree (in progress) · Systems Analyst",
       "interestsLabel": "Interests",

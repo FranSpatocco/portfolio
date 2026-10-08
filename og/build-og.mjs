@@ -15,14 +15,14 @@ mkdirSync(publicDir, { recursive: true });
 const texts = {
   es: {
     tagline: "Interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy.",
-    modeLabel: "Modalidad",
-    mode: "Trabajo remoto",
+    modeLabel: "Disponible para trabajar",
+    mode: "Remoto · Argentina",
     stackLabel: "Stack",
   },
   en: {
     tagline: "Fast, accessible and maintainable interfaces, from design to deploy.",
-    modeLabel: "Work mode",
-    mode: "Remote work",
+    modeLabel: "Available for work",
+    mode: "Remote · Argentina",
     stackLabel: "Stack",
   },
 };

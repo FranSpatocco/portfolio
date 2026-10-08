@@ -7,7 +7,7 @@ import { featuredStack } from "@/data/stack";
 import CardCaption from "./CardCaption";
 import { ArrowUpRight, Download, Gauge, GitHub, Layout, LinkedIn, Phone } from "./icons";
 
-const marquee = ["role", "stack", "mode"] as const;
+const marquee = ["role", "stack", "available", "mode"] as const;
 const services = [
   { key: "landing", Icon: Layout },
   { key: "apps", Icon: Phone },

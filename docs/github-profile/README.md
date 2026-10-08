@@ -4,9 +4,9 @@
 
 Analista de Sistemas. Construyo interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy: sitios y paneles web con Next.js, y apps para web y celular con Flutter. También curso la Tecnicatura en Mantenimiento Industrial y me interesa el cruce entre software, automatización e Industria 4.0.
 
-📬 **Disponible para trabajar de forma remota**, en relación de dependencia o como freelance.
+📬 **Estoy buscando trabajo y estoy disponible**: remoto, desde Argentina, en relación de dependencia o como freelance.
 
-_Frontend developer (React, TypeScript, Next.js, Flutter). I build fast, accessible interfaces from design to deploy. Available for remote work, full-time or freelance._
+_Frontend developer (React, TypeScript, Next.js, Flutter). I build fast, accessible interfaces from design to deploy. Looking for work and available now: remote, from Argentina, full-time or freelance._
 
 **Stack:** React · TypeScript · Next.js · Tailwind CSS · GSAP · Flutter · Dart · Firebase · Vercel · API de Claude
 

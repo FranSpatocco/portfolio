@@ -25,6 +25,7 @@ export const cv = {
     lang: "es",
     name: "Franco Spatocco",
     role: "Frontend Developer · React · TypeScript",
+    location: "Argentina (remoto)",
     phone: "+54 9 223 687 8118",
     contact,
     sections: {
@@ -37,7 +38,7 @@ export const cv = {
       courses: "Cursos",
     },
     profile:
-      "Desarrollador frontend con React, TypeScript y Next.js. Construyo interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy. Formado como Analista de Sistemas; curso la Tecnicatura Superior en Mantenimiento Industrial porque me interesa el cruce entre software, automatización e Industria 4.0. Busco mi primera experiencia en IT, en modalidad remota.",
+      "Desarrollador frontend con React, TypeScript y Next.js. Construyo interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy. Formado como Analista de Sistemas; curso la Tecnicatura Superior en Mantenimiento Industrial porque me interesa el cruce entre software, automatización e Industria 4.0. Estoy buscando trabajo y disponible para empezar, de forma remota desde Argentina (relación de dependencia o freelance).",
     projects: [
       {
         name: "Portfolio personal",
@@ -113,6 +114,7 @@ export const cv = {
     lang: "en",
     name: "Franco Spatocco",
     role: "Frontend Developer · React · TypeScript",
+    location: "Argentina (remote)",
     phone: "+54 9 223 687 8118",
     contact,
     sections: {
@@ -125,7 +127,7 @@ export const cv = {
       courses: "Courses",
     },
     profile:
-      "Frontend developer working with React, TypeScript and Next.js. I build fast, accessible and maintainable interfaces, from design to deploy. Background in Systems Analysis; currently studying Industrial Maintenance, drawn to where software meets automation and Industry 4.0. Looking for my first tech role, working remotely.",
+      "Frontend developer working with React, TypeScript and Next.js. I build fast, accessible and maintainable interfaces, from design to deploy. Background in Systems Analysis; currently studying Industrial Maintenance, drawn to where software meets automation and Industry 4.0. Looking for work and available to start, remotely from Argentina (full-time or freelance).",
     projects: [
       {
         name: "Personal portfolio",

@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "{name} · Frontend Developer (React + TypeScript)",
-    "description": "Portfolio de {name}, Frontend Developer especializado en React, TypeScript y Next.js. Proyectos, casos de estudio y contacto.",
-    "ogAlt": "Franco Spatocco — Frontend Developer · React · TypeScript. Tarjetas con el monograma FS, el stack y la modalidad: remoto."
+    "description": "Portfolio de {name}, Frontend Developer especializado en React, TypeScript y Next.js. Disponible para trabajo remoto desde Argentina. Proyectos, casos de estudio y contacto.",
+    "ogAlt": "Franco Spatocco — Frontend Developer · React · TypeScript. Tarjetas con el monograma FS, el stack y la disponibilidad: trabajo remoto desde Argentina."
   },
   "nav": {
     "skip": "Saltar al contenido",
@@ -30,11 +30,12 @@
     "tagline": "Construyo interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy.",
     "ctaProjects": "Ver proyectos",
     "ctaContact": "Contactame",
-    "marqueeLabel": "Frontend Developer · React, TypeScript y Next.js · Trabajo remoto",
+    "marqueeLabel": "Frontend Developer · React, TypeScript y Next.js · Disponible para trabajar · Remoto desde Argentina",
     "marquee": {
       "role": "Frontend <b>Developer</b>",
       "stack": "React · TypeScript · <b>Next.js</b>",
-      "mode": "Trabajo <b>remoto</b>"
+      "available": "Disponible para <b>trabajar</b>",
+      "mode": "Remoto desde <b>Argentina</b>"
     }
   },
   "bento": {
@@ -56,7 +57,7 @@
       "languages": "Sitio bilingüe",
       "a11y": "Accesibilidad en Lighthouse"
     },
-    "contactLabel": "Contacto",
+    "contactLabel": "Disponible para trabajar",
     "together": "Trabajemos",
     "togetherAccent": "juntos."
   },
@@ -111,11 +112,15 @@
       "intro": "Soy desarrollador frontend y trabajo con React, TypeScript y Next.js. Me gusta construir interfaces claras, rápidas y accesibles, y cuidar cada detalle desde el diseño hasta el deploy.",
       "industry": "Me formé como Analista de Sistemas y en paralelo curso la Tecnicatura Superior en Mantenimiento Industrial, porque me atrae el cruce entre el software y la industria: automatización, Industria 4.0 y herramientas que ayuden a las empresas a aprovechar mejor sus datos.",
       "ai": "Uso a diario herramientas de IA como Claude Code para programar, documentar y aprender más rápido, sin dejar de entender cada parte del código que entrego.",
-      "looking": "Busco mi primera experiencia laboral en IT, de forma remota, y estoy abierto a todo tipo de propuestas. Tengo muchas ganas de sumarme a un equipo, aprender y crecer profesionalmente."
+      "looking": "Estoy buscando trabajo y estoy disponible para empezar: de forma remota, desde Argentina, en relación de dependencia o como freelance. Busco mi primera experiencia laboral en IT y tengo muchas ganas de sumarme a un equipo, aprender y crecer profesionalmente."
     },
     "facts": {
+      "statusLabel": "Estado",
+      "status": "Buscando trabajo",
       "modeLabel": "Modalidad",
       "mode": "Remoto",
+      "locationLabel": "Ubicación",
+      "location": "Argentina",
       "educationLabel": "Formación",
       "education": "Tecnicatura Superior en Mantenimiento Industrial (en curso) · Analista de Sistemas",
       "interestsLabel": "Intereses",
