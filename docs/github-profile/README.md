@@ -2,7 +2,7 @@
 
 **Frontend Developer · React · TypeScript · Next.js · Flutter**
 
-Analista de Sistemas. Construyo interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy: sitios y paneles web con Next.js, y apps para web y celular con Flutter. También curso la Tecnicatura en Mantenimiento Industrial y me interesa el cruce entre software, automatización e Industria 4.0.
+Analista de Sistemas. Construyo interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy: sitios y paneles web con Next.js, y apps para web y celular con Flutter.
 
 📬 **Estoy buscando trabajo y estoy disponible**: remoto, desde Argentina, en relación de dependencia o como freelance.
 
@@ -17,7 +17,7 @@ _Frontend developer (React, TypeScript, Next.js, Flutter). I build fast, accessi
     <td colspan="2">
       <a href="https://grano-co-dashboard.vercel.app"><img src="assets/grano.webp" alt="Panel de Grano & Co. con KPIs de ventas, evolución semanal y ventas por categoría"></a>
       <h3>Grano &amp; Co. · dashboard con IA</h3>
-      Panel de gestión de una cafetería: ventas, pedidos y stock en una pantalla, con un resumen semanal escrito por la API de Claude.<br>
+      Panel de gestión de una cafetería (ficticia, datos simulados): ventas, pedidos y stock en una pantalla, con un resumen semanal escrito por la API de Claude.<br>
       <sub>Next.js · TypeScript · Firebase · TanStack Query · Recharts · API de Claude</sub><br>
       <a href="https://grano-co-dashboard.vercel.app"><b>Ver demo</b></a> · <a href="https://github.com/FranSpatocco/grano-co-dashboard">Código</a>
     </td>
@@ -39,6 +39,10 @@ _Frontend developer (React, TypeScript, Next.js, Flutter). I build fast, accessi
     </td>
   </tr>
 </table>
+
+## Sobre mí
+
+También curso la Tecnicatura en Mantenimiento Industrial: me interesa el cruce entre software, automatización e Industria 4.0.
 
 ## Contacto
 
