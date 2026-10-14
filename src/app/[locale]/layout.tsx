@@ -8,6 +8,7 @@ import { site } from "@/config/site";
 import { ogImage } from "@/config/og";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Spotlight from "@/components/Spotlight";
 import "../globals.css";
 
 const geist = Geist({
@@ -85,6 +86,7 @@ export default async function LocaleLayout({
             {children}
           </main>
           <Footer />
+          <Spotlight />
         </NextIntlClientProvider>
       </body>
     </html>

@@ -93,7 +93,7 @@ section[id] {
   scroll-margin-top: 6rem;
 }
 
-/* Cinta de texto del hero: el gesto del diseño. Sólo CSS, sin JS */
+/* Cinta de texto del hero. Sólo CSS, sin JS */
 @keyframes marquee {
   to {
     transform: translateX(-50%);
@@ -107,6 +107,48 @@ section[id] {
     border-radius: 1.75rem;
     background-color: var(--surface-to);
     background-image: linear-gradient(180deg, var(--surface), var(--surface-to));
+    /* Contexto propio para que el spotlight quede entre el fondo y el contenido */
+    position: relative;
+    isolation: isolate;
+  }
+
+  /* Spotlight: el gesto del diseño. Spotlight.tsx agrega .spotlight a <html>
+     (sólo con mouse y sin movimiento reducido) y pasa --spot-x/--spot-y */
+  .spotlight .card::before,
+  .spotlight .card::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  /* Brillo suave sobre el fondo */
+  .spotlight .card::before {
+    background: radial-gradient(
+      26rem circle at var(--spot-x, -100rem) var(--spot-y, -100rem),
+      color-mix(in srgb, var(--accent) 12%, transparent),
+      transparent 45%
+    );
+  }
+  /* Borde encendido: la máscara deja ver sólo el anillo de 1px */
+  .spotlight .card::after {
+    padding: 1px;
+    background: radial-gradient(
+      18rem circle at var(--spot-x, -100rem) var(--spot-y, -100rem),
+      color-mix(in srgb, var(--accent) 85%, transparent),
+      transparent 45%
+    );
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+  }
+  .spot-on .card::before,
+  .spot-on .card::after {
+    opacity: 1;
   }
 
   /* Tarjeta clickeable: se eleva y la flecha se rellena con el acento */
@@ -154,6 +196,44 @@ section[id] {
   .marquee-track {
     animation: marquee 28s linear infinite;
   }
+
+  /* Monograma del hero: el trazo dibuja "FS", se rellena y el bloque late
+     una vez. Es el elemento LCP: medido con Lighthouse, la animación no
+     lo empeora (2,7–3,1 s antes y después, mobile con CPU 2x) */
+  .mono-draw text {
+    fill: currentColor;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-opacity: 0;
+    stroke-dasharray: 600;
+    animation:
+      mono-stroke 1.6s cubic-bezier(0.6, 0, 0.3, 1) both,
+      mono-fill 0.6s ease 1s both;
+  }
+  .mono-draw {
+    animation: mono-pulse 0.9s ease 1.5s;
+  }
+}
+
+@keyframes mono-stroke {
+  from {
+    stroke-dashoffset: 600;
+    stroke-opacity: 1;
+  }
+  75% {
+    stroke-dashoffset: 0;
+    stroke-opacity: 1;
+  }
+}
+@keyframes mono-fill {
+  from {
+    fill: transparent;
+  }
+}
+@keyframes mono-pulse {
+  50% {
+    box-shadow: 0 0 0 0.875rem color-mix(in srgb, var(--accent) 18%, transparent);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -162,6 +242,10 @@ section[id] {
     transform: none;
   }
   .marquee-track {
+    animation: none;
+  }
+  .mono-draw,
+  .mono-draw text {
     animation: none;
   }
 }

@@ -16,7 +16,7 @@ Portfolio de Frontend Developer (React + TypeScript) para conseguir trabajo remo
 - `src/app/sitemap.ts`, `src/app/robots.ts` — SEO con `hreflang`
 - `src/proxy.ts` — middleware de next-intl (en Next 16 `middleware` se llama `proxy`)
 - `src/i18n/` — `routing.ts`, `request.ts`, `navigation.ts` (usar su `Link`, no el de `next/link`)
-- `src/components/` — `Hero` (la grilla bento de la home) y las secciones + `Reveal` (animaciones), `CardCaption` (pie de tarjeta con flecha), `Monogram`, `icons.tsx` (íconos de trazo), `SectionHeading`, `ProjectCapture`, `ProjectLinks`, `ThemeToggle`, `LocaleSwitcher`, `MobileMenu`
+- `src/components/` — `Hero` (la grilla bento de la home) y las secciones + `Reveal` (animaciones), `Spotlight` (brillo que sigue al cursor), `CardCaption` (pie de tarjeta con flecha), `Monogram`, `icons.tsx` (íconos de trazo), `SectionHeading`, `ProjectCapture`, `ProjectLinks`, `ThemeToggle`, `LocaleSwitcher`, `MobileMenu`
 - `src/config/nav.ts` — secciones del menú (compartidas por el header y el menú mobile)
 - `src/config/site.ts` — nombre, URLs, links, CV, ID de Formspree
 - `src/data/projects.ts` — datos no traducibles de los proyectos (stack, links, imagen)
@@ -29,7 +29,7 @@ Portfolio de Frontend Developer (React + TypeScript) para conseguir trabajo remo
 - Para documentación de librerías usar el MCP de Context7; para probar en navegador, `playwright-cli`.
 - Colores sólo con los tokens (`bg`, `surface`, `inset`, `raised`, `fg`, `muted`, `subtle`, `border`, `border-strong`, `line`, `accent`, `accent-hover`, `accent-fg`); el modo oscuro se resuelve redefiniendo las variables en `.dark`. Tarjetas con la clase `.card` (y `.card-link` si son clickeables, con la flecha `.arrow`); rótulos con `.label`; capturas faltantes con `.hatch`.
 - Grillas: siempre con columnas explícitas (`grid-cols-1` en mobile), si no la cinta del hero o un texto largo ensanchan la página.
-- Animaciones sólo a través de `Reveal` o `gsap.matchMedia` con `(prefers-reduced-motion: no-preference)`. La grilla del hero no se anima (está above the fold, afecta el LCP). La cinta es CSS puro y se frena con movimiento reducido.
+- Animaciones sólo a través de `Reveal` o `gsap.matchMedia` con `(prefers-reduced-motion: no-preference)`. La grilla del hero no se anima con opacidad (está above the fold, afecta el LCP); el monograma sí se dibuja, medido sin impacto en el LCP. La cinta es CSS puro y se frena con movimiento reducido.
 - Cifras de la tarjeta "Datos": sólo verificables (proyectos publicados, idiomas, accesibilidad 100 en Lighthouse). Si alguna deja de ser cierta, se cambia.
 - Imágenes con `next/image` y `alt` traducido.
 - Accesibilidad: HTML semántico, contraste AA, foco visible, navegación por teclado.
@@ -51,7 +51,7 @@ Portfolio de Frontend Developer (React + TypeScript) para conseguir trabajo remo
 - Oscuro: bg `#0D0D0E`, tarjeta `#19191C`→`#141416`, inset `#111113`, raised `#202024`, fg `#F2F2F3`, muted `#A6A6AD`, subtle `#8B8B93`, border `#242427`, border-strong `#2E2E33`, accent `#7B8CFF` con texto `#0D0D0E` encima.
 - Claro: bg `#F3F3F1`, tarjeta `#FFFFFF`→`#FBFBFA`, inset `#F6F6F4`, raised `#F0F0EE`, fg `#141416`, muted `#55555C`, subtle `#66666E`, border `#E2E2DF`, border-strong `#D2D2CE`, accent `#4352D6` con texto blanco encima.
 - Tarjetas con radio de 28px, botones en píldora. Sin foto: el monograma "FS" ocupa su lugar.
-- Gesto principal: la cinta de texto del hero (CSS). Secundario: las tarjetas clickeables se elevan y la flecha se rellena con el acento.
+- Gesto principal (desde el 14/10/2026, por sugerencia del profesor de sumar algo que llame la atención): **spotlight** — un brillo del acento sigue al cursor y enciende el borde de las tarjetas cercanas (`Spotlight.tsx` + `.spotlight .card` en `globals.css`; sólo con mouse y sin movimiento reducido). Al cargar, el monograma "FS" del hero se dibuja con un trazo, se rellena y late una vez (`.mono-draw`, CSS puro). Secundarios: la cinta de texto del hero y las tarjetas clickeables que se elevan con la flecha rellena con el acento.
 
 ## Deploy
 - Vercel, conectado a github.com/FranSpatocco/portfolio: cada push a `main` publica en https://franco-spatocco.vercel.app

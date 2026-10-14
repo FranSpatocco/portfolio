@@ -50,11 +50,21 @@ export default function Hero() {
         <div className="card flex flex-col gap-6 p-5.5 sm:flex-row sm:items-center sm:gap-8 md:col-span-2 md:p-9 lg:col-span-6">
           <div
             aria-hidden="true"
-            className="grid h-55 shrink-0 place-items-center rounded-[1.25rem] bg-accent text-accent-fg sm:size-50"
+            className="mono-draw grid h-55 shrink-0 place-items-center rounded-[1.25rem] bg-accent text-accent-fg sm:size-50"
           >
-            <span className="text-[6.5rem] leading-none font-bold tracking-[-0.06em] sm:text-[5.75rem]">
-              FS
-            </span>
+            {/* SVG para poder dibujar el trazo de las letras (ver .mono-draw) */}
+            <svg viewBox="0 0 130 100" className="h-[6.5rem] overflow-visible sm:h-[5.75rem]">
+              <text
+                x="65"
+                y="50"
+                textAnchor="middle"
+                dominantBaseline="central"
+                fontSize="100"
+                className="font-bold tracking-[-0.06em]"
+              >
+                FS
+              </text>
+            </svg>
           </div>
           <div className="flex flex-col gap-3">
             <p className="label">{t("role")}</p>

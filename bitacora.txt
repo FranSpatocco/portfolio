@@ -588,6 +588,34 @@ CV: "Argentina (remoto)" al principio de la línea de contacto (campo
   location, nuevo en build-cv.mjs) y el perfil cierra con la búsqueda.
 GitHub: README y bio con el mismo mensaje; "Available for hire" activado.
 
+[14/10/2026] DECISIÓN — Spotlight como gesto principal y monograma animado
+Qué es: un brillo del color de acento que sigue al cursor e ilumina el
+  borde de las tarjetas cercanas, en todo el sitio. Además, al cargar, el
+  "FS" del hero se dibuja con un trazo, se rellena y el bloque late una vez.
+Para qué lo usé: el profesor sugirió que, para apuntar a frontend, el
+  sitio tuviera alguna animación que llame la atención (el estilo Bento le
+  pareció bien, pero muy visto). Reemplaza a la cinta como gesto principal.
+Por qué esto y no otra cosa: se compararon en una demo spotlight, monograma,
+  entrada en cascada y tarjeta de proyecto que se expande (FLIP). El
+  spotlight es el que más muestra oficio de frontend por su costo: CSS más
+  una variable por tarjeta, sin librerías. Se descartaron tilt 3D, cursor
+  custom y texto que se escribe solo (van contra la dirección visual). La
+  expansión FLIP queda para más adelante.
+Lo que aprendí / problema que resolví:
+  - El borde que se enciende es un ::after con padding de 1px y dos
+    máscaras con mask-composite: exclude: queda sólo el anillo.
+  - isolation: isolate en .card + z-index: -1 en los pseudo-elementos
+    pone el brillo entre el fondo y el contenido sin tocar los hijos.
+  - El mouse dispara más eventos que frames: se guarda la posición y se
+    calcula una vez por requestAnimationFrame, sólo para las tarjetas en
+    pantalla. También se recalcula con el scroll (las tarjetas se mueven
+    bajo un cursor quieto).
+  - Sólo se activa con matchMedia("(hover: hover) and (pointer: fine) and
+    (prefers-reduced-motion: no-preference)"): en touch no hay cursor.
+  - El monograma pasó a SVG para animar stroke-dashoffset del texto. Es el
+    elemento LCP: Lighthouse mobile (CPU 2x, 3 corridas) da 92–96 y LCP
+    2,7–3,1 s antes y después, sin cambios.
+
 ================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)
