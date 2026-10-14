@@ -2,8 +2,9 @@
 
 import { useEffect } from "react";
 
-// Sólo con mouse (en touch no hay cursor que seguir) y sin movimiento reducido
-const query = "(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)";
+// Sólo con mouse: en touch no hay cursor que seguir. No depende de
+// prefers-reduced-motion porque no desplaza nada, sólo ilumina
+const query = "(hover: hover) and (pointer: fine)";
 
 // Gesto principal del diseño: un brillo del acento sigue al cursor y
 // enciende el borde de las tarjetas cercanas. El efecto es CSS (.card en

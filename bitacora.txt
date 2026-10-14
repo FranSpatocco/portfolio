@@ -615,6 +615,11 @@ Lo que aprendí / problema que resolví:
   - El monograma pasó a SVG para animar stroke-dashoffset del texto. Es el
     elemento LCP: Lighthouse mobile (CPU 2x, 3 corridas) da 92–96 y LCP
     2,7–3,1 s antes y después, sin cambios.
+  - Ese mismo día Franco no veía nada: su Windows tenía apagados los
+    "Efectos de animación", y Chrome lo traduce en prefers-reduced-motion:
+    reduce. Como el spotlight no desplaza nada (sólo ilumina), se lo dejó
+    activo igual; las pautas de movimiento reducido apuntan a parallax,
+    zooms y desplazamientos. El monograma sí sigue respetando la preferencia.
 
 ================================================================
 RESUMEN PARA CV / LINKEDIN

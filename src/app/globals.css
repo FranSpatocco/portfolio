@@ -113,7 +113,7 @@ section[id] {
   }
 
   /* Spotlight: el gesto del diseño. Spotlight.tsx agrega .spotlight a <html>
-     (sólo con mouse y sin movimiento reducido) y pasa --spot-x/--spot-y */
+     (sólo con mouse; no mueve nada, así que sigue con movimiento reducido) y pasa --spot-x/--spot-y */
   .spotlight .card::before,
   .spotlight .card::after {
     content: "";
