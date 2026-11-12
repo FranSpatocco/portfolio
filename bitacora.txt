@@ -636,6 +636,64 @@ Lo que aprendí / problema que resolví: Laufen figuraba con iOS pero nunca
   en sitio, CV y README. Los textos nuevos del CV pasaban de una página:
   se acortaron dos viñetas del Dashboard en lugar de achicar la letra.
 
+[12/11/2026] DECISIÓN — "Preguntale al portfolio": asistente con IA en el hero
+Qué es: un campo en el hero donde el visitante pregunta por proyectos, stack o
+  disponibilidad y recibe una respuesta con fuentes que enlazan al caso de
+  estudio; la tarjeta citada se enciende en la página.
+Para qué lo usé: que el sitio demuestre lo que dice el CV (API de Claude, Zod,
+  límites de uso, plan B) en lugar de sólo mostrarlo. Gesto principal nuevo;
+  el spotlight queda como detalle. Hero recompuesto: identidad 5 columnas +
+  asistente 7, cinta a ancho completo y Geist Mono para rótulos técnicos.
+Por qué esto y no otra cosa: de tres conceptos (asistente, "rayos X" con Web
+  Vitals en vivo, proyectos con video) se eligió el que muestra más de lo que
+  Franco sabe hacer con IA. Sin 3D (regla vigente): protege LCP y TBT.
+  Haiku 5.5 por costo y latencia (preguntas cortas, esfuerzo bajo).
+Lo que aprendí / problema que resolví:
+  - Costo acotado: las preguntas sugeridas son texto fijo y no usan la API;
+    la libre tiene tope por visitante (hash de la IP) y global, por día, en
+    Upstash Redis (la memoria no se comparte entre instancias serverless).
+    Falla cerrado: sin clave o sin Redis en producción, 503 y quedan los chips.
+  - Anti prompt-injection: la pregunta va en <question> como dato, la salida
+    es estructurada (Zod) con fuentes de una lista cerrada y se recorta.
+  - El conocimiento sale de messages/, projects.ts, stack.ts y cv-data.mjs:
+    nada duplicado a mano. Un test comprueba que cada fuente exista.
+  - Zod no viaja al navegador: lo compartido está en lib/ai/contract.ts.
+  - vitest 5 pidió @types/node >= 22 (CI ya usa Node 22): se subió.
+  - Sin streaming ni typewriter (regla del proyecto); la respuesta aparece
+    completa y el área reserva alto para no mover la página.
+  - Pendiente de Franco: provisionar Upstash, cargar las variables en Vercel,
+    fijar un límite de gasto en la consola de Anthropic y probar con la clave
+    real (la llamada a la API no se pudo probar sin clave: sólo con mocks).
+
+[12/11/2026] PROBLEMA — Revisión del asistente antes de publicarlo
+Qué es: revisión de seguridad, velocidad y eficiencia de /api/ask, con prueba
+  real contra la API (Haiku 5.5, clave en .env.local, ignorado por git).
+Lo que aprendí / problema que resolví:
+  - Next 16.3.7 tenía una crítica en npm audit (RCE en imágenes con SVG y en
+    `use cache`, DoS con Server Actions): el sitio no usaba esas funciones,
+    pero se subió a 16.4.6 (0 vulnerabilidades).
+  - La pregunta iba dentro de <question>: se podía cerrar la etiqueta y colar
+    instrucciones. Ahora se reemplazan < y > antes de armar el mensaje.
+  - Cuerpo sin tope (ahora 2 KB, 413), cliente de Anthropic sin timeout (ahora
+    20 s, 1 reintento, maxDuration 30), 429 sin Retry-After.
+  - Topes: eran 2-4 viajes a Redis y el expire no era atómico. Ahora un solo
+    script Lua (EVALSHA) mira los dos topes y suma sólo si ambos permiten:
+    un visitante que ya pasó su tope no gasta el tope global.
+  - AbortSignal.any/timeout no existen en Safari < 17.4: timeout manual.
+  - `</>` en bento.aboutMark se leía como etiqueta ICU y tiraba un error de
+    next-intl en dev (el texto se veía igual): se lee con t.raw().
+  - Medido con la API real: respuestas en 2-5 s, prompt caching activo
+    (3.100-3.700 tokens leídos de caché, 0 tokens de razonamiento), ~190
+    tokens de salida: unos 0,02 centavos de dólar por pregunta. Inyección
+    (cerrar <question>, "ignorá tus instrucciones", "cuánto cobra", "trabajó
+    en Google"): no inventa y deriva al contacto. Tope por visitante: la 9.ª
+    pregunta da 429 con Retry-After.
+  - Lighthouse mobile (5 corridas, build de producción): performance 97-99
+    (mediana 99), accesibilidad 100, buenas prácticas 100, LCP 0,93 s, CLS 0.
+  - Sin probar: Fable 5.1 (no es gratis, $10/$50 por MTok; se decidió probar
+    sólo Haiku, el modelo de producción) y Redis real (Upstash se provisiona
+    al publicar; en producción sin Redis el campo libre se apaga).
+
 ================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)

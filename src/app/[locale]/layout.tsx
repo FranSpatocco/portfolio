@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
@@ -13,6 +13,13 @@ import "../globals.css";
 
 const geist = Geist({
   variable: "--font-geist",
+  subsets: ["latin"],
+});
+
+// Misma familia, versión monoespaciada: sólo para rótulos técnicos y
+// citas del asistente (clase font-mono)
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -68,7 +75,7 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${geist.variable} antialiased`}
+      className={`${geist.variable} ${geistMono.variable} antialiased`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />

@@ -4,6 +4,7 @@ import { site } from "@/config/site";
 import { routing, type Locale } from "@/i18n/routing";
 import { projects } from "@/data/projects";
 import { featuredStack } from "@/data/stack";
+import AskPortfolio from "./AskPortfolio";
 import CardCaption from "./CardCaption";
 import { ArrowUpRight, Download, Gauge, GitHub, Layout, LinkedIn, Phone } from "./icons";
 
@@ -47,13 +48,13 @@ export default function Hero() {
     >
       <div className="grid grid-cols-1 gap-4 md:grid-flow-dense md:grid-cols-2 md:gap-6 lg:grid-cols-12">
         {/* Presentación */}
-        <div className="card flex flex-col gap-6 p-5.5 sm:flex-row sm:items-center sm:gap-8 md:col-span-2 md:p-9 lg:col-span-6">
+        <div className="card flex flex-col gap-7 p-5.5 md:col-span-2 md:flex-row md:items-center md:gap-9 md:p-9 lg:col-span-5 lg:flex-col lg:items-start lg:justify-between">
           <div
             aria-hidden="true"
-            className="mono-draw grid h-55 shrink-0 place-items-center rounded-[1.25rem] bg-accent text-accent-fg sm:size-50"
+            className="mono-draw grid size-24 shrink-0 place-items-center rounded-[1.25rem] bg-accent text-accent-fg md:size-36 lg:size-24"
           >
             {/* SVG para poder dibujar el trazo de las letras (ver .mono-draw) */}
-            <svg viewBox="0 0 130 100" className="h-[6.5rem] overflow-visible sm:h-[5.75rem]">
+            <svg viewBox="0 0 130 100" className="h-1/2 overflow-visible">
               <text
                 x="65"
                 y="50"
@@ -73,7 +74,7 @@ export default function Hero() {
               className="text-[2.375rem] leading-[1.02] font-semibold tracking-[-0.035em] md:text-[2.75rem]"
             >
               {first}
-              <br className="hidden sm:block" /> {rest.join(" ")}.
+              <br className="hidden sm:block lg:block" /> {rest.join(" ")}.
             </h1>
             <p className="leading-relaxed text-muted">{t("tagline")}</p>
             <div className="mt-2 flex flex-wrap gap-2.5">
@@ -95,8 +96,11 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="flex min-w-0 flex-col gap-4 md:col-span-2 md:gap-6 lg:col-span-6">
-          {/* Cinta: el texto se lee completo en el sr-only, la animación es decorativa */}
+        {/* Asistente: el gesto del diseño (ver AskPortfolio) */}
+        <AskPortfolio />
+
+        {/* Cinta: el texto se lee completo en el sr-only, la animación es decorativa */}
+        <div className="md:col-span-2 lg:col-span-12">
           <div className="card flex h-13 shrink-0 items-center overflow-hidden rounded-full md:h-14">
             <p className="sr-only">{t("marqueeLabel")}</p>
             <div aria-hidden="true" className="marquee-track flex shrink-0">
@@ -120,38 +124,40 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="grid flex-1 grid-cols-2 gap-4 md:gap-6">
-            <a
-              href="#about"
-              className="card card-link flex min-h-48 flex-col p-4.5 md:min-h-65 md:p-6"
-            >
-              <span className="flex flex-1 flex-col items-center justify-center gap-1.5 pb-4">
-                <span className="text-[2.125rem] font-semibold tracking-[-0.04em] md:text-[2.5rem]">
-                  {tb("aboutMark")}
-                </span>
-                <span className="label hidden text-center md:block">{tb("aboutBadge")}</span>
-              </span>
-              <CardCaption label={tb("aboutLabel")} title={tb("aboutTitle")} arrow arrowClassName="hidden md:grid" />
-            </a>
-            <a
-              href="#projects"
-              className="card card-link flex min-h-48 flex-col overflow-hidden p-4.5 md:min-h-65 md:p-6"
-            >
-              <span className="flex flex-1 items-center justify-center pb-4">
-                {cover?.image && (
-                  <span className="relative aspect-[16/10] w-full overflow-hidden rounded-lg border border-border-strong md:w-[86%]">
-                    <Image src={cover.image} alt="" fill sizes="240px" className="object-cover" />
-                  </span>
-                )}
-              </span>
-              <CardCaption label={tb("projectsLabel")} title={tb("projectsTitle")} arrow arrowClassName="hidden md:grid" />
-            </a>
-          </div>
         </div>
+
+        <a
+          href="#about"
+          data-source="about"
+          className="card card-link flex min-h-48 flex-col p-4.5 md:min-h-65 md:p-6 lg:col-span-3"
+        >
+          <span className="flex flex-1 flex-col items-center justify-center gap-1.5 pb-4">
+            <span className="text-[2.125rem] font-semibold tracking-[-0.04em] md:text-[2.5rem]">
+              {tb.raw("aboutMark")}
+            </span>
+            <span className="label hidden text-center md:block">{tb("aboutBadge")}</span>
+          </span>
+          <CardCaption label={tb("aboutLabel")} title={tb("aboutTitle")} arrow arrowClassName="hidden md:grid" />
+        </a>
+        <a
+          href="#projects"
+          data-source={cover?.slug}
+          className="card card-link flex min-h-48 flex-col overflow-hidden p-4.5 md:min-h-65 md:p-6 lg:col-span-3"
+        >
+          <span className="flex flex-1 items-center justify-center pb-4">
+            {cover?.image && (
+              <span className="relative aspect-[16/10] w-full overflow-hidden rounded-lg border border-border-strong md:w-[86%]">
+                <Image src={cover.image} alt="" fill sizes="240px" className="object-cover" />
+              </span>
+            )}
+          </span>
+          <CardCaption label={tb("projectsLabel")} title={tb("projectsTitle")} arrow arrowClassName="hidden md:grid" />
+        </a>
 
         {/* Stack */}
         <section
           aria-labelledby="stack-title"
+          data-source="stack"
           className="card flex flex-col p-5 md:min-h-65 md:p-6 lg:col-span-3"
         >
           <ul className="flex flex-1 flex-wrap content-center gap-2 pb-5 text-[0.8125rem] font-medium">
@@ -244,7 +250,8 @@ export default function Hero() {
         {/* Contacto */}
         <a
           href="#contact"
-          className="card card-link flex flex-col justify-between gap-7 p-6 md:col-span-2 md:p-8 lg:col-span-6"
+          data-source="availability"
+          className="card card-link flex flex-col justify-between gap-7 p-6 md:col-span-2 md:p-8 lg:col-span-12"
         >
           <span className="label">{tb("contactLabel")}</span>
           <span className="flex items-end justify-between gap-4">

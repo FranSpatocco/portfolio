@@ -29,6 +29,7 @@ export default function Projects() {
         {projects.map((project) => (
           <article
             key={project.slug}
+            data-source={project.slug}
             className="card card-link flex flex-col gap-5 p-3 pb-6 md:gap-6 md:p-4 md:pb-7"
           >
             <ProjectCapture

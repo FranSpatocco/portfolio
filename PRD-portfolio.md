@@ -16,7 +16,7 @@ Tener el portfolio publicado con dominio propio, bilingüe (ES/EN), Lighthouse 9
 **No incluye (por ahora):**
 - El desarrollo de los 3 proyectos en sí (cada uno lleva su propio PRD)
 - Blog, CMS o panel de administración
-- Backend propio
+- Backend propio, salvo una única ruta serverless (`/api/ask`) para el asistente con IA del hero (ver abajo)
 
 ## Proyectos a mostrar
 1. **Dashboard con IA (proyecto estrella):** React + TypeScript + Firebase, con resúmenes o insights generados vía API de Claude desde una API Route (la key queda en el servidor).
@@ -42,6 +42,7 @@ Motivo: es el combo que más se repite en las ofertas remotas de LatAm (React + 
 
 - i18n → **next-intl**, con rutas `/es` y `/en` y textos en `messages/es.json` y `messages/en.json`. Todo texto nuevo va en ambos archivos; nunca hardcodeado en componentes.
 - Contacto → Formspree (sin backend propio).
+- Asistente "Preguntale al portfolio" → gesto principal desde el 12/11/2026. Una ruta `/api/ask` (Route Handler, el resto sigue SSG) llama a la API de Claude desde el servidor con lo que publica el sitio como único conocimiento; salida validada con Zod, topes diarios por visitante y globales (Upstash Redis) y falla cerrado: sin clave o sin Redis se apaga y quedan las preguntas sugeridas, que no usan la API.
 - Deploy → Vercel conectado al repo de GitHub, con deploy automático en cada push a `main`.
 - Dominio → propio (a definir).
 

@@ -38,6 +38,49 @@
       "mode": "Remoto desde <b>Argentina</b>"
     }
   },
+  "ask": {
+    "label": "Preguntale al portfolio",
+    "badgeAi": "IA",
+    "badgeSite": "Sitio",
+    "title": "¿Qué querés saber sobre mi trabajo?",
+    "chipsLabel": "Preguntas sugeridas",
+    "idle": "Elegí una pregunta o escribí la tuya. Respondo con lo que publica este sitio.",
+    "thinking": "Buscando en el sitio…",
+    "sourcesLabel": "Fuentes",
+    "inputLabel": "Tu pregunta sobre Franco",
+    "placeholder": "Preguntá por proyectos, stack o disponibilidad",
+    "send": "Preguntar",
+    "disclaimer": "Las respuestas libres las genera la API de Claude a partir del contenido de este sitio y pueden tener errores.",
+    "chips": {
+      "claude": {
+        "q": "¿Qué construyó con la API de Claude?",
+        "a": "El Dashboard con IA para una cafetería (Grano & Co.): un panel que genera un resumen semanal con la API de Claude desde el servidor. La respuesta se valida con Zod, se guarda en caché, tiene límites de uso y, si el modelo falla, el panel muestra un resumen por reglas."
+      },
+      "stack": {
+        "q": "¿Con qué tecnologías trabaja?",
+        "a": "React, TypeScript y Next.js en frontend, con Tailwind CSS y GSAP. Flutter y Firebase para apps de web y celular. En IA, la API de Claude, Claude Code, MCP y Zod; para calidad, Vitest y Playwright. Despliega con GitHub Actions y Vercel."
+      },
+      "availability": {
+        "q": "¿Está disponible para trabajar?",
+        "a": "Sí. Está disponible para empezar, de forma remota desde Argentina (UTC-3), en relación de dependencia o como freelance. Se lo puede contactar desde la sección Contacto."
+      },
+      "laufen": {
+        "q": "¿Hizo alguna app mobile?",
+        "a": "Laufen, una app de running hecha en Flutter y Firebase para Android y web: mapa en vivo, parciales por kilómetro, intervalos y récords personales. Se puede probar sin registrarse."
+      }
+    },
+    "sources": {
+      "about": "Sobre mí",
+      "stack": "Tecnologías",
+      "availability": "Contacto"
+    },
+    "errors": {
+      "invalid": "No pude entender la pregunta. Probá reformularla en pocas palabras.",
+      "rate_limited": "Se alcanzó el límite de preguntas libres por hoy. Las preguntas sugeridas siguen funcionando.",
+      "unavailable": "El asistente no está disponible ahora. Probá con una pregunta sugerida o escribile a Franco desde Contacto.",
+      "network": "No hubo conexión con el asistente. Probá de nuevo o elegí una pregunta sugerida."
+    }
+  },
   "bento": {
     "aboutLabel": "Más sobre mí",
     "aboutTitle": "Sobre mí",

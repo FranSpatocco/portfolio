@@ -9,14 +9,15 @@ Portfolio de Frontend Developer (React + TypeScript) para conseguir trabajo remo
 - Tailwind CSS v4 (config en `src/app/globals.css`, sin `tailwind.config`)
 - next-intl 4 con rutas `/es` y `/en` (default `es`)
 - GSAP + `@gsap/react` para animaciones
-- Formspree para el formulario de contacto (sin backend)
+- Formspree para el formulario de contacto
+- Una sola ruta dinámica, `src/app/api/ask/route.ts`, para el asistente con IA (API de Claude + Zod + Upstash Redis para los topes); el resto de las rutas sigue siendo SSG
 
 ## Estructura
 - `src/app/[locale]/` — layout raíz, home y `projects/[slug]` (caso de estudio)
 - `src/app/sitemap.ts`, `src/app/robots.ts` — SEO con `hreflang`
 - `src/proxy.ts` — middleware de next-intl (en Next 16 `middleware` se llama `proxy`)
 - `src/i18n/` — `routing.ts`, `request.ts`, `navigation.ts` (usar su `Link`, no el de `next/link`)
-- `src/components/` — `Hero` (la grilla bento de la home) y las secciones + `Reveal` (animaciones), `Spotlight` (brillo que sigue al cursor), `CardCaption` (pie de tarjeta con flecha), `Monogram`, `icons.tsx` (íconos de trazo), `SectionHeading`, `ProjectCapture`, `ProjectLinks`, `ThemeToggle`, `LocaleSwitcher`, `MobileMenu`
+- `src/components/` — `Hero` (la grilla bento de la home) y las secciones + `Reveal` (animaciones), `AskPortfolio` (asistente del hero, client), `Spotlight` (brillo que sigue al cursor), `CardCaption` (pie de tarjeta con flecha), `Monogram`, `icons.tsx` (íconos de trazo), `SectionHeading`, `ProjectCapture`, `ProjectLinks`, `ThemeToggle`, `LocaleSwitcher`, `MobileMenu`
 - `src/config/nav.ts` — secciones del menú (compartidas por el header y el menú mobile)
 - `src/config/site.ts` — nombre, URLs, links, CV, ID de Formspree
 - `src/data/projects.ts` — datos no traducibles de los proyectos (stack, links, imagen)
@@ -60,12 +61,21 @@ Portfolio de Frontend Developer (React + TypeScript) para conseguir trabajo remo
 - `npm run dev` — desarrollo en http://localhost:3000
 - `npm run build` — build de producción (verificar que todas las rutas salgan como SSG ●)
 - `npm run lint`
+- `npm run typecheck` · `npm test` (Vitest, sólo `src/**/*.test.ts`)
 - `npm run og` — genera las imágenes para compartir (`public/og/og-{es,en}.png`, 1200×630) desde `og/build-og.mjs`. Toda página con `openGraph` propio debe incluir `ogImage()` de `src/config/og.ts`.
 - `npm run cv` — genera el CV (ES/EN) desde `cv/cv-data.mjs`. Con datos `TODO(...)` pendientes deja borradores en `cv/out/`; sin pendientes publica `public/cv/cv-{es,en}.pdf`. Requiere `playwright-cli` global.
+
+## Asistente con IA ("Preguntale al portfolio")
+- Gesto principal desde el 12/11/2026 (reemplaza al spotlight como protagonista; el spotlight se mantiene). Vive en el hero: `AskPortfolio.tsx` (client) + `src/app/api/ask/route.ts` + `src/lib/ai/` (`knowledge` arma el contexto desde `messages/`, `projects.ts`, `stack.ts` y `cv/cv-data.mjs`: no hay copia a mano; `ask` llama a Claude; `limits` cuenta los usos; `contract` es lo único que viaja al navegador, sin Zod; `schema` valida en el servidor).
+- Las preguntas sugeridas (`src/data/ask.ts` + `ask.chips.*` en `messages/`) responden con texto fijo, sin API. Sólo la pregunta libre usa Claude (`claude-haiku-5-5` por defecto, `AI_MODEL` para cambiarlo).
+- Reglas: responde sólo con el contenido del sitio y cita fuentes (`data-source` / `data-cited` enciende la tarjeta citada); **sin efecto máquina de escribir ni streaming** (la respuesta aparece completa); no inventar cifras ni experiencia. Si cambia el contenido del sitio, el asistente lo toma solo; si se agrega un proyecto o sección citable, sumarlo a `SECTION_SOURCES` / `projects` y poner `data-source` en su tarjeta.
+- Falla cerrado: en producción sin `ANTHROPIC_API_KEY` o sin Redis, `/api/ask` responde 503 y quedan los chips. La CSP no cambia (`connect-src 'self'` alcanza; Claude se llama sólo desde el servidor).
+- El hero no se anima con opacidad (LCP); el área de respuesta reserva alto para no mover la página.
 
 ## Variables de entorno (`.env.local`, ver `.env.example`)
 - `NEXT_PUBLIC_SITE_URL` — opcional, sólo con dominio propio; por defecto https://franco-spatocco.vercel.app (canonical, sitemap, Open Graph)
 - `NEXT_PUBLIC_FORMSPREE_ID` — opcional; por defecto el form del portfolio (`xqpajwje`, los mensajes llegan a fspatocco02@gmail.com)
+- `ANTHROPIC_API_KEY` (y `ANTHROPIC_WORKSPACE_ID` si la clave lo pide), `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` (o `KV_REST_API_*` del Marketplace), `AI_GLOBAL_DAILY_CAP` (150), `AI_IP_DAILY_LIMIT` (8), `AI_MODEL` — del asistente; sólo servidor, cargar en Vercel con `--sensitive`
 
 ## Integrar un proyecto terminado
 Los 3 proyectos se desarrollan en carpetas y repos aparte (el Dashboard con IA y Laufen —app de running en Flutter, que reemplazó a la PWA con Capacitor— en otras sesiones de Claude Code). Al integrar uno:
