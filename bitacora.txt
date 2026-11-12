@@ -621,6 +621,21 @@ Lo que aprendí / problema que resolví:
     activo igual; las pautas de movimiento reducido apuntan a parallax,
     zooms y desplazamientos. El monograma sí sigue respetando la preferencia.
 
+[12/11/2026] DECISIÓN — Reposicionamiento a "Frontend + IA"
+Qué es: el perfil pasa de "Frontend Developer" a "Frontend Developer + IA",
+  alineado con LinkedIn.
+Para qué lo usé: CV (ES/EN) con perfil, experiencia y aptitudes nuevas
+  (grupo IA); título, meta description y hero del sitio; sección Sobre mí;
+  imagen para compartir y README de perfil de GitHub.
+Por qué esto y no otra cosa: el Dashboard con IA (API de Claude, Zod,
+  límites de uso, MCP, Vitest) ya respalda el giro con evidencia real.
+  Python y RAG figuran como "sumando", no como experiencia, hasta tener
+  un proyecto que los muestre.
+Lo que aprendí / problema que resolví: Laufen figuraba con iOS pero nunca
+  se compiló para iOS (hace falta una Mac); se corrige a "Android y web"
+  en sitio, CV y README. Los textos nuevos del CV pasaban de una página:
+  se acortaron dos viñetas del Dashboard en lugar de achicar la letra.
+
 ================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)

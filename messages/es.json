@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "{name} · Frontend Developer (React + TypeScript)",
-    "description": "Portfolio de {name}, Frontend Developer especializado en React, TypeScript y Next.js. Disponible para trabajo remoto desde Argentina. Proyectos, casos de estudio y contacto.",
-    "ogAlt": "Franco Spatocco — Frontend Developer · React · TypeScript. Tarjetas con el monograma FS, el stack y la disponibilidad: trabajo remoto desde Argentina."
+    "title": "{name} · Frontend Developer + IA (React + TypeScript)",
+    "description": "Portfolio de {name}, Frontend Developer + IA especializado en React, TypeScript y Next.js, con apps que integran la API de Claude. Disponible para trabajo remoto desde Argentina. Proyectos, casos de estudio y contacto.",
+    "ogAlt": "Franco Spatocco — Frontend Developer + IA · React · TypeScript. Tarjetas con el monograma FS, el stack y la disponibilidad: trabajo remoto desde Argentina."
   },
   "nav": {
     "skip": "Saltar al contenido",
@@ -26,13 +26,13 @@
     "en": "English"
   },
   "hero": {
-    "role": "Frontend Developer · React · TypeScript",
+    "role": "Frontend Developer + IA · React · TypeScript",
     "tagline": "Construyo interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy.",
     "ctaProjects": "Ver proyectos",
     "ctaContact": "Contactame",
-    "marqueeLabel": "Frontend Developer · React, TypeScript y Next.js · Disponible para trabajar · Remoto desde Argentina",
+    "marqueeLabel": "Frontend Developer + IA · React, TypeScript y Next.js · Disponible para trabajar · Remoto desde Argentina",
     "marquee": {
-      "role": "Frontend <b>Developer</b>",
+      "role": "Frontend <b>Developer + IA</b>",
       "stack": "React · TypeScript · <b>Next.js</b>",
       "available": "Disponible para <b>trabajar</b>",
       "mode": "Remoto desde <b>Argentina</b>"
@@ -42,7 +42,7 @@
     "aboutLabel": "Más sobre mí",
     "aboutTitle": "Sobre mí",
     "aboutMark": "</>",
-    "aboutBadge": "Desarrollador Frontend",
+    "aboutBadge": "Desarrollador Frontend + IA",
     "projectsLabel": "Trabajos",
     "projectsTitle": "Proyectos",
     "stackLabel": "Stack",
@@ -80,10 +80,10 @@
       },
       "laufen": {
         "title": "Laufen — app de running",
-        "summary": "App para registrar carreras con GPS, hecha 100% en Flutter: el mismo código funciona en Android, iOS y la web. Mapa en vivo, ritmo por kilómetro, intervalos e historial, con Firebase detrás.",
+        "summary": "App para registrar carreras con GPS, hecha 100% en Flutter: el mismo código funciona en Android y en la web. Mapa en vivo, ritmo por kilómetro, intervalos e historial, con Firebase detrás.",
         "problem": "Quería un proyecto mobile real, no una lista de tareas: algo que use el GPS del celular, dibuje un mapa en vivo y guarde los datos en la nube. Me inspiré en Strava, pero dejé de lado lo social para enfocarme en la carrera, con el mapa y los números como protagonistas. Como pieza de portfolio también tenía que poder probarse en un clic desde la computadora, sin registrarse y sin salir a correr.",
-        "decisions": "Elegí Flutter para tener una sola base de código en Android, iOS y web. El GPS a veces da saltos imposibles, así que descarto las lecturas poco precisas y las que implicarían correr a más de 8 m/s; eso lo descubrí probando en una carrera real. El momento exacto en que se cruza cada kilómetro se calcula entre dos lecturas de GPS, para que los parciales sean precisos. La app se usa sin cuenta: hay una carrera de ejemplo para recorrerla desde la PC, y el registro se pide recién al guardar una carrera. Las animaciones están hechas con las herramientas propias de Flutter, sin librerías extra, y el diseño se adapta de verdad a la computadora (barra lateral, mapa con un panel al costado) en lugar de estirar la versión de celular.",
-        "result": "Publicada en la web con Firebase Hosting e instalada y probada en un Android real, incluida una carrera al aire libre. Tiene tests de la lógica (parciales por kilómetro e intervalos) y de pantallas. Lo que más aprendí: los problemas importantes aparecieron recién en el dispositivo real (el login con Google que fallaba en Android, la distancia que se congelaba con la pantalla apagada, la barra de navegación tapando botones), así que probar en el celular desde temprano fue clave. Queda pendiente publicarla en las tiendas: iOS necesita una Mac."
+        "decisions": "Elegí Flutter para tener una sola base de código en Android y web. El GPS a veces da saltos imposibles, así que descarto las lecturas poco precisas y las que implicarían correr a más de 8 m/s; eso lo descubrí probando en una carrera real. El momento exacto en que se cruza cada kilómetro se calcula entre dos lecturas de GPS, para que los parciales sean precisos. La app se usa sin cuenta: hay una carrera de ejemplo para recorrerla desde la PC, y el registro se pide recién al guardar una carrera. Las animaciones están hechas con las herramientas propias de Flutter, sin librerías extra, y el diseño se adapta de verdad a la computadora (barra lateral, mapa con un panel al costado) en lugar de estirar la versión de celular.",
+        "result": "Publicada en la web con Firebase Hosting e instalada y probada en un Android real, incluida una carrera al aire libre. Tiene tests de la lógica (parciales por kilómetro e intervalos) y de pantallas. Lo que más aprendí: los problemas importantes aparecieron recién en el dispositivo real (el login con Google que fallaba en Android, la distancia que se congelaba con la pantalla apagada, la barra de navegación tapando botones), así que probar en el celular desde temprano fue clave. Queda pendiente publicarla en las tiendas de aplicaciones."
       }
     },
     "viewCase": "Ver caso",
@@ -109,10 +109,10 @@
   "about": {
     "title": "Sobre mí",
     "paragraphs": {
-      "intro": "Soy desarrollador frontend y trabajo con React, TypeScript y Next.js. Me gusta construir interfaces claras, rápidas y accesibles, y cuidar cada detalle desde el diseño hasta el deploy.",
+      "intro": "Soy Analista de Sistemas y desarrollo apps web con IA integrada, con React, TypeScript y Next.js. Armo proyectos de punta a punta, del diseño al deploy, cuidando que las interfaces sean claras, rápidas y accesibles.",
       "industry": "Me formé como Analista de Sistemas y en paralelo curso la Tecnicatura Superior en Mantenimiento Industrial, porque me atrae el cruce entre el software y la industria: automatización, Industria 4.0 y herramientas que ayuden a las empresas a aprovechar mejor sus datos.",
-      "ai": "Uso a diario herramientas de IA como Claude Code para programar, documentar y aprender más rápido, sin dejar de entender cada parte del código que entrego.",
-      "looking": "Estoy buscando trabajo y estoy disponible para empezar: de forma remota, desde Argentina, en relación de dependencia o como freelance. Busco mi primera experiencia laboral en IT y tengo muchas ganas de sumarme a un equipo, aprender y crecer profesionalmente."
+      "ai": "Trabajo todos los días con herramientas agénticas (Claude Code con servidores MCP y archivos de contexto del proyecto), entendiendo cada línea que subo. Hoy estoy sumando Python y RAG para crecer hacia AI Engineering.",
+      "looking": "Estoy buscando trabajo y estoy disponible para empezar: de forma remota, desde Argentina, en relación de dependencia o como freelance. Tengo muchas ganas de sumarme a un equipo, aprender y crecer profesionalmente."
     },
     "facts": {
       "statusLabel": "Estado",
@@ -124,7 +124,7 @@
       "educationLabel": "Formación",
       "education": "Tecnicatura Superior en Mantenimiento Industrial (en curso) · Analista de Sistemas",
       "interestsLabel": "Intereses",
-      "interests": "Frontend, automatización e Industria 4.0"
+      "interests": "Frontend, IA aplicada y automatización"
     },
     "stackTitle": "Tecnologías que uso",
     "label": "Quién soy"

@@ -1,12 +1,12 @@
 # Hola, soy Franco 👋
 
-**Frontend Developer · React · TypeScript · Next.js · Flutter**
+**Frontend Developer + IA · React · TypeScript · Next.js · Flutter**
 
-Analista de Sistemas. Construyo interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy: sitios y paneles web con Next.js, y apps para web y celular con Flutter.
+Analista de Sistemas. Desarrollo apps web con IA integrada, del diseño al deploy: paneles y sitios con Next.js y la API de Claude, y apps para web y celular con Flutter. Hoy estoy sumando Python y RAG.
 
 📬 **Estoy buscando trabajo y estoy disponible**: remoto, desde Argentina, en relación de dependencia o como freelance.
 
-_Frontend developer (React, TypeScript, Next.js, Flutter). I build fast, accessible interfaces from design to deploy. Looking for work and available now: remote, from Argentina, full-time or freelance._
+_Front-end developer + AI (React, TypeScript, Next.js, Flutter). I build web apps with integrated AI, from design to deploy. Looking for work and available now: remote, from Argentina, full-time or freelance._
 
 **Stack:** React · TypeScript · Next.js · Tailwind CSS · GSAP · Flutter · Dart · Firebase · Vercel · API de Claude
 
@@ -26,7 +26,7 @@ _Frontend developer (React, TypeScript, Next.js, Flutter). I build fast, accessi
     <td width="50%" valign="top">
       <a href="https://laufen-app.web.app"><img src="assets/laufen.webp" alt="Landing de Laufen con un mapa y una ruta de running"></a>
       <h3>Laufen · app de running</h3>
-      GPS, mapa en vivo, parciales por km e intervalos. Android, iOS y web con un mismo código.<br>
+      GPS, mapa en vivo, parciales por km e intervalos. Android y web con un mismo código.<br>
       <sub>Flutter · Dart · Firebase</sub><br>
       <a href="https://laufen-app.web.app"><b>Ver demo</b></a> · <a href="https://github.com/FranSpatocco/laufen">Código</a>
     </td>

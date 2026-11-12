@@ -15,7 +15,12 @@ export const stack = [
   "Firebase",
   "Git",
   "Vercel",
+  "Claude API",
   "Claude Code",
+  "MCP",
+  "Zod",
+  "Vitest",
+  "Playwright",
 ];
 
 export const featuredStack = [

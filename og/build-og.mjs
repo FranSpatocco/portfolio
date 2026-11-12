@@ -14,12 +14,14 @@ mkdirSync(publicDir, { recursive: true });
 
 const texts = {
   es: {
+    role: "Frontend Developer + IA · React · TypeScript",
     tagline: "Interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy.",
     modeLabel: "Disponible para trabajar",
     mode: "Remoto · Argentina",
     stackLabel: "Stack",
   },
   en: {
+    role: "Frontend Developer + AI · React · TypeScript",
     tagline: "Fast, accessible and maintainable interfaces, from design to deploy.",
     modeLabel: "Available for work",
     mode: "Remote · Argentina",
@@ -79,7 +81,7 @@ const render = (lang, t) => `<!doctype html>
   <div class="card hero">
     <div class="mono">FS</div>
     <div>
-      <p class="label">Frontend Developer · React · TypeScript</p>
+      <p class="label">${t.role}</p>
       <h1>Franco Spatocco.</h1>
       <p class="tagline">${t.tagline}</p>
     </div>

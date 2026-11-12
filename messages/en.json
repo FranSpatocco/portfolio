@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "{name} · Frontend Developer (React + TypeScript)",
-    "description": "Portfolio of {name}, a Frontend Developer focused on React, TypeScript and Next.js. Available for remote work from Argentina. Projects, case studies and contact.",
-    "ogAlt": "Franco Spatocco — Frontend Developer · React · TypeScript. Cards with the FS monogram, the stack and availability: remote work from Argentina."
+    "title": "{name} · Frontend Developer + AI (React + TypeScript)",
+    "description": "Portfolio of {name}, a Frontend Developer + AI focused on React, TypeScript and Next.js, building apps that integrate the Claude API. Available for remote work from Argentina. Projects, case studies and contact.",
+    "ogAlt": "Franco Spatocco — Frontend Developer + AI · React · TypeScript. Cards with the FS monogram, the stack and availability: remote work from Argentina."
   },
   "nav": {
     "skip": "Skip to content",
@@ -26,13 +26,13 @@
     "en": "English"
   },
   "hero": {
-    "role": "Frontend Developer · React · TypeScript",
+    "role": "Frontend Developer + AI · React · TypeScript",
     "tagline": "I build fast, accessible and maintainable interfaces, from design to deploy.",
     "ctaProjects": "See projects",
     "ctaContact": "Get in touch",
-    "marqueeLabel": "Frontend Developer · React, TypeScript and Next.js · Available for work · Remote from Argentina",
+    "marqueeLabel": "Frontend Developer + AI · React, TypeScript and Next.js · Available for work · Remote from Argentina",
     "marquee": {
-      "role": "Frontend <b>Developer</b>",
+      "role": "Frontend <b>Developer + AI</b>",
       "stack": "React · TypeScript · <b>Next.js</b>",
       "available": "Available <b>for work</b>",
       "mode": "Remote from <b>Argentina</b>"
@@ -42,7 +42,7 @@
     "aboutLabel": "More about me",
     "aboutTitle": "About me",
     "aboutMark": "</>",
-    "aboutBadge": "Frontend Developer",
+    "aboutBadge": "Frontend Developer + AI",
     "projectsLabel": "Work",
     "projectsTitle": "Projects",
     "stackLabel": "Stack",
@@ -80,10 +80,10 @@
       },
       "laufen": {
         "title": "Laufen — running app",
-        "summary": "GPS run tracker built 100% in Flutter: the same code runs on Android, iOS and the web. Live map, per-kilometer pace, intervals and history, backed by Firebase.",
+        "summary": "GPS run tracker built 100% in Flutter: the same code runs on Android and the web. Live map, per-kilometer pace, intervals and history, backed by Firebase.",
         "problem": "I wanted a real mobile project, not a to-do list: something that uses the phone's GPS, draws a live map and stores data in the cloud. I took Strava as a reference but left the social side out to focus on the run itself, with the map and the numbers front and center. As a portfolio piece it also had to be testable in one click from a computer, without signing up or going for a run.",
-        "decisions": "I chose Flutter to have a single codebase for Android, iOS and web. GPS sometimes jumps to impossible positions, so I discard low-accuracy readings and any that would mean running faster than 8 m/s; I found that out testing on a real run. The exact moment each kilometer is crossed is calculated between two GPS readings, so splits are accurate. The app works without an account: there's a sample run to explore it from a desktop, and signing up is only asked for when saving a run. Animations are built with Flutter's own tools, no extra libraries, and the layout truly adapts to desktop (side navigation, map with a side panel) instead of stretching the phone version.",
-        "result": "Published on the web with Firebase Hosting, and installed and tested on a real Android phone, including an outdoor run. It has tests for the logic (per-kilometer splits and intervals) and for screens. What I learned the most: the important bugs only showed up on the real device (Google sign-in failing on Android, distance freezing with the screen off, the navigation bar covering buttons), so testing on the phone early was key. Still pending: publishing to the app stores, since iOS needs a Mac."
+        "decisions": "I chose Flutter to have a single codebase for Android and web. GPS sometimes jumps to impossible positions, so I discard low-accuracy readings and any that would mean running faster than 8 m/s; I found that out testing on a real run. The exact moment each kilometer is crossed is calculated between two GPS readings, so splits are accurate. The app works without an account: there's a sample run to explore it from a desktop, and signing up is only asked for when saving a run. Animations are built with Flutter's own tools, no extra libraries, and the layout truly adapts to desktop (side navigation, map with a side panel) instead of stretching the phone version.",
+        "result": "Published on the web with Firebase Hosting, and installed and tested on a real Android phone, including an outdoor run. It has tests for the logic (per-kilometer splits and intervals) and for screens. What I learned the most: the important bugs only showed up on the real device (Google sign-in failing on Android, distance freezing with the screen off, the navigation bar covering buttons), so testing on the phone early was key. Still pending: publishing to the app stores."
       }
     },
     "viewCase": "View case",
@@ -109,10 +109,10 @@
   "about": {
     "title": "About me",
     "paragraphs": {
-      "intro": "I'm a frontend developer working with React, TypeScript and Next.js. I enjoy building clear, fast and accessible interfaces, and caring about every detail from design to deploy.",
+      "intro": "I'm a Systems Analyst building web apps with integrated AI, using React, TypeScript and Next.js. I ship projects end to end, from design to deploy, keeping interfaces clear, fast and accessible.",
       "industry": "My background is in Systems Analysis, and I'm also studying Industrial Maintenance at a technical college, because I'm drawn to where software meets industry: automation, Industry 4.0 and tools that help companies make better use of their data.",
-      "ai": "I use AI tools like Claude Code every day to code, document and learn faster, while making sure I understand every part of the code I ship.",
-      "looking": "I'm looking for work and available to start: remotely, from Argentina, full-time or freelance. I'm after my first job in tech and I'm eager to join a team, keep learning and grow professionally."
+      "ai": "I use agentic tools (Claude Code with MCP servers and project context files) every day, while understanding every line I commit. Currently adding Python and RAG to grow toward AI engineering.",
+      "looking": "I'm looking for work and available to start: remotely, from Argentina, full-time or freelance. I'm eager to join a team, keep learning and grow professionally."
     },
     "facts": {
       "statusLabel": "Status",
@@ -124,7 +124,7 @@
       "educationLabel": "Education",
       "education": "Industrial Maintenance technical degree (in progress) · Systems Analyst",
       "interestsLabel": "Interests",
-      "interests": "Frontend, automation and Industry 4.0"
+      "interests": "Frontend, applied AI and automation"
     },
     "stackTitle": "Technologies I use",
     "label": "Who I am"
