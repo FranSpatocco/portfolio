@@ -694,6 +694,23 @@ Lo que aprendí / problema que resolví:
     sólo Haiku, el modelo de producción) y Redis real (Upstash se provisiona
     al publicar; en producción sin Redis el campo libre se apaga).
 
+[12/11/2026] DECISIÓN — Nuevo frente "A": barra de comandos centrada
+Qué es: el hero pasa de la grilla bento con tarjeta de identidad a un frente
+  tipográfico: rótulo, nombre en grande (hasta 104 px), tagline, la barra del
+  asistente con sus preguntas sugeridas, la respuesta debajo y 4 tarjetas
+  (Sobre mí, Proyectos, Stack, Perfiles + descarga del CV).
+Por qué: la tarjeta del nombre copiaba el alto del asistente y quedaba
+  estirada, con un hueco vacío; el asistente era una caja con cajas adentro.
+  Se compararon 3 formatos en Claude Design (A barra centrada, B ventana de
+  chat, C titular gigante); Franco eligió la A.
+Lo que aprendí / problema que resolví:
+  - Se sacaron del hero la cinta, la tarjeta de Datos, Servicios y Contacto y
+    el monograma animado; Servicios y Contacto siguen como secciones y el
+    header tiene "Hablemos". El CSS sin uso (marquee, mono-draw) se borró.
+  - Un servidor viejo en el puerto de pruebas mostraba la página sin estilos
+    (la compilación nueva cambia los archivos CSS): probar siempre en un
+    puerto libre.
+
 ================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)

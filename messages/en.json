@@ -27,22 +27,12 @@
   },
   "hero": {
     "role": "Frontend Developer + AI · React · TypeScript",
-    "tagline": "I build fast, accessible and maintainable interfaces, from design to deploy.",
-    "ctaProjects": "See projects",
-    "ctaContact": "Get in touch",
-    "marqueeLabel": "Frontend Developer + AI · React, TypeScript and Next.js · Available for work · Remote from Argentina",
-    "marquee": {
-      "role": "Frontend <b>Developer + AI</b>",
-      "stack": "React · TypeScript · <b>Next.js</b>",
-      "available": "Available <b>for work</b>",
-      "mode": "Remote from <b>Argentina</b>"
-    }
+    "tagline": "I build web apps with integrated AI, from design to deploy."
   },
   "ask": {
     "label": "Ask the portfolio",
     "badgeAi": "AI",
     "badgeSite": "Site",
-    "title": "What do you want to know about my work?",
     "chipsLabel": "Suggested questions",
     "idle": "Pick a question or type your own. I answer with what this site publishes.",
     "thinking": "Searching the site…",
@@ -90,19 +80,8 @@
     "projectsTitle": "Projects",
     "stackLabel": "Stack",
     "stackTitle": "Technologies I use",
-    "servicesLabel": "Freelance services",
-    "servicesTitle": "What I offer",
     "profilesLabel": "Follow me",
-    "profilesTitle": "Profiles",
-    "factsLabel": "At a glance",
-    "facts": {
-      "projects": "Published projects",
-      "languages": "Bilingual site",
-      "a11y": "Lighthouse accessibility"
-    },
-    "contactLabel": "Available for work",
-    "together": "Let's work",
-    "togetherAccent": "together."
+    "profilesTitle": "Profiles"
   },
   "projects": {
     "title": "Projects",

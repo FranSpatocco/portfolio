@@ -12,20 +12,25 @@ import {
 } from "@/lib/ai/contract";
 import { ArrowRight } from "./icons";
 
+type ChipKey = (typeof chips)[number]["key"];
+
 type View =
   | { kind: "idle" }
   | { kind: "loading"; q: string }
-  | { kind: "answer"; q: string; answer: string; sources: SourceId[]; origin: "site" | "ai" }
+  | { kind: "answer"; q: string; answer: string; sources: SourceId[]; origin: "site" | "ai"; chip?: ChipKey }
   | { kind: "error"; q: string; code: AskErrorCode | "network" };
 
 const TIMEOUT_MS = 30_000;
 
 const isSection = (id: SourceId): id is keyof typeof sectionHref => id in sectionHref;
 
-// El gesto del diseño: un asistente que responde sobre Franco con lo que
-// publica el sitio y cita sus fuentes. Los chips responden con textos fijos
-// (sin API); la pregunta libre pasa por /api/ask. Al citar un proyecto o una
-// sección, su tarjeta se enciende en la página (data-source / data-cited).
+const sourceLink =
+  "flex min-h-11 items-center gap-2 rounded-full border border-border-strong px-4 text-sm font-medium transition-colors hover:border-accent hover:text-accent";
+
+// El gesto del diseño: una barra de comandos que responde sobre Franco con
+// lo que publica el sitio y cita sus fuentes. Los chips responden con textos
+// fijos (sin API); la pregunta libre pasa por /api/ask. Al citar un proyecto
+// o una sección, su tarjeta se enciende en la página (data-source / data-cited).
 export default function AskPortfolio() {
   const t = useTranslations("ask");
   const tp = useTranslations("projects");
@@ -51,8 +56,9 @@ export default function AskPortfolio() {
   useEffect(() => () => pending.current?.abort(), []);
 
   const busy = view.kind === "loading";
+  const activeChip = view.kind === "answer" ? view.chip : undefined;
 
-  function pickChip(key: (typeof chips)[number]["key"], sources: readonly SourceId[]) {
+  function pickChip(key: ChipKey, sources: readonly SourceId[]) {
     pending.current?.abort();
     setView({
       kind: "answer",
@@ -60,6 +66,7 @@ export default function AskPortfolio() {
       answer: t(`chips.${key}.a`),
       sources: [...sources],
       origin: "site",
+      chip: key,
     });
   }
 
@@ -115,44 +122,72 @@ export default function AskPortfolio() {
 
   return (
     <section
-      aria-labelledby="ask-title"
-      className="card flex flex-col gap-5 p-5.5 md:col-span-2 md:p-8 lg:col-span-7"
+      aria-label={t("label")}
+      className="mx-auto mt-10 flex max-w-[55rem] flex-col gap-4 md:mt-12 md:gap-5"
     >
-      <div className="flex flex-col gap-2.5">
-        <div className="flex items-center gap-2.5">
-          <span className="label">{t("label")}</span>
-          <span className="rounded-full bg-accent px-2.5 py-0.5 font-mono text-[0.6875rem] font-semibold tracking-wide text-accent-fg">
+      <form onSubmit={onSubmit}>
+        <label htmlFor={inputId} className="sr-only">
+          {t("inputLabel")}
+        </label>
+        <div className="flex items-center gap-2 rounded-full border border-border-strong bg-[linear-gradient(180deg,var(--surface),var(--surface-to))] py-1.5 pr-1.5 pl-5 shadow-[0_18px_48px_-18px_var(--shadow)] transition-colors focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/40 md:gap-3 md:py-2.5 md:pr-2.5 md:pl-7">
+          <span aria-hidden="true" className="font-mono text-lg text-accent md:text-xl">
+            &gt;
+          </span>
+          <input
+            id={inputId}
+            type="text"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            onKeyDown={onKeyDown}
+            maxLength={ASK_MAX_LENGTH}
+            autoComplete="off"
+            enterKeyHint="send"
+            placeholder={t("placeholder")}
+            className="h-12 min-w-0 flex-1 bg-transparent text-base outline-none! placeholder:text-subtle md:h-14 md:text-[1.1875rem]"
+          />
+          <span
+            aria-hidden="true"
+            className="hidden h-7 items-center rounded-full bg-raised px-2.5 font-mono text-[0.6875rem] font-medium tracking-wide text-muted sm:flex"
+          >
             {t("badgeAi")}
           </span>
+          <button
+            type="submit"
+            disabled={busy || text.trim().length < 2}
+            aria-label={t("send")}
+            className="grid size-12 shrink-0 place-items-center rounded-full bg-accent text-accent-fg transition-colors hover:bg-accent-hover disabled:opacity-40 md:size-14"
+          >
+            <ArrowRight className="size-5 md:size-5.5" strokeWidth={2} />
+          </button>
         </div>
-        <h2
-          id="ask-title"
-          className="text-[1.625rem] leading-[1.1] font-semibold tracking-[-0.03em] md:text-[2.125rem]"
-        >
-          {t("title")}
-        </h2>
-      </div>
+      </form>
 
-      <ul aria-label={t("chipsLabel")} className="flex flex-wrap gap-2">
-        {chips.map(({ key, sources }) => (
-          <li key={key}>
-            <button
-              type="button"
-              onClick={() => pickChip(key, sources)}
-              className="min-h-11 rounded-full border border-border-strong bg-raised px-4 text-left text-[0.8125rem] font-medium transition-colors hover:border-accent"
-            >
-              {t(`chips.${key}.q`)}
-            </button>
-          </li>
-        ))}
+      <ul aria-label={t("chipsLabel")} className="flex flex-wrap justify-center gap-2 md:gap-2.5">
+        {chips.map(({ key, sources }) => {
+          const active = activeChip === key;
+          return (
+            <li key={key}>
+              <button
+                type="button"
+                aria-pressed={active}
+                onClick={() => pickChip(key, sources)}
+                className={`min-h-11 rounded-full border px-4 text-sm font-medium transition-colors hover:border-accent md:px-5 ${
+                  active ? "border-accent bg-raised" : "border-border-strong"
+                }`}
+              >
+                {t(`chips.${key}.q`)}
+              </button>
+            </li>
+          );
+        })}
       </ul>
 
-      {/* Salida: alto reservado para que la respuesta no mueva el resto de la página */}
+      {/* Salida: alto reservado para que la respuesta no mueva lo que está debajo */}
       <div
         aria-live="polite"
-        className="flex min-h-96 flex-col justify-center gap-3 rounded-[1.25rem] border border-line bg-inset p-4.5 md:min-h-80 md:p-5.5"
+        className="card flex min-h-52 flex-col justify-center gap-4 p-5.5 md:min-h-60 md:p-8"
       >
-        {view.kind === "idle" && <p className="text-muted">{t("idle")}</p>}
+        {view.kind === "idle" && <p className="text-center text-muted">{t("idle")}</p>}
 
         {view.kind === "loading" && (
           <>
@@ -171,31 +206,25 @@ export default function AskPortfolio() {
         {view.kind === "answer" && (
           <>
             <p className="font-mono text-[0.8125rem] break-words text-subtle">&gt; {view.q}</p>
-            <p className="text-[1.0625rem] leading-relaxed">{view.answer}</p>
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 pt-1">
-              <span className="rounded-full border border-border-strong px-2.5 py-0.5 font-mono text-[0.6875rem] tracking-wide text-muted">
+            <p className="text-[1.0625rem] leading-relaxed md:text-xl md:leading-relaxed">{view.answer}</p>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-border pt-4 md:pt-5">
+              <span className="rounded-full border border-border-strong px-2.5 py-0.5 font-mono text-[0.6875rem] tracking-wide text-muted uppercase">
                 {view.origin === "ai" ? t("badgeAi") : t("badgeSite")}
               </span>
               {view.sources.length > 0 && (
                 <>
-                  <span className="label">{t("sourcesLabel")}</span>
+                  <span className="label font-mono">{t("sourcesLabel")}</span>
                   <ul className="flex flex-wrap gap-2">
                     {view.sources.map((id) => (
                       <li key={id}>
                         {isSection(id) ? (
-                          <a
-                            href={sectionHref[id]}
-                            className="rounded-full border border-border-strong px-3 py-1.5 text-[0.8125rem] font-medium transition-colors hover:border-accent hover:text-accent"
-                          >
+                          <a href={sectionHref[id]} className={sourceLink}>
                             {t(`sources.${id}`)}
                           </a>
                         ) : (
                           projects.some((p) => p.slug === id) && (
-                            <Link
-                              href={`/projects/${id}`}
-                              className="rounded-full border border-border-strong px-3 py-1.5 text-[0.8125rem] font-medium transition-colors hover:border-accent hover:text-accent"
-                            >
-                              <span className="font-mono text-subtle">{projectCode(id)}</span>{" "}
+                            <Link href={`/projects/${id}`} className={sourceLink}>
+                              <span className="font-mono text-subtle">{projectCode(id)}</span>
                               {tp(`items.${id}.title`)}
                             </Link>
                           )
@@ -210,37 +239,7 @@ export default function AskPortfolio() {
         )}
       </div>
 
-      <form onSubmit={onSubmit} className="flex flex-col gap-2.5">
-        <label htmlFor={inputId} className="sr-only">
-          {t("inputLabel")}
-        </label>
-        <div className="flex items-center gap-2 rounded-full border border-border-strong bg-inset py-1.5 pr-1.5 pl-5 transition-colors focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/40">
-          <span aria-hidden="true" className="font-mono text-accent">
-            &gt;
-          </span>
-          <input
-            id={inputId}
-            type="text"
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            onKeyDown={onKeyDown}
-            maxLength={ASK_MAX_LENGTH}
-            autoComplete="off"
-            enterKeyHint="send"
-            placeholder={t("placeholder")}
-            className="h-11 min-w-0 flex-1 bg-transparent text-base outline-none! placeholder:text-subtle"
-          />
-          <button
-            type="submit"
-            disabled={busy || text.trim().length < 2}
-            aria-label={t("send")}
-            className="grid size-11 shrink-0 place-items-center rounded-full bg-accent text-accent-fg transition-colors hover:bg-accent-hover disabled:opacity-40"
-          >
-            <ArrowRight className="size-5" strokeWidth={2} />
-          </button>
-        </div>
-        <p className="font-mono text-[0.6875rem] leading-snug text-subtle">{t("disclaimer")}</p>
-      </form>
+      <p className="text-center font-mono text-[0.6875rem] leading-snug text-subtle">{t("disclaimer")}</p>
     </section>
   );
 }

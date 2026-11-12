@@ -25,7 +25,7 @@ export default function CardCaption({
   return (
     <div className={`flex items-end justify-between gap-4 ${className}`}>
       <div className="flex flex-col gap-1">
-        <span className="label">{label}</span>
+        <span className="label font-mono">{label}</span>
         <Title className="text-[1.1875rem] font-semibold tracking-[-0.01em] md:text-[1.375rem]">
           {title}
         </Title>

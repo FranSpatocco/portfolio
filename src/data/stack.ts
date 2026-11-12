@@ -27,8 +27,8 @@ export const featuredStack = [
   "React",
   "TypeScript",
   "Next.js",
+  "Claude API",
   "Tailwind CSS",
-  "GSAP",
   "Flutter",
   "Firebase",
 ];

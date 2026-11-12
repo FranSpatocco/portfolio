@@ -27,22 +27,12 @@
   },
   "hero": {
     "role": "Frontend Developer + IA · React · TypeScript",
-    "tagline": "Construyo interfaces rápidas, accesibles y fáciles de mantener, del diseño al deploy.",
-    "ctaProjects": "Ver proyectos",
-    "ctaContact": "Contactame",
-    "marqueeLabel": "Frontend Developer + IA · React, TypeScript y Next.js · Disponible para trabajar · Remoto desde Argentina",
-    "marquee": {
-      "role": "Frontend <b>Developer + IA</b>",
-      "stack": "React · TypeScript · <b>Next.js</b>",
-      "available": "Disponible para <b>trabajar</b>",
-      "mode": "Remoto desde <b>Argentina</b>"
-    }
+    "tagline": "Desarrollo apps web con IA integrada, del diseño al deploy."
   },
   "ask": {
     "label": "Preguntale al portfolio",
     "badgeAi": "IA",
     "badgeSite": "Sitio",
-    "title": "¿Qué querés saber sobre mi trabajo?",
     "chipsLabel": "Preguntas sugeridas",
     "idle": "Elegí una pregunta o escribí la tuya. Respondo con lo que publica este sitio.",
     "thinking": "Buscando en el sitio…",
@@ -90,19 +80,8 @@
     "projectsTitle": "Proyectos",
     "stackLabel": "Stack",
     "stackTitle": "Tecnologías que uso",
-    "servicesLabel": "Servicios freelance",
-    "servicesTitle": "Lo que ofrezco",
     "profilesLabel": "Seguime",
-    "profilesTitle": "Perfiles",
-    "factsLabel": "Datos",
-    "facts": {
-      "projects": "Proyectos publicados",
-      "languages": "Sitio bilingüe",
-      "a11y": "Accesibilidad en Lighthouse"
-    },
-    "contactLabel": "Disponible para trabajar",
-    "together": "Trabajemos",
-    "togetherAccent": "juntos."
+    "profilesTitle": "Perfiles"
   },
   "projects": {
     "title": "Proyectos",

@@ -94,13 +94,6 @@ section[id] {
   scroll-margin-top: 6rem;
 }
 
-/* Cinta de texto del hero. Sólo CSS, sin JS */
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
-  }
-}
-
 @layer components {
   /* Tarjeta bento: la unidad de todo el sitio */
   .card {
@@ -208,60 +201,11 @@ section[id] {
       var(--raised) 10px 20px
     );
   }
-
-  .marquee-track {
-    animation: marquee 28s linear infinite;
-  }
-
-  /* Monograma del hero: el trazo dibuja "FS", se rellena y el bloque late
-     una vez. Es el elemento LCP: medido con Lighthouse, la animación no
-     lo empeora (2,7–3,1 s antes y después, mobile con CPU 2x) */
-  .mono-draw text {
-    fill: currentColor;
-    stroke: currentColor;
-    stroke-width: 1.5;
-    stroke-opacity: 0;
-    stroke-dasharray: 600;
-    animation:
-      mono-stroke 1.6s cubic-bezier(0.6, 0, 0.3, 1) both,
-      mono-fill 0.6s ease 1s both;
-  }
-  .mono-draw {
-    animation: mono-pulse 0.9s ease 1.5s;
-  }
-}
-
-@keyframes mono-stroke {
-  from {
-    stroke-dashoffset: 600;
-    stroke-opacity: 1;
-  }
-  75% {
-    stroke-dashoffset: 0;
-    stroke-opacity: 1;
-  }
-}
-@keyframes mono-fill {
-  from {
-    fill: transparent;
-  }
-}
-@keyframes mono-pulse {
-  50% {
-    box-shadow: 0 0 0 0.875rem color-mix(in srgb, var(--accent) 18%, transparent);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .card-link:hover,
   .card-link:focus-visible {
     transform: none;
-  }
-  .marquee-track {
-    animation: none;
-  }
-  .mono-draw,
-  .mono-draw text {
-    animation: none;
   }
 }

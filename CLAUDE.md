@@ -17,7 +17,7 @@ Portfolio de Frontend Developer (React + TypeScript) para conseguir trabajo remo
 - `src/app/sitemap.ts`, `src/app/robots.ts` — SEO con `hreflang`
 - `src/proxy.ts` — middleware de next-intl (en Next 16 `middleware` se llama `proxy`)
 - `src/i18n/` — `routing.ts`, `request.ts`, `navigation.ts` (usar su `Link`, no el de `next/link`)
-- `src/components/` — `Hero` (la grilla bento de la home) y las secciones + `Reveal` (animaciones), `AskPortfolio` (asistente del hero, client), `Spotlight` (brillo que sigue al cursor), `CardCaption` (pie de tarjeta con flecha), `Monogram`, `icons.tsx` (íconos de trazo), `SectionHeading`, `ProjectCapture`, `ProjectLinks`, `ThemeToggle`, `LocaleSwitcher`, `MobileMenu`
+- `src/components/` — `Hero` (frente de la home: nombre en tipografía, asistente y 4 tarjetas) y las secciones + `Reveal` (animaciones), `AskPortfolio` (asistente del hero, client), `Spotlight` (brillo que sigue al cursor), `CardCaption` (pie de tarjeta con flecha), `Monogram`, `icons.tsx` (íconos de trazo), `SectionHeading`, `ProjectCapture`, `ProjectLinks`, `ThemeToggle`, `LocaleSwitcher`, `MobileMenu`
 - `src/config/nav.ts` — secciones del menú (compartidas por el header y el menú mobile)
 - `src/config/site.ts` — nombre, URLs, links, CV, ID de Formspree
 - `src/data/projects.ts` — datos no traducibles de los proyectos (stack, links, imagen)
@@ -29,9 +29,9 @@ Portfolio de Frontend Developer (React + TypeScript) para conseguir trabajo remo
 - Cada página nueva con segmentos dinámicos: `generateStaticParams` para que siga siendo estática, y `generateMetadata` con `alternates.languages`. El idioma se lee con `next/root-params` en `src/i18n/request.ts`: **no usar `setRequestLocale`** (es el método legacy).
 - Para documentación de librerías usar el MCP de Context7; para probar en navegador, `playwright-cli`.
 - Colores sólo con los tokens (`bg`, `surface`, `inset`, `raised`, `fg`, `muted`, `subtle`, `border`, `border-strong`, `line`, `accent`, `accent-hover`, `accent-fg`); el modo oscuro se resuelve redefiniendo las variables en `.dark`. Tarjetas con la clase `.card` (y `.card-link` si son clickeables, con la flecha `.arrow`); rótulos con `.label`; capturas faltantes con `.hatch`.
-- Grillas: siempre con columnas explícitas (`grid-cols-1` en mobile), si no la cinta del hero o un texto largo ensanchan la página.
-- Animaciones (lo que desplaza o transforma) sólo a través de `Reveal` o `gsap.matchMedia` con `(prefers-reduced-motion: no-preference)`. La grilla del hero no se anima con opacidad (está above the fold, afecta el LCP); el monograma sí se dibuja, medido sin impacto en el LCP. La cinta es CSS puro y se frena con movimiento reducido.
-- Cifras de la tarjeta "Datos": sólo verificables (proyectos publicados, idiomas, accesibilidad 100 en Lighthouse). Si alguna deja de ser cierta, se cambia.
+- Grillas: siempre con columnas explícitas (`grid-cols-1` en mobile), si no un texto largo ensancha la página.
+- Animaciones (lo que desplaza o transforma) sólo a través de `Reveal` o `gsap.matchMedia` con `(prefers-reduced-motion: no-preference)`. El hero no se anima con opacidad (está above the fold, afecta el LCP).
+- Cualquier cifra que se muestre tiene que ser verificable (ej. accesibilidad 100 en Lighthouse). Desde el 12/11/2026 el hero ya no tiene tarjeta "Datos", cinta ni monograma animado.
 - Imágenes con `next/image` y `alt` traducido.
 - Accesibilidad: HTML semántico, contraste AA, foco visible, navegación por teclado.
 - Mobile-first. Objetivo Lighthouse 95+ en las cuatro métricas.
