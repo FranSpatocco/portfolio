@@ -66,7 +66,7 @@ export const cv = {
         links: [contact.site, { href: "https://github.com/FranSpatocco/portfolio", text: "código" }],
         stack: "Next.js, TypeScript, Tailwind CSS, API de Claude",
         bullets: [
-          "Sitio bilingüe (ES/EN) con deploy continuo y un asistente con IA (API de Claude, topes en Redis) que responde citando fuentes, a menos de US$ 0,001 por respuesta.",
+          "Sitio bilingüe (ES/EN) estático, con SEO técnico y deploy continuo, y un asistente con IA (API de Claude, salida validada con Zod, topes en Redis) que responde sobre mi perfil citando fuentes, a menos de US$ 0,001 por respuesta.",
         ],
       },
     ],
@@ -80,6 +80,7 @@ export const cv = {
         ],
       },
       {
+        pdf: false, // el CV en español muestra sólo la experiencia más reciente
         role: "Encargado de depósito",
         org: "Zoom Bazar, Mar del Plata",
         meta: "Oct 2025 – Jul 2026",

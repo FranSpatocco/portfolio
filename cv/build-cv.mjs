@@ -76,7 +76,9 @@ function render(d) {
     )
     .join("");
 
+  // pdf: false deja la entrada fuera del PDF pero no del sitio ni del asistente
   const experience = d.experience
+    .filter((e) => e.pdf !== false)
     .map((e) => entry({ title: v(e.role), sub: v(e.org), meta: v(e.meta), bullets: e.bullets }))
     .join("");
 
@@ -104,7 +106,7 @@ function render(d) {
      acento del modo claro */
   @page { size: A4; margin: 12mm 15mm; }
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: "Geist", system-ui, sans-serif; font-size: 9.2pt; line-height: 1.41; color: #141416; }
+  body { margin: 0; font-family: "Geist", system-ui, sans-serif; font-size: 9.2pt; line-height: 1.45; color: #141416; }
   a { color: inherit; text-decoration: none; }
   mark { background: #fde68a; color: #141416; padding: 0 2px; }
   header { display: flex; align-items: center; gap: 12pt; padding: 11pt 12pt; border: 0.75pt solid #e2e2df; border-radius: 12pt; background: #f6f6f4; }

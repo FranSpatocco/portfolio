@@ -766,8 +766,9 @@ Por qué esto y no otra cosa: en el CV, una sola viñeta dentro del proyecto Por
   (el CV tiene que entrar en una página); sólo cifras verificadas (menos de
   US$ 0,001 por respuesta, medido). En el README, una línea con link y la captura nueva.
 Lo que aprendí / problema que resolví:
-  - La viñeta nueva hacía pasar el CV a 2 páginas; se unieron dos viñetas y se bajó el
-    interlineado de 1.45 a 1.41 (casi no se nota) para volver a una página.
+  - La viñeta nueva hacía pasar el CV a 2 páginas. En el CV en español se dejó sólo la
+    experiencia más reciente (marca pdf: false en la entrada de Zoom Bazar: sale del PDF
+    pero el sitio y el asistente la siguen conociendo) y el interlineado volvió a 1.45.
   - La captura del README estaba vieja (hero anterior): se regeneró desde producción.
 
 ================================================================
