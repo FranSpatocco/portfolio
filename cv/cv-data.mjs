@@ -64,9 +64,9 @@ export const cv = {
         name: "Portfolio personal",
         meta: "2026",
         links: [contact.site, { href: "https://github.com/FranSpatocco/portfolio", text: "código" }],
-        stack: "Next.js, TypeScript, Tailwind CSS, GSAP",
+        stack: "Next.js, TypeScript, Tailwind CSS, API de Claude",
         bullets: [
-          "Sitio bilingüe (ES/EN) generado estático, con SEO técnico, controles de accesibilidad y deploy continuo desde GitHub.",
+          "Sitio bilingüe (ES/EN) con deploy continuo y un asistente con IA (API de Claude, topes en Redis) que responde citando fuentes, a menos de US$ 0,001 por respuesta.",
         ],
       },
     ],
@@ -172,9 +172,9 @@ export const cv = {
         name: "Personal portfolio",
         meta: "2026",
         links: [contact.site, { href: "https://github.com/FranSpatocco/portfolio", text: "source" }],
-        stack: "Next.js, TypeScript, Tailwind CSS, GSAP",
+        stack: "Next.js, TypeScript, Tailwind CSS, Claude API",
         bullets: [
-          "Bilingual (ES/EN) site, statically generated, with technical SEO, accessibility checks and continuous deploy from GitHub.",
+          "Bilingual (ES/EN) static site with technical SEO and continuous deploy, plus an AI assistant (Claude API, Zod-validated output, Redis usage caps) that answers about my profile citing sources, at under US$ 0.001 per answer.",
         ],
       },
     ],

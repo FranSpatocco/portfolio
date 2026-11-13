@@ -21,12 +21,12 @@ export const faq: FaqEntry[] = [
     es: {
       q: "¿Está disponible para trabajar?",
       k: ["disponib", "puede+empezar", "puede+incorporar", "cuando+empez"],
-      a: "Sí. Está buscando trabajo y disponible para empezar, de forma remota desde Argentina (UTC-3), en relación de dependencia o como freelance.",
+      a: "Sí. Está buscando trabajo y disponible para empezar, en relación de dependencia o como freelance.",
     },
     en: {
       q: "Is he available to work?",
       k: ["available+to+work", "available+to+start", "available+for+work", "is+he+available", "can+start", "when+start", "open+to+work"],
-      a: "Yes. He is looking for work and available to start, remotely from Argentina (UTC-3), either as an employee or as a freelancer.",
+      a: "Yes. He is looking for work and available to start, either as an employee or as a freelancer.",
     },
   },
   {

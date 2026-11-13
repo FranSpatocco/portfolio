@@ -759,6 +759,17 @@ Lo que aprendí / problema que resolví:
     caché) y US$ 0,0006 (cuando hay que escribirlo) por pregunta libre.
   - Los tokens de razonamiento ya vienen dentro de output_tokens, no se suman aparte.
 
+[12/11/2026] DECISIÓN — CV y README de GitHub con el asistente
+Qué es: el asistente con IA suma a los dos CV (ES/EN) y al README del perfil.
+Para qué lo usé: que quien lea el CV o el perfil sepa que el portfolio responde con IA.
+Por qué esto y no otra cosa: en el CV, una sola viñeta dentro del proyecto Portfolio
+  (el CV tiene que entrar en una página); sólo cifras verificadas (menos de
+  US$ 0,001 por respuesta, medido). En el README, una línea con link y la captura nueva.
+Lo que aprendí / problema que resolví:
+  - La viñeta nueva hacía pasar el CV a 2 páginas; se unieron dos viñetas y se bajó el
+    interlineado de 1.45 a 1.41 (casi no se nota) para volver a una página.
+  - La captura del README estaba vieja (hero anterior): se regeneró desde producción.
+
 ================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)

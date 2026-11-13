@@ -10,6 +10,8 @@ _Front-end developer + AI (React, TypeScript, Next.js, Flutter). I build web app
 
 **Stack:** React · TypeScript · Next.js · Tailwind CSS · GSAP · Flutter · Dart · Firebase · Vercel · API de Claude
 
+🤖 **Preguntale al portfolio**: [mi sitio](https://franco-spatocco.vercel.app) tiene un asistente con IA que responde sobre mis proyectos, stack y disponibilidad, solo con lo que publico y citando fuentes. _Ask the portfolio: an AI assistant answers about my work, only from what the site publishes._
+
 ## Proyectos
 
 <table>
@@ -31,10 +33,10 @@ _Front-end developer + AI (React, TypeScript, Next.js, Flutter). I build web app
       <a href="https://laufen-app.web.app"><b>Ver demo</b></a> · <a href="https://github.com/FranSpatocco/laufen">Código</a>
     </td>
     <td width="50%" valign="top">
-      <a href="https://franco-spatocco.vercel.app"><img src="assets/portfolio.webp" alt="Portfolio de Franco Spatocco con diseño de tarjetas"></a>
+      <a href="https://franco-spatocco.vercel.app"><img src="assets/portfolio.webp" alt="Portfolio de Franco Spatocco con el nombre en grande y una barra para preguntarle al asistente con IA"></a>
       <h3>Portfolio</h3>
-      Bilingüe (ES/EN), con animaciones y diseño de tarjetas. Lighthouse 90+ en mobile.<br>
-      <sub>Next.js · TypeScript · Tailwind CSS · next-intl · GSAP</sub><br>
+      Bilingüe (ES/EN), con un asistente con IA (API de Claude, salida validada con Zod y topes de uso en Redis). Lighthouse 95+ en mobile.<br>
+      <sub>Next.js · TypeScript · Tailwind CSS · next-intl · API de Claude</sub><br>
       <a href="https://franco-spatocco.vercel.app"><b>Ver sitio</b></a> · <a href="https://github.com/FranSpatocco/portfolio">Código</a>
     </td>
   </tr>
