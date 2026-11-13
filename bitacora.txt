@@ -711,6 +711,21 @@ Lo que aprendí / problema que resolví:
     (la compilación nueva cambia los archivos CSS): probar siempre en un
     puerto libre.
 
+[12/11/2026] PROBLEMA — Asistente en producción: 503 hasta el redeploy
+Qué es: puesta en marcha del asistente (Upstash Redis + clave de Anthropic en Vercel).
+Para qué lo usé: activar la pregunta libre en franco-spatocco.vercel.app.
+Por qué esto y no otra cosa: el asistente falla cerrado (503) sin clave o sin Redis,
+  para no gastar sin tope; en el sitio se ve como "fuera de servicio".
+Lo que aprendí / problema que resolví:
+  - Con las variables cargadas seguía el 503: las variables de Vercel sólo
+    aplican a deploys creados después de guardarlas. Un push a main (commit
+    vacío) generó el deploy nuevo y el asistente respondió.
+  - El 503 por variable faltante no escribe nada en los logs; sólo los fallos
+    de Redis o de Claude lo hacen. Logs vacíos = revisar variables y deploy.
+  - Upstash for Redis (Marketplace): eviction apagado (si se borrara un contador
+    se perdería el tope), prefijo vacío para que queden KV_REST_API_URL/TOKEN.
+  - Pendiente: límite de gasto mensual de la clave en la consola de Anthropic.
+
 ================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)
