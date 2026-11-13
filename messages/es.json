@@ -37,6 +37,7 @@
     "idle": "Elegí una pregunta o escribí la tuya. Respondo con lo que publica este sitio.",
     "thinking": "Buscando en el sitio…",
     "sourcesLabel": "Fuentes",
+    "cost": "Costo estimado de esta respuesta: {value}",
     "inputLabel": "Tu pregunta sobre Franco",
     "placeholder": "Preguntá por proyectos, stack o disponibilidad",
     "send": "Preguntar",

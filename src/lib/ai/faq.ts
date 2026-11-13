@@ -47,5 +47,5 @@ export function answerFromFaq(question: string, lang: AskRequest["lang"]): AskAn
   const found = findFaq(question, lang);
   if (found.length !== 1) return null;
   const entry = found[0];
-  return { answer: entry[lang].a, sources: [...entry.sources], origin: "faq" };
+  return { answer: entry[lang].a, sources: [...entry.sources], origin: "faq", costUsd: 0 };
 }

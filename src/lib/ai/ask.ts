@@ -1,6 +1,7 @@
 import "server-only";
 import Anthropic from "@anthropic-ai/sdk";
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
+import { costUsd } from "./cost";
 import { buildKnowledge } from "./knowledge";
 import type { AskAnswer } from "./contract";
 import { modelAnswerSchema, sanitizeAnswer, SOURCE_IDS, type AskRequest } from "./schema";
@@ -87,5 +88,5 @@ export async function askClaude(request: AskRequest): Promise<AskAnswer> {
 
   const result = sanitizeAnswer(response.parsed_output);
   if (!result.answer) throw new AiIncompleteError("Respuesta vacía");
-  return result;
+  return { ...result, costUsd: costUsd(MODEL, response.usage) };
 }

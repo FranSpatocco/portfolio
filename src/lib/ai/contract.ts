@@ -12,6 +12,7 @@ export const SECTION_SOURCES = ["about", "stack", "availability"] as const;
 export type SourceId = Project["slug"] | (typeof SECTION_SOURCES)[number];
 
 // origin "faq": respuesta fija del banco de preguntas frecuentes (sin API)
-export type AskAnswer = { answer: string; sources: SourceId[]; origin?: "faq" };
+// costUsd: costo de la respuesta en dólares (0 si es del banco; ausente si no hay precio verificado)
+export type AskAnswer = { answer: string; sources: SourceId[]; origin?: "faq"; costUsd?: number };
 export type AskErrorCode = "invalid" | "rate_limited" | "unavailable";
 export type AskError = { error: AskErrorCode };

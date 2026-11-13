@@ -747,6 +747,18 @@ Lo que aprendí / problema que resolví:
     respondido.
   - En Git Bash, curl con tildes manda mal el UTF-8: probar la API con node fetch.
 
+[12/11/2026] DECISIÓN — Costo en dólares de cada respuesta del asistente
+Qué es: una línea chica en la tarjeta de respuesta con el costo estimado (US$).
+Para qué lo usé: mostrar a las empresas que preguntarle al asistente es barato,
+  con un dato medido y no una promesa.
+Por qué esto y no otra cosa: se calcula en el servidor con response.usage (entrada,
+  caché, salida) y la lista de precios de Anthropic; las respuestas del banco
+  muestran US$ 0. Si el modelo no tiene precio verificado, no se muestra nada.
+Lo que aprendí / problema que resolví:
+  - Medido con Haiku 5.5 y llamadas reales: entre US$ 0,0001 (con el contexto en
+    caché) y US$ 0,0006 (cuando hay que escribirlo) por pregunta libre.
+  - Los tokens de razonamiento ya vienen dentro de output_tokens, no se suman aparte.
+
 ================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)

@@ -17,10 +17,18 @@ type ChipKey = (typeof chips)[number]["key"];
 type View =
   | { kind: "idle" }
   | { kind: "loading"; q: string }
-  | { kind: "answer"; q: string; answer: string; sources: SourceId[]; origin: "site" | "ai"; chip?: ChipKey }
+  | { kind: "answer"; q: string; answer: string; sources: SourceId[]; origin: "site" | "ai"; cost?: number; chip?: ChipKey }
   | { kind: "error"; q: string; code: AskErrorCode | "network" };
 
 const TIMEOUT_MS = 30_000;
+
+// Costo en dólares con 4 decimales: una respuesta cuesta fracciones de centavo
+function formatUsd(value: number, locale: string) {
+  if (value === 0) return "US$ 0";
+  const fmt = (n: number) =>
+    n.toLocaleString(locale, { minimumFractionDigits: 4, maximumFractionDigits: 4 });
+  return value < 0.0001 ? `< US$ ${fmt(0.0001)}` : `US$ ${fmt(value)}`;
+}
 
 const isSection = (id: SourceId): id is keyof typeof sectionHref => id in sectionHref;
 
@@ -75,6 +83,7 @@ export default function AskPortfolio() {
       answer: t(`chips.${key}.a`),
       sources: [...sources],
       origin: "site",
+      cost: 0,
       chip: key,
     });
   }
@@ -102,6 +111,7 @@ export default function AskPortfolio() {
         answer?: unknown;
         sources?: unknown;
         origin?: unknown;
+        costUsd?: unknown;
         error?: AskErrorCode;
       } | null;
       if (!res.ok || typeof body?.answer !== "string") {
@@ -115,6 +125,7 @@ export default function AskPortfolio() {
         answer: body.answer,
         sources,
         origin: body.origin === "faq" ? "site" : "ai",
+        cost: typeof body.costUsd === "number" && body.costUsd >= 0 ? body.costUsd : undefined,
       });
       setText("");
     } catch (e) {
@@ -256,6 +267,11 @@ export default function AskPortfolio() {
                 </>
               )}
             </div>
+            {view.cost !== undefined && (
+              <p className="text-right font-mono text-[0.6875rem] text-subtle">
+                {t("cost", { value: formatUsd(view.cost, locale) })}
+              </p>
+            )}
           </>
         )}
       </div>

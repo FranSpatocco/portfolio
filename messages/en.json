@@ -37,6 +37,7 @@
     "idle": "Pick a question or type your own. I answer with what this site publishes.",
     "thinking": "Searching the site…",
     "sourcesLabel": "Sources",
+    "cost": "Estimated cost of this answer: {value}",
     "inputLabel": "Your question about Franco",
     "placeholder": "Ask about projects, stack or availability",
     "send": "Ask",
