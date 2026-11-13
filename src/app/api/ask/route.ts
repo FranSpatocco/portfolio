@@ -3,6 +3,7 @@ import type { NextRequest } from "next/server";
 import { z } from "zod";
 import { AiIncompleteError, AiRefusalError, aiEnabled, askClaude } from "@/lib/ai/ask";
 import type { AskAnswer, AskError } from "@/lib/ai/contract";
+import { answerFromFaq } from "@/lib/ai/faq";
 import { consumeAsk, getLimiter, secondsUntilNextDay } from "@/lib/ai/limits";
 import { askRequestSchema } from "@/lib/ai/schema";
 
@@ -57,6 +58,11 @@ export async function POST(req: NextRequest) {
   if (body === "too_large") return fail(413, { error: "invalid" });
   const parsed = askRequestSchema.safeParse(body);
   if (!parsed.success) return fail(400, { error: "invalid" });
+
+  // Las preguntas más comunes tienen respuesta fija: no cuestan nada, no gastan
+  // los topes y siguen funcionando aunque falte la clave o Redis
+  const fixed = answerFromFaq(parsed.data.q, parsed.data.lang);
+  if (fixed) return Response.json(fixed, { headers: noStore });
 
   // Sin clave o sin dónde contar, el asistente se apaga: no se llama a Claude a ciegas
   const limiter = getLimiter();

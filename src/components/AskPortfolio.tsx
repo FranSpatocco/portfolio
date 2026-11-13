@@ -39,6 +39,7 @@ export default function AskPortfolio() {
   const [view, setView] = useState<View>({ kind: "idle" });
   const [text, setText] = useState("");
   const pending = useRef<AbortController | null>(null);
+  const output = useRef<HTMLDivElement>(null);
 
   // Enciende las tarjetas citadas y apaga las demás
   useEffect(() => {
@@ -54,6 +55,14 @@ export default function AskPortfolio() {
   }, [view]);
 
   useEffect(() => () => pending.current?.abort(), []);
+
+  // Al responder, baja lo justo para que la respuesta quede a la vista: si no,
+  // en pantallas chicas parece que no pasó nada. No se mueve si ya se ve entera.
+  useEffect(() => {
+    if (view.kind !== "answer" && view.kind !== "error") return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    output.current?.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" });
+  }, [view]);
 
   const busy = view.kind === "loading";
   const activeChip = view.kind === "answer" ? view.chip : undefined;
@@ -89,13 +98,24 @@ export default function AskPortfolio() {
         signal: controller.signal,
       });
       const data: unknown = await res.json().catch(() => null);
-      const body = data as { answer?: unknown; sources?: unknown; error?: AskErrorCode } | null;
+      const body = data as {
+        answer?: unknown;
+        sources?: unknown;
+        origin?: unknown;
+        error?: AskErrorCode;
+      } | null;
       if (!res.ok || typeof body?.answer !== "string") {
         setView({ kind: "error", q, code: body?.error ?? "unavailable" });
         return;
       }
       const sources = Array.isArray(body.sources) ? (body.sources as SourceId[]) : [];
-      setView({ kind: "answer", q, answer: body.answer, sources, origin: "ai" });
+      setView({
+        kind: "answer",
+        q,
+        answer: body.answer,
+        sources,
+        origin: body.origin === "faq" ? "site" : "ai",
+      });
       setText("");
     } catch (e) {
       // Una pregunta nueva cancela la anterior: no es un error
@@ -184,8 +204,9 @@ export default function AskPortfolio() {
 
       {/* Salida: alto reservado para que la respuesta no mueva lo que está debajo */}
       <div
+        ref={output}
         aria-live="polite"
-        className="card flex min-h-52 flex-col justify-center gap-4 p-5.5 md:min-h-60 md:p-8"
+        className="card flex min-h-52 scroll-mb-6 flex-col justify-center gap-4 p-5.5 md:min-h-60 md:p-8"
       >
         {view.kind === "idle" && <p className="text-center text-muted">{t("idle")}</p>}
 

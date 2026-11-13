@@ -726,6 +726,27 @@ Lo que aprendí / problema que resolví:
     se perdería el tope), prefijo vacío para que queden KV_REST_API_URL/TOKEN.
   - Pendiente: límite de gasto mensual de la clave en la consola de Anthropic.
 
+[12/11/2026] DECISIÓN — Banco de 75 preguntas frecuentes del asistente
+Qué es: respuestas fijas (ES/EN) a las preguntas típicas de un recruiter:
+  disponibilidad, condiciones, perfil, experiencia, tecnologías, IA, proyectos.
+Para qué lo usé: que lo común se responda sin llamar a la API (costo cero, sin
+  gastar el cupo diario) y que el costo por pregunta del asistente sea bajo.
+Por qué esto y no otra cosa: un buscador por palabras clave en el servidor, y no
+  en el navegador, para no sumar ~50 KB al bundle ni depender de un modelo de
+  embeddings. Es conservador: sólo responde si la pregunta es corta y encaja con
+  una sola entrada; si hay duda, va a Claude (mejor un centavo que una respuesta
+  equivocada).
+Lo que aprendí / problema que resolví:
+  - Las palabras sueltas ("código", "proyectos", "live") hacían encajar varias
+    entradas a la vez; se pasó a frases seguidas y el test exige que cada pregunta
+    se reconozca a sí misma y a ninguna otra.
+  - Donde el sitio no publica el dato (sueldo, años de experiencia, preaviso) la
+    respuesta lo dice, en vez de inventarlo.
+  - La respuesta ahora baja la pantalla lo justo (scrollIntoView, block nearest,
+    sin animar con movimiento reducido): en el celular no se notaba que había
+    respondido.
+  - En Git Bash, curl con tildes manda mal el UTF-8: probar la API con node fetch.
+
 ================================================================
 RESUMEN PARA CV / LINKEDIN
 (actualizar al cerrar cada fase)

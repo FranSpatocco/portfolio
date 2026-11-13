@@ -27,7 +27,8 @@ function request(body: unknown, headers: Record<string, string> = {}) {
   });
 }
 
-const valid = { q: "¿Qué stack usa?", lang: "es" };
+// Una pregunta que el banco de preguntas frecuentes no reconoce: va a Claude
+const valid = { q: "¿Cuál es el color favorito de Franco?", lang: "es" };
 
 beforeEach(() => {
   askClaude.mockReset();
@@ -85,5 +86,22 @@ describe("POST /api/ask", () => {
     const res = await POST(request(valid));
     expect(res.status).toBe(502);
     expect(await res.json()).toEqual({ error: "unavailable" });
+  });
+
+  it("responde las preguntas frecuentes sin llamar a Claude ni gastar topes", async () => {
+    const res = await POST(request({ q: "¿Cuánto cuesta cada pregunta al asistente?", lang: "es" }));
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.origin).toBe("faq");
+    expect(body.answer).toMatch(/costo cero/);
+    expect(askClaude).not.toHaveBeenCalled();
+    expect(consumeAsk).not.toHaveBeenCalled();
+  });
+
+  it("las preguntas frecuentes siguen andando aunque falte Redis", async () => {
+    getLimiter.mockReturnValue(null);
+    const res = await POST(request({ q: "Is he available to work?", lang: "en" }));
+    expect(res.status).toBe(200);
+    expect((await res.json()).origin).toBe("faq");
   });
 });

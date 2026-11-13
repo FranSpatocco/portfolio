@@ -11,6 +11,7 @@ export const SECTION_SOURCES = ["about", "stack", "availability"] as const;
 
 export type SourceId = Project["slug"] | (typeof SECTION_SOURCES)[number];
 
-export type AskAnswer = { answer: string; sources: SourceId[] };
+// origin "faq": respuesta fija del banco de preguntas frecuentes (sin API)
+export type AskAnswer = { answer: string; sources: SourceId[]; origin?: "faq" };
 export type AskErrorCode = "invalid" | "rate_limited" | "unavailable";
 export type AskError = { error: AskErrorCode };
